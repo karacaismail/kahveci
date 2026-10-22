@@ -65,3 +65,9 @@ Build `public/tercih-puanlari.csv` ve JSON karşılığını tüm makineler içi
 `PAGES_BUILD=1 npm run build` /kahveci/ taban yolunu kullanır. GitHub Actions ana branch değişiminde test eder, derler ve Pages artifact olarak yayınlar. Gizli anahtar gerekmez; workflow commit oluşturmaz. Mevcut büyük ortak JS paketi performans sınırı olarak kaydedilmiştir.
 
 Kurulu WebKit için `ATLAS_ENGINE=webkit npm run test:phone` aynı akışı emülasyonda sınar. Bu gerçek iOS Safari sertifikasyonu değildir. Telefon stili yüklenmezse görünür yeniden deneme ekranı gösterilir.
+
+## Genel arama
+
+Üstteki “Tüm verilerde ara” alanı yazdıkça bütün183makineyi,47ekipmanı ve265kavram/veri alanını arar. Tüm iç içe katalog alanları, teknik değerler, kaynak/görsel adresleri, eski ve güncel fiyat gözlemleri, satıcılar, araştırma notları ve senaryodaki puan gerekçeleri kapsamdadır. Türkçe karakterler isteğe bağlıdır;58mm/58 mm ve41.999/41999 eşleşir. Sözcükler birlikte aranır, tırnaklı ifade aynı sırayı gerektirir. İnternet araması değildir. Eşleşme özellik onayı veya güncel stok iddiası değildir. Makine,ekipman,kavram türüyle süzülür ve eşleşen alan gösterilir. Katalogdaki yerel arama da aynı motoru kullanır; diğer filtreler korunur.
+
+`node tests/search-browser.mjs`320pxtelefon ve1512pxmasaüstü arama akışını production build üzerinde doğrular.

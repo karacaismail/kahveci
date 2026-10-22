@@ -18,3 +18,13 @@
 183 makine ve47 ekipmana gerekçeli rol puanı verilir; fiyat/bütçe kabul veya puana dahil değildir.164 makinenin8 başlığı araştırılmıştır;9 SKU ve10 erişilemeyen belge kaydı açık kalır.54 öncelikli fiyat gözlemi modelinin8 başlığı,çoklu görseli,farklı satın alma sayfaları vardır;35 modelde iki uygun fiyat gözlemi alan adı bulunur. Stok dışı/yurt dışı seçenekler etiketlidir.
 
 Önceki920benzersizgörsel URL kontrolü korunur; bu görevde tüm uzak URL’ler tekrar taranmadı. Tat,sıcaklık,basınç veya25içecek kapasite laboratuvar testi yoktur. Eksik kanıt özellik yokluğu sayılmaz.
+
+## Genel arama güncellemesi
+
+-61unit/regresyon testi,TypeScript ve production build PASS.61sayısı önceki57+4arama davranışını kapsar.
+-183makine,47ekipman,265kavram/teknik alan;495arama belgesi. İç içe tüm kayıt alanları,kaynak/görsel adresleri,fiyat gözlemleri,araştırma kontrolleri ve ortak motorun güncel senaryo puanları indekslenir.
+-Chrome155 veWebKit27.2 production /kahveci/ üzerinde320telefon+1512masaüstü arama akışı PASS. Marka,teknik değer,kavram,ekipman türü,kayıt açma,boş sonuç,girdi odağı,taşma,hatasız çalışma kontrol edildi. Ekranlar search-chrome-* ve search-webkit-* dosyalarında.
+-Bağımsız incelemedeki search rota/fallback kusuru önce2h1ileRED, ardından tekh1ve hata metni yokluğu ileGREEN doğrulandı. Son hedefli incelemede açık bulgu kalmadı; inceleyici komut çalıştırmadı.
+-Mevcut21masaüstü kontrolü ve320/360/375/390telefon suite’i geçti. Yeni arama kontrolü GitHub Pages workflow kapısına eklendi. Fiziksel telefon/alan performansı not_run.
+-Yerel Node24ölçümü: ilk tam indeks299ms;sorgular1–18ms. Normal ekranlarda indeks oluşturulmaz; yalnız arama açılınca veya katalog sorgusu girilince oluşturulur. Bu fiziksel telefon performansı değildir.
+-Arama interneti taramaz. Yok/açıklanmamış/eski fiyat bilgisi de eşleşebilir; durum ve kaynak uyarıları korunur. Sonuç eşleşmesi özellik onayı değildir. Büyük ortak JS chunk uyarısı sürer.

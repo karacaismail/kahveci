@@ -404,3 +404,24 @@ footer > div:last-child {
 .compare-offer small {
   font-size: var(--font-small);
 }
+.universal-search {
+  flex-wrap: wrap;
+}
+.universal-search .mantine-TextInput-root {
+  flex: 1 0 100%;
+}
+.universal-search > .mantine-Button-root {
+  width: 100%;
+}
+.search-summary {
+  display: block;
+}
+.search-summary .mantine-Select-root {
+  min-width: 0;
+}
+.search-results {
+  grid-template-columns: minmax(0, 1fr);
+}
+.search-result h2 {
+  font-size: var(--phone-heading);
+}

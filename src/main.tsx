@@ -85,6 +85,8 @@ import {
   equipmentPreferenceScore,
 } from "./preference.mjs";
 import "./styles.css";
+import { buildSearchIndex, searchIndex } from "./search.mjs";
+import { SearchResults } from "./SearchResults";
 import { selectLayout } from "./layout.mjs";
 const layout = selectLayout({
   width: screen.width,
@@ -888,6 +890,8 @@ function Specs({
 
 function App() {
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [globalQuery, setGlobalQuery] = useState("");
+  const [equipmentTarget, setEquipmentTarget] = useState("");
   const [route, setRoute] = useState(location.hash.slice(1) || "catalog");
   const [selected, setSelected] = useState<string[]>(() => {
     try {
@@ -1002,17 +1006,29 @@ function App() {
     cups: Number(cups),
     milkShare: Number(milkShare),
   };
+  const searchNeeded = route === "search" || !!query.trim();
+  const globalIndex = useMemo(
+    () =>
+      searchNeeded ? buildSearchIndex(products, equipment, scoreOptions) : [],
+    [searchNeeded, budget, grinder, accessories, goal, cups, milkShare],
+  );
+  useEffect(() => {
+    if (route === "equipment" && equipmentTarget)
+      document
+        .getElementById("equipment-" + equipmentTarget)
+        ?.scrollIntoView({ block: "start" });
+  }, [route, equipmentTarget, equipKind]);
   const compared = selected
     .map((id) => products.find((p) => p.id === id)!)
     .filter(Boolean);
   const filtered = useMemo(() => {
+    const matchedIds = new Set(
+      searchIndex(globalIndex, query, "machine").map((r) => r.id),
+    );
     let list = products.filter(
       (p) =>
-        (view === "all" || p.featured) &&
-        (!query ||
-          `${p.brand} ${p.name} ${p.category}`
-            .toLocaleLowerCase("tr")
-            .includes(query.toLocaleLowerCase("tr"))) &&
+        (view === "all" || !!query.trim() || p.featured) &&
+        (!query.trim() || matchedIds.has(p.id)) &&
         (!brand || p.brand === brand) &&
         (!category || formatCategory(p) === category) &&
         (!verifiedOnly || Object.keys(p.verified).length > 0) &&
@@ -1053,6 +1069,7 @@ function App() {
     cap,
     criteriaFilter,
     qualityStatusFilter,
+    globalIndex,
     budget,
     grinder,
     accessories,
@@ -1200,7 +1217,37 @@ function App() {
           Karşılaştır<span>{selected.length}/4</span>
         </button>
       </header>
+      <section className="universal-search" aria-label="Genel arama">
+        <TextInput
+          aria-label="Tüm verilerde ara"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") go("search");
+          }}
+          placeholder="Her şeyi ara: marka, PID, 58 mm, satıcı, fiyat…"
+          leftSection={<IconSearch size={18} />}
+          value={globalQuery}
+          onChange={(e) => {
+            setGlobalQuery(e.currentTarget.value);
+            if (route !== "search") go("search");
+          }}
+        />
+        <Button variant="light" onClick={() => go("search")}>
+          Genel arama
+        </Button>
+      </section>
       <main>
+        {route === "search" && (
+          <SearchResults
+            index={globalIndex}
+            query={globalQuery}
+            go={go}
+            openEquipment={(id) => {
+              setEquipKind("Tümü");
+              setEquipmentTarget(id);
+              go("equipment");
+            }}
+          />
+        )}
         {route === "catalog" && (
           <>
             <section className="hero">
@@ -1464,7 +1511,7 @@ function App() {
                     <TextInput
                       aria-label="Makine ara"
                       leftSection={<IconSearch size={18} />}
-                      placeholder="Marka, model veya makine tipi ara"
+                      placeholder="Tüm makine verilerinde ara"
                       value={query}
                       onChange={(e) => setQuery(e.currentTarget.value)}
                     />
@@ -2043,7 +2090,11 @@ function App() {
               {equipment
                 .filter((e) => equipKind === "Tümü" || e.category === equipKind)
                 .map((p) => (
-                  <article className="equipment-item" key={p.id}>
+                  <article
+                    className="equipment-item"
+                    id={"equipment-" + p.id}
+                    key={p.id}
+                  >
                     {p.images.length > 0 && (
                       <Photo
                         p={p}
@@ -2411,9 +2462,14 @@ function App() {
             </div>
           </section>
         )}
-        {!["catalog", "compare", "equipment", "decision", "guide"].includes(
-          route,
-        ) &&
+        {![
+          "catalog",
+          "compare",
+          "equipment",
+          "decision",
+          "guide",
+          "search",
+        ].includes(route) &&
           !current && (
             <div className="empty-state">
               <h1>Ürün bulunamadı.</h1>
