@@ -1,0 +1,35 @@
+{
+  "name": "espresso-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/research-coverage.mjs && tsc -b && vite build",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:browser": "node tests/browser-check.mjs",
+    "format": "prettier --write src tests scripts vite.config.ts",
+    "format:check": "prettier --check src tests scripts vite.config.ts",
+    "check": "npm run format:check && npm test && npm run build",
+    "test:phone": "node tests/phone-browser.mjs"
+  },
+  "dependencies": {
+    "@fontsource/outfit": "5.2.8",
+    "@mantine/core": "9.7.3",
+    "@mantine/hooks": "9.7.3",
+    "@phosphor-icons/react": "2.1.10",
+    "@tabler/icons-react": "3.40.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "vite": "8.3.5"
+  }
+}

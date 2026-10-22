@@ -1,0 +1,373 @@
+{
+  "browser": "Google Chrome 155.0.8059.85",
+  "viewport": "1512×1100 and 1280×900",
+  "url": "http://127.0.0.1:4173",
+  "checks": [
+    {
+      "check": "twelve filters and downloaded CSV/JSON carry derived quality states and evidence",
+      "status": "pass"
+    },
+    {
+      "check": "catalog rendered; all visible text >=14px",
+      "status": "pass"
+    },
+    {
+      "check": "Mantine dropdown keyboard open/close",
+      "status": "pass"
+    },
+    {
+      "check": "eight primary criterion filters, eight card markers and separate-equipment status filter",
+      "status": "pass"
+    },
+    {
+      "check": "compare add retains focus",
+      "status": "pass"
+    },
+    {
+      "check": "fifth machine rejected at maximum four",
+      "status": "pass"
+    },
+    {
+      "check": "four-column detailed comparison and difference filter",
+      "status": "pass"
+    },
+    {
+      "check": "score disclosure has immediate semantic states and positive reciprocal motion",
+      "status": "pass"
+    },
+    {
+      "check": "all-machine preference scores, seven large green Phosphor acceptance markers and 14-row score reasons",
+      "status": "pass"
+    },
+    {
+      "check": "product shows eight primary and four extra criteria with evidence and limitations",
+      "status": "pass"
+    },
+    {
+      "check": "gallery selection survives modal open/close; zoom, scrolling and next image work",
+      "status": "pass"
+    },
+    {
+      "check": "product detail and modal text >=14px",
+      "status": "pass"
+    },
+    {
+      "check": "decision inputs update workload scenario and method matches price-independent scoring",
+      "status": "pass"
+    },
+    {
+      "check": "budget changes displayed costs without changing technical preference score",
+      "status": "pass"
+    },
+    {
+      "check": "all separate equipment records rendered",
+      "status": "pass"
+    },
+    {
+      "check": "keyboard focus visible as non-enclosing underline",
+      "status": "pass"
+    },
+    {
+      "check": "focus mode only starts with Tab and pointer hides visual mode",
+      "status": "pass"
+    },
+    {
+      "check": "forced colors keyboard exception",
+      "status": "pass"
+    },
+    {
+      "check": "positive symmetric motion and reduced-motion exception",
+      "status": "pass"
+    },
+    {
+      "check": "desktop1280 no page overflow and >=14px text",
+      "status": "pass"
+    },
+    {
+      "check": "no uncaught application errors",
+      "status": "pass"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/0ES601EU_01.jpg?v=1759493940",
+      "loaded": true
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
+      "loaded": true
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
+      "loaded": true
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "loaded": true
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES990/SES990BSS4EEU1/pdp1.png?pdp",
+      "loaded": true
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES876/SES876BSS4GUK1/pdp.png?pdp",
+      "loaded": true
+    },
+    {
+      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
+      "loaded": true
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
+      "loaded": false
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES920/BES920UK/pdp_1300px.png?pdp",
+      "loaded": false
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES880/SES880BSS4EEU1/pdp_1300px.png?pdp",
+      "loaded": false
+    },
+    {
+      "url": "https://ascaso.com/wp-content/uploads/2024/09/DREAM-001-scaled-e1726226223342.jpg",
+      "loaded": false
+    },
+    {
+      "url": "https://images.philips.com/is/image/philipsconsumer/vrs_65d3e4d8_a0a7_42b9_87ca4db9c6fca9be?wid=1400&hei=1400&fit=constrain",
+      "loaded": false
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:4173/",
+      "type": "document"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/index-D8vKua7a.css",
+      "type": "stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/index-saE4mhtV.js",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/outfit-latin-ext-400-normal-5tcqmc2S.woff2",
+      "type": "font"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/outfit-latin-ext-600-normal-B85nYjL1.woff2",
+      "type": "font"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/outfit-latin-ext-500-normal-zeox_O30.woff2",
+      "type": "font"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/outfit-latin-700-normal-Cu9v6i1X.woff2",
+      "type": "font"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/outfit-latin-600-normal-B7SfZ07L.woff2",
+      "type": "font"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/outfit-latin-400-normal-BGsTXAXT.woff2",
+      "type": "font"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/outfit-latin-500-normal-DKnIMDSk.woff2",
+      "type": "font"
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/0ES601EU_01.jpg?v=1759493940",
+      "type": "image"
+    },
+    {
+      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES880/SES880BSS4EEU1/pdp_1300px.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES990/SES990BSS4EEU1/pdp1.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES920/BES920UK/pdp_1300px.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES876/SES876BSS4GUK1/pdp.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://images.philips.com/is/image/philipsconsumer/vrs_65d3e4d8_a0a7_42b9_87ca4db9c6fca9be?wid=1400&hei=1400&fit=constrain",
+      "type": "image"
+    },
+    {
+      "url": "https://ascaso.com/wp-content/uploads/2024/09/DREAM-001-scaled-e1726226223342.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://ascaso.com/wp-content/uploads/2024/09/baby-t-plus-2.png",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES881/SES881BSS4GUK1/pdp.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL042TEMD_frontale-2.webp",
+      "type": "image"
+    },
+    {
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL92T_frontale-2.webp?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://ascaso.com/wp-content/uploads/2024/10/FOTO-TERCIO-01-STEEL.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://www.lelit.com/wp-content/uploads/2024/02/PL162T_frontale-2.webp?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "other"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL91T_frontale-2.webp?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://www.ranciliogroup.com/app/uploads/2019/09/Silvia-Pro-X.png",
+      "type": "image"
+    },
+    {
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/MAIN-e1741266073723.png?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES810/BES810BSSUK/pdp_1300px.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "other"
+    },
+    {
+      "url": "https://cdn.karaca.com/rcman/cw1000h1000q90gm/image/banner/000001000237179003-0.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://www.mutbex.com/lelit-grace-pl81t-espresso-coffee-machine-espresso-and-cappuccino-machines-lelit-33027-16-B.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://www.wacaco.com/cdn/shop/products/Picopresso-308-PNG-LD_58cced72-f01b-46de-a2d3-c874f0e41819.png?v=1678885971",
+      "type": "image"
+    },
+    {
+      "url": "https://global.solis.com/cdn/shop/files/1170BaristaPerfettaPlusBlack_1.png?v=1719979246",
+      "type": "image"
+    },
+    {
+      "url": "https://www.gaggia.com/app/uploads/2023/11/Classic-Trequarti-Bianco_2018.png",
+      "type": "image"
+    },
+    {
+      "url": "https://www.cafelat.com/uploads/1/5/3/6/15367184/drinks_orig.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://www.bezzera.it/uploads/prod_images/Magica/MAGICA%20MN%20PID%20NEW%20GRID.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "other"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_9.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_0.jpg?v=1759832734",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_6.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_5.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_1_27e3fb7c-8728-433a-b6dd-c22424eedacf.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_4.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_7.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_2.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_8.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "other"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    }
+  ],
+  "failedRequests": []
+}

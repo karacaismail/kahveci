@@ -1,0 +1,53 @@
+name: Verify and publish Kahveci
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+        env:
+          PAGES_BUILD: '1'
+      - name: Start preview and wait for Pages subpath
+        run: |
+          PAGES_BUILD=1 npm run preview -- --port 4173 > /tmp/kahveci-preview.log 2>&1 &
+          curl --fail --retry 20 --retry-connrefused --retry-delay 1 http://127.0.0.1:4173/kahveci/ > /dev/null
+      - run: node tests/phone-browser.mjs
+        env:
+          ATLAS_URL: http://127.0.0.1:4173/kahveci/
+      - run: node tests/phone-recovery.mjs
+        env:
+          ATLAS_URL: http://127.0.0.1:4173/kahveci/
+      - run: npm run test:browser
+        env:
+          ATLAS_URL: http://127.0.0.1:4173/kahveci/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

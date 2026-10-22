@@ -1,0 +1,392 @@
+/* Loaded only for compact touch screens; shared Mantine, data and business state stay common. */
+:root[data-layout="phone"] {
+  --page-gutter: 16px;
+  --space-lg: 24px;
+  --gap: 16px;
+  --target: 48px;
+  --font-heading: 30px;
+  --phone-section: 28px;
+  --phone-media: 240px;
+  --phone-dock: 84px;
+  --phone-brand: 24px;
+  --phone-heading: 26px;
+  --phone-spec-min: 650px;
+  --phone-comparison-min: 1100px;
+  --phone-rank-number: 28px;
+  --phone-rank-photo: 64px;
+}
+body {
+  min-width: 0;
+}
+header {
+  flex-wrap: wrap;
+  height: auto;
+  padding: var(--space-sm) var(--page-gutter);
+  gap: var(--space-sm);
+  position: relative;
+}
+.brand {
+  font-size: var(--phone-brand);
+}
+.brand small {
+  font-size: var(--font-small);
+}
+.brand-mark {
+  width: var(--target);
+  height: var(--target);
+}
+header nav {
+  order: 3;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-sm);
+  padding: 0;
+}
+header nav button {
+  white-space: nowrap;
+  flex: 0 0 auto;
+  min-height: var(--target);
+}
+.header-compare {
+  margin-left: auto;
+  min-height: var(--target);
+  flex-wrap: wrap;
+}
+.topbar {
+  padding: var(--space-sm) var(--page-gutter);
+  height: auto;
+}
+.topbar > span:last-child {
+  display: none;
+}
+main {
+  min-width: 0;
+}
+.hero {
+  grid-template-columns: minmax(0, 1fr);
+  padding: var(--phone-section) var(--page-gutter);
+  gap: var(--gap);
+  min-height: 0;
+}
+.hero-copy {
+  padding: 0;
+}
+.hero h1 {
+  font-size: var(--font-heading);
+  line-height: 1.2;
+}
+.hero p {
+  font-size: var(--font-body);
+}
+.hero-actions,
+.hero-facts {
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.hero-visual {
+  height: var(--phone-media);
+  min-height: 0;
+  overflow: hidden;
+}
+.hero-halo {
+  width: var(--phone-media);
+  height: var(--phone-media);
+}
+.hero-machine {
+  height: 100%;
+}
+.hero-label,
+.hero-side {
+  display: none;
+}
+.hero-product {
+  left: var(--space-sm);
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+}
+.trust-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: var(--space-md) var(--page-gutter);
+  gap: var(--gap);
+}
+.catalog-section,
+.page-section,
+.detail-section,
+.ownership,
+.methodology,
+.pathways {
+  padding: var(--phone-section) var(--page-gutter);
+}
+.section-head {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.section-head h2,
+h2 {
+  font-size: var(--phone-heading);
+}
+.catalog-tabs {
+  flex-wrap: wrap;
+}
+.catalog-tabs button {
+  min-height: var(--target);
+}
+.catalog-layout,
+.decision-layout {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--gap);
+}
+.catalog-layout > aside {
+  position: static;
+}
+.catalog-layout > aside[hidden] {
+  display: none;
+}
+.phone-filter-toggle {
+  margin-bottom: var(--gap);
+  width: 100%;
+}
+.results-toolbar {
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.results-toolbar > .mantine-TextInput-root,
+.results-toolbar > .mantine-Select-root {
+  width: 100%;
+  flex: 1 0 100%;
+}
+.product-grid,
+.equipment-grid,
+.quality-grid,
+.guide-grid,
+.tradeoffs,
+.score-gaps,
+.pathways > div {
+  grid-template-columns: minmax(0, 1fr);
+}
+.product-card,
+.catalog-results,
+.decision-rank,
+.equipment-item,
+.product-intro {
+  min-width: 0;
+}
+.card-media {
+  height: var(--phone-media);
+}
+.compare-icon,
+.round-link {
+  width: var(--target);
+  height: var(--target);
+}
+.card-content {
+  padding: var(--space-md);
+}
+.card-price {
+  flex-wrap: wrap;
+}
+.breadcrumb {
+  padding: var(--space-md) var(--page-gutter);
+  flex-wrap: wrap;
+}
+.product-hero {
+  grid-template-columns: minmax(0, 1fr);
+  padding: var(--space-md) var(--page-gutter);
+  gap: var(--gap);
+}
+.gallery-main {
+  height: var(--phone-media);
+}
+.product-intro {
+  padding: 0;
+}
+.product-intro h1 {
+  font-size: var(--font-heading);
+}
+.product-ctas,
+.intro-stats,
+.budget-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+.product-ctas > * {
+  flex: 1 0 100%;
+}
+.thumbnails {
+  overflow-x: auto;
+}
+.thumbnails button {
+  flex-shrink: 0;
+}
+.product-anchor-nav {
+  position: static;
+  overflow-x: auto;
+  padding: var(--space-sm) var(--page-gutter);
+  gap: var(--gap);
+}
+.product-anchor-nav a {
+  flex-shrink: 0;
+  min-height: var(--target);
+  display: inline-flex;
+  align-items: center;
+}
+.quality-grid > div {
+  padding: var(--space-md) 0;
+}
+.preference-heading {
+  flex-wrap: wrap;
+}
+.preference-heading > div:last-child {
+  text-align: left;
+}
+.spec-table {
+  min-width: var(--phone-spec-min);
+}
+#specs {
+  overflow-x: auto;
+}
+.comparison-scroll {
+  max-width: 100%;
+}
+.comparison-table {
+  min-width: var(--phone-comparison-min);
+}
+.comparison-table thead {
+  position: static;
+}
+.compare-controls {
+  flex-wrap: wrap;
+}
+.offer {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-sm);
+}
+.purchase-link,
+.source-list > div {
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+.buy-search {
+  flex-wrap: wrap;
+}
+.equipment-controls {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.equipment-controls .mantine-SegmentedControl-root {
+  flex-shrink: 0;
+}
+.equipment-item {
+  padding: var(--space-md) 0;
+}
+.decision-inputs {
+  position: static;
+  padding: var(--space-md);
+}
+.rank-row {
+  grid-template-columns:
+    var(--phone-rank-number) var(--phone-rank-photo)
+    minmax(0, 1fr);
+  gap: var(--space-sm);
+}
+.rank-row > .photo {
+  width: var(--phone-rank-photo);
+}
+.rank-price {
+  grid-column: 3;
+  text-align: left;
+}
+.guide-links {
+  flex-wrap: wrap;
+}
+footer {
+  display: block;
+  padding: var(--phone-section) var(--page-gutter)
+    calc(var(--phone-dock) + env(safe-area-inset-bottom));
+}
+footer > div:last-child {
+  flex-wrap: wrap;
+}
+.compare-dock {
+  left: var(--space-sm);
+  right: var(--space-sm);
+  bottom: calc(var(--space-sm) + env(safe-area-inset-bottom));
+  padding: var(--space-sm);
+  gap: var(--space-sm);
+}
+.compare-dock > div:first-child {
+  flex: 1;
+}
+.compare-dock .dock-items {
+  display: none;
+}
+.compare-dock > .mantine-Button-root {
+  margin: 0;
+}
+.toast {
+  left: var(--space-sm);
+  right: var(--space-sm);
+  bottom: calc(var(--phone-dock) + var(--space-sm));
+  max-width: none;
+}
+.mantine-Input-input,
+.mantine-Button-root,
+.mantine-Select-option {
+  min-height: var(--target);
+}
+.mantine-Checkbox-body,
+.mantine-Switch-body {
+  min-height: var(--target);
+  align-items: center;
+}
+.mantine-Pagination-control {
+  min-width: var(--target);
+  min-height: var(--target);
+}
+.mantine-Pagination-control[data-dots] {
+  min-width: 0;
+}
+.mantine-Pagination-root .mantine-Group-root {
+  gap: 0;
+  justify-content: center;
+}
+.mantine-Modal-inner {
+  padding: var(--space-sm);
+}
+.mantine-Modal-content {
+  max-width: 100%;
+}
+.lightbox-toolbar,
+.lightbox-bottom {
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.lightbox-thumbs {
+  order: 3;
+  max-width: 100%;
+  width: 100%;
+}
+.zoom-viewport {
+  height: 45dvh;
+}
+.lightbox-bottom > .mantine-Button-root {
+  flex: 1;
+}
+@media (orientation: landscape) and (min-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero-visual {
+    display: none;
+  }
+}
+
+.title-button,
+.text-link,
+.aside-title button {
+  min-height: var(--target);
+}
