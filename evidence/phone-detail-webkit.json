@@ -1,0 +1,19 @@
+{
+  "engine": "webkit",
+  "browser": "27.2",
+  "checks": [
+    "320: filter selection, results action and scroll return",
+    "320: combined quality filters, empty results and clear recovery",
+    "320: four-product comparison, fifth rejection, differences and direct column navigation",
+    "320: product evidence disclosure, contained specs, loaded photo, zoom/pan, image navigation, close target, rotation controls and focus return",
+    "360: filter selection, results action and scroll return",
+    "360: four-product comparison, fifth rejection, differences and direct column navigation",
+    "360: product evidence disclosure, contained specs, loaded photo, zoom/pan, image navigation, close target, rotation controls and focus return",
+    "375: filter selection, results action and scroll return",
+    "375: four-product comparison, fifth rejection, differences and direct column navigation",
+    "375: product evidence disclosure, contained specs, loaded photo, zoom/pan, image navigation, close target, rotation controls and focus return",
+    "390: filter selection, results action and scroll return",
+    "390: four-product comparison, fifth rejection, differences and direct column navigation",
+    "390: product evidence disclosure, contained specs, loaded photo, zoom/pan, image navigation, close target, rotation controls and focus return"
+  ]
+}

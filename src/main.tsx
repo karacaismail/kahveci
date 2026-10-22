@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useId } from "react";
+import React, { useState, useEffect, useMemo, useId, useRef } from "react";
 import { createRoot } from "react-dom/client";
 import {
   MantineProvider,
@@ -495,7 +495,7 @@ function Photo({
   p: Product;
   index?: number;
   className?: string;
-  onClick?: () => void;
+  onClick?: (trigger: HTMLButtonElement) => void;
 }) {
   const src = p.images[index];
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
@@ -529,7 +529,7 @@ function Photo({
         <button
           className="photo-hit"
           aria-label={`${p.name} görselini büyüt`}
-          onClick={onClick}
+          onClick={(event) => onClick(event.currentTarget)}
         >
           <span>
             <IconZoomIn size={19} />
@@ -764,7 +764,7 @@ function Gallery({
   onOpen,
 }: {
   p: Product;
-  onOpen: (p: Product, index: number) => void;
+  onOpen: (p: Product, index: number, trigger: HTMLButtonElement) => void;
 }) {
   const [index, setIndex] = useState(0);
   useEffect(() => setIndex(0), [p.id]);
@@ -774,8 +774,8 @@ function Gallery({
         p={p}
         index={index}
         className="gallery-main"
-        onClick={() => {
-          onOpen(p, index);
+        onClick={(trigger) => {
+          onOpen(p, index, trigger);
         }}
       />
       <div className="thumbnails">
@@ -826,58 +826,71 @@ function Specs({
         başlığa bağlı teknik alanlar tekrar puan eklemez; güç, menşei, malzeme
         ve pompa tepe basıncı tek başına kalite puanı almaz.
       </p>
-      <table className="spec-table">
-        <tbody>
-          {Object.entries(p.specs)
-            .filter(([k]) => showLegacy || p.verified[k])
-            .map(([k, v]) => (
-              <tr key={k}>
-                <th>{k}</th>
-                <td>{v}</td>
-                <td>
-                  {p.verified[k] ? (
-                    <Link href={p.verified[k]}>
-                      {p.evidenceKind?.[k] === "retailer"
-                        ? "Satıcı kaydı"
-                        : p.evidenceKind?.[k]?.includes("distributor")
-                          ? "Dağıtıcı kaydı"
-                          : "Teknik kaynak"}
-                    </Link>
-                  ) : (
-                    <span className="unknown-text">Teyitsiz aktarım</span>
-                  )}
-                </td>
-                <td className="spec-contribution">
-                  {!p.verified[k] ? (
-                    "Teyitsiz alan · 0"
-                  ) : k === "Kazan tipi" && scoring.penalty > 0 ? (
-                    <span>
-                      Servis temposu: −{scoring.penalty} ortak puan (bir kez
-                      uygulanır)
-                    </span>
-                  ) : relatedPreferenceCriterion(k) ? (
-                    <>
-                      {relatedPreferenceCriterion(k)}
-                      <strong>
-                        {Number(
-                          (
-                            scoring.rows.find(
-                              (row) =>
-                                row.key === relatedPreferenceCriterion(k),
-                            )?.points || 0
-                          ).toFixed(1),
-                        )}{" "}
-                        ortak ağırlık katkısı
-                      </strong>
-                    </>
-                  ) : (
-                    "Bilgilendirici · 0"
-                  )}
-                </td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      {layout === "phone" && (
+        <p className="hint">
+          Teknik tabloyu yatay kaydırarak değerleri, kaynakları ve puan
+          katkısını inceleyin.
+        </p>
+      )}
+      <div
+        className="spec-table-scroll"
+        role="region"
+        tabIndex={0}
+        aria-label="Ürün teknik özellik tablosu"
+      >
+        <table className="spec-table">
+          <tbody>
+            {Object.entries(p.specs)
+              .filter(([k]) => showLegacy || p.verified[k])
+              .map(([k, v]) => (
+                <tr key={k}>
+                  <th>{k}</th>
+                  <td>{v}</td>
+                  <td>
+                    {p.verified[k] ? (
+                      <Link href={p.verified[k]}>
+                        {p.evidenceKind?.[k] === "retailer"
+                          ? "Satıcı kaydı"
+                          : p.evidenceKind?.[k]?.includes("distributor")
+                            ? "Dağıtıcı kaydı"
+                            : "Teknik kaynak"}
+                      </Link>
+                    ) : (
+                      <span className="unknown-text">Teyitsiz aktarım</span>
+                    )}
+                  </td>
+                  <td className="spec-contribution">
+                    {!p.verified[k] ? (
+                      "Teyitsiz alan · 0"
+                    ) : k === "Kazan tipi" && scoring.penalty > 0 ? (
+                      <span>
+                        Servis temposu: −{scoring.penalty} ortak puan (bir kez
+                        uygulanır)
+                      </span>
+                    ) : relatedPreferenceCriterion(k) ? (
+                      <>
+                        {relatedPreferenceCriterion(k)}
+                        <strong>
+                          {Number(
+                            (
+                              scoring.rows.find(
+                                (row) =>
+                                  row.key === relatedPreferenceCriterion(k),
+                              )?.points || 0
+                            ).toFixed(1),
+                          )}{" "}
+                          ortak ağırlık katkısı
+                        </strong>
+                      </>
+                    ) : (
+                      "Bilgilendirici · 0"
+                    )}
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
       {!Object.keys(p.verified).length && (
         <p className="empty-inline">
           Bu kaydın teknik özellikleri henüz teknik belgeyle eşleştirilmedi.
@@ -890,6 +903,14 @@ function Specs({
 
 function App() {
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const comparisonRef = useRef<HTMLDivElement>(null);
+  const comparisonNavRef = useRef<HTMLElement>(null);
+  const galleryTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const [activeComparison, setActiveComparison] = useState(0);
+  const closeFilters = () => {
+    setFiltersOpen(false);
+    document.querySelector<HTMLButtonElement>(".phone-filter-toggle")?.focus();
+  };
   const [globalQuery, setGlobalQuery] = useState("");
   const [equipmentTarget, setEquipmentTarget] = useState("");
   const [route, setRoute] = useState(location.hash.slice(1) || "catalog");
@@ -940,7 +961,9 @@ function App() {
     [equipKind, setEquipKind] = useState("Tümü");
   useEffect(() => {
     const cb = () => {
-      setRoute(location.hash.slice(1) || "catalog");
+      const nextRoute = location.hash.slice(1) || "catalog";
+      setRoute(nextRoute);
+      if (nextRoute === "compare") setActiveComparison(0);
       window.scrollTo(0, 0);
     };
     window.addEventListener("hashchange", cb);
@@ -949,6 +972,9 @@ function App() {
   useEffect(() => {
     localStorage.setItem("espresso-compare", JSON.stringify(selected));
   }, [selected]);
+  useEffect(() => {
+    setActiveComparison((i) => Math.min(i, Math.max(0, selected.length - 1)));
+  }, [selected.length]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
       if (e.key === "Tab") document.documentElement.dataset.keyboard = "true";
@@ -1021,6 +1047,20 @@ function App() {
   const compared = selected
     .map((id) => products.find((p) => p.id === id)!)
     .filter(Boolean);
+  useEffect(() => {
+    const nav = comparisonNavRef.current;
+    const button = nav?.querySelector<HTMLElement>('[aria-pressed="true"]');
+    if (nav && button) {
+      if (button.offsetLeft < nav.scrollLeft)
+        nav.scrollLeft = button.offsetLeft;
+      else if (
+        button.offsetLeft + button.offsetWidth >
+        nav.scrollLeft + nav.clientWidth
+      )
+        nav.scrollLeft =
+          button.offsetLeft + button.offsetWidth - nav.clientWidth;
+    }
+  }, [activeComparison, route]);
   const filtered = useMemo(() => {
     const matchedIds = new Set(
       searchIndex(globalIndex, query, "machine").map((r) => r.id),
@@ -1504,6 +1544,14 @@ function App() {
                         Nasıl değerlendiriyoruz? <IconArrowRight size={16} />
                       </button>
                     </div>
+                    {layout === "phone" && (
+                      <Button
+                        className="phone-filter-apply"
+                        onClick={closeFilters}
+                      >
+                        Sonuçları göster ({filtered.length})
+                      </Button>
+                    )}
                   </aside>
                 </Collapse>
                 <div className="catalog-results">
@@ -1597,7 +1645,8 @@ function App() {
             <section className="product-hero">
               <Gallery
                 p={current}
-                onOpen={(p, index) => {
+                onOpen={(p, index, trigger) => {
+                  galleryTriggerRef.current = trigger;
                   setZoom(1);
                   setImageModal({ p, index });
                 }}
@@ -1728,21 +1777,50 @@ function App() {
                       <h3>{c.label}</h3>
                       <Status p={current} k={c.key} />
                     </div>
-                    <p className="acceptance-rule">
-                      {
-                        acceptancePolicy[c.key as keyof typeof acceptancePolicy]
-                          .rule
-                      }
-                    </p>
-                    <p>{c.why}</p>
-                    <strong>{qualityFor(current, c.key).value}</strong>
-                    <p>{qualityFor(current, c.key).reason}</p>
-                    {qualityFor(current, c.key).sources.map(
-                      (url: string, i: number) => (
-                        <Link key={url} href={url}>
-                          Dayanak {i + 1}{" "}
-                        </Link>
-                      ),
+                    {layout === "phone" ? (
+                      <>
+                        <strong>{qualityFor(current, c.key).value}</strong>
+                        <Disclosure
+                          label={c.shortLabel + " açıklaması ve kaynakları"}
+                        >
+                          <p className="acceptance-rule">
+                            {
+                              acceptancePolicy[
+                                c.key as keyof typeof acceptancePolicy
+                              ].rule
+                            }
+                          </p>
+                          <p>{c.why}</p>
+                          <p>{qualityFor(current, c.key).reason}</p>
+                          {qualityFor(current, c.key).sources.map(
+                            (url: string, i: number) => (
+                              <Link key={url} href={url}>
+                                Dayanak {i + 1}{" "}
+                              </Link>
+                            ),
+                          )}
+                        </Disclosure>
+                      </>
+                    ) : (
+                      <>
+                        <p className="acceptance-rule">
+                          {
+                            acceptancePolicy[
+                              c.key as keyof typeof acceptancePolicy
+                            ].rule
+                          }
+                        </p>
+                        <p>{c.why}</p>
+                        <strong>{qualityFor(current, c.key).value}</strong>
+                        <p>{qualityFor(current, c.key).reason}</p>
+                        {qualityFor(current, c.key).sources.map(
+                          (url: string, i: number) => (
+                            <Link key={url} href={url}>
+                              Dayanak {i + 1}{" "}
+                            </Link>
+                          ),
+                        )}
+                      </>
                     )}
                   </div>
                 ))}
@@ -1892,12 +1970,84 @@ function App() {
                   </span>
                   <button onClick={() => setSelected([])}>Tümünü çıkar</button>
                 </div>
+                {layout === "phone" && (
+                  <nav
+                    ref={comparisonNavRef}
+                    className="phone-comparison-nav"
+                    aria-label="Karşılaştırılan makineler"
+                  >
+                    {compared.map((p, i) => (
+                      <button
+                        key={p.id}
+                        aria-label={`Karşılaştırmada ${i + 1}. makineye git`}
+                        aria-pressed={activeComparison === i}
+                        onClick={() => {
+                          const box = comparisonRef.current;
+                          const cell =
+                            box?.querySelectorAll<HTMLTableCellElement>(
+                              "thead th",
+                            )[i + 1];
+                          const label =
+                            box?.querySelector<HTMLTableCellElement>(
+                              "thead th",
+                            );
+                          if (box && cell && label) {
+                            box.scrollLeft =
+                              cell.offsetLeft - label.offsetWidth;
+                            setActiveComparison(i);
+                          }
+                        }}
+                      >
+                        {i + 1}. {p.brand} {p.name}
+                      </button>
+                    ))}
+                  </nav>
+                )}
+                {layout === "phone" && (
+                  <p className="hint">
+                    Dört makine aynı tabloda. Numaralı düğmelerle ürüne gidin
+                    veya tabloyu yatay kaydırın; kriter sütunu sabit kalır.
+                  </p>
+                )}
                 <div
+                  ref={comparisonRef}
+                  onScroll={
+                    layout === "phone"
+                      ? (e) => {
+                          const box = e.currentTarget;
+                          const cells =
+                            box.querySelectorAll<HTMLTableCellElement>(
+                              "thead th",
+                            );
+                          if (cells.length > 1)
+                            setActiveComparison(
+                              Math.min(
+                                compared.length - 1,
+                                Math.max(
+                                  0,
+                                  Math.round(
+                                    box.scrollLeft / cells[1].offsetWidth,
+                                  ),
+                                ),
+                              ),
+                            );
+                        }
+                      : undefined
+                  }
                   className="comparison-scroll"
                   tabIndex={0}
                   aria-label="Makine karşılaştırma tablosu"
                 >
-                  <table className="comparison-table">
+                  <table
+                    className="comparison-table"
+                    style={
+                      layout === "phone"
+                        ? ({
+                            "--compare-count": compared.length,
+                          } as React.CSSProperties)
+                        : undefined
+                    }
+                  >
                     <thead>
                       <tr>
                         <th>Karar kriteri</th>
@@ -2098,7 +2248,8 @@ function App() {
                     {p.images.length > 0 && (
                       <Photo
                         p={p}
-                        onClick={() => {
+                        onClick={(trigger) => {
+                          galleryTriggerRef.current = trigger;
                           setZoom(1);
                           setImageModal({ p, index: 0 });
                         }}
@@ -2504,7 +2655,8 @@ function App() {
           <div>
             <IconScale size={24} />
             <strong>
-              Karşılaştırma masası <span>{selected.length}/4</span>
+              {layout === "phone" ? "Seçilenler" : "Karşılaştırma masası"}{" "}
+              <span>{selected.length}/4</span>
             </strong>
           </div>
           <div className="dock-items">
@@ -2527,8 +2679,12 @@ function App() {
               </span>
             ))}
           </div>
-          <Button onClick={() => go("compare")}>
-            Yan yana karşılaştır <IconArrowRight size={18} />
+          <Button
+            aria-label="Yan yana karşılaştır"
+            onClick={() => go("compare")}
+          >
+            {layout === "phone" ? "Karşılaştır" : "Yan yana karşılaştır"}{" "}
+            <IconArrowRight size={18} />
           </Button>
         </div>
       )}
@@ -2546,6 +2702,21 @@ function App() {
         onClose={() => setImageModal(null)}
         title={imageModal ? imageModal.p.brand + " " + imageModal.p.name : ""}
         size="90vw"
+        returnFocus={layout !== "phone"}
+        onExitTransitionEnd={() => {
+          if (
+            layout === "phone" &&
+            !imageModal &&
+            galleryTriggerRef.current?.isConnected
+          )
+            galleryTriggerRef.current.focus({ preventScroll: true });
+        }}
+        fullScreen={layout === "phone"}
+        closeButtonProps={
+          layout === "phone"
+            ? { "aria-label": "Görsel penceresini kapat" }
+            : undefined
+        }
         centered
         classNames={{ body: "lightbox-body" }}
       >

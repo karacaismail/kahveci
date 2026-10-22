@@ -1930,3 +1930,6 @@ body.profile-error-mode {
   padding: var(--space-sm);
   border-radius: var(--small-radius);
 }
+.spec-table-scroll {
+  overflow-x: auto;
+}

@@ -12,7 +12,8 @@
     "format": "prettier --write src tests scripts vite.config.ts",
     "format:check": "prettier --check src tests scripts vite.config.ts",
     "check": "npm run format:check && npm test && npm run build",
-    "test:phone": "node tests/phone-browser.mjs"
+    "test:phone": "node tests/phone-browser.mjs",
+    "test:phone:detail": "node tests/phone-detail.mjs"
   },
   "dependencies": {
     "@fontsource/outfit": "5.2.8",

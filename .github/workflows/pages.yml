@@ -28,6 +28,9 @@ jobs:
       - run: node tests/phone-browser.mjs
         env:
           ATLAS_URL: http://127.0.0.1:4173/kahveci/
+      - run: npm run test:phone:detail
+        env:
+          ATLAS_URL: http://127.0.0.1:4173/kahveci/
       - run: node tests/phone-recovery.mjs
         env:
           ATLAS_URL: http://127.0.0.1:4173/kahveci/

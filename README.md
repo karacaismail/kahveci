@@ -71,3 +71,9 @@ Kurulu WebKit için `ATLAS_ENGINE=webkit npm run test:phone` aynı akışı emü
 Üstteki “Tüm verilerde ara” alanı yazdıkça bütün183makineyi,47ekipmanı ve265kavram/veri alanını arar. Tüm iç içe katalog alanları, teknik değerler, kaynak/görsel adresleri, eski ve güncel fiyat gözlemleri, satıcılar, araştırma notları ve senaryodaki puan gerekçeleri kapsamdadır. Türkçe karakterler isteğe bağlıdır;58mm/58 mm ve41.999/41999 eşleşir. Sözcükler birlikte aranır, tırnaklı ifade aynı sırayı gerektirir. İnternet araması değildir. Eşleşme özellik onayı veya güncel stok iddiası değildir. Makine,ekipman,kavram türüyle süzülür ve eşleşen alan gösterilir. Katalogdaki yerel arama da aynı motoru kullanır; diğer filtreler korunur.
 
 `node tests/search-browser.mjs`320pxtelefon ve1512pxmasaüstü arama akışını production build üzerinde doğrular.
+
+## Ayrıntılı telefon QA
+
+`npm run test:phone:detail`, 320/360/375/390 telefon profillerinde filtreleri, ürün kanıtlarını, dört makine karşılaştırmasını ve galeriyi sınar. 844×320 yatay görünüm, kapatma, klavye odağı ve karşılaştırmaya geri dönüş de kapsamdadır. Chrome 320 profilinde CDP dokunma hareketi denenir. `ATLAS_ENGINE=webkit npm run test:phone:detail`, kurulu WebKit ile aynı akışı emülasyonda doğrular.
+
+Telefon karşılaştırmasında 104 px kriter ve 184 px ürün sütunu, ürüne geçiş düğmeleri ve sabit kriter sütunu bulunur. Galeri telefonda tam ekrandır; ürün kanıtları açılır bölümlerdedir. Masaüstü düzeni korunur. Ayrıntılar [evidence/PHONE_QA.md](evidence/PHONE_QA.md) dosyasındadır. Fiziksel cihaz testi yapılmadı.

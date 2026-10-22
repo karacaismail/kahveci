@@ -425,3 +425,194 @@ footer > div:last-child {
 .search-result h2 {
   font-size: var(--phone-heading);
 }
+/* Detailed phone journeys: functional controls stay visible around the content. */
+:root[data-layout="phone"] {
+  --phone-compare-label: 104px;
+  --phone-compare-product: 184px;
+  --phone-gallery-gap: 8px;
+  --phone-gallery-min: 100px;
+}
+.phone-filter-apply {
+  width: 100%;
+  margin-top: var(--space-md);
+  position: sticky;
+  bottom: var(--space-sm);
+  z-index: 4;
+}
+.phone-comparison-nav {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-sm);
+  padding-block: var(--space-sm);
+}
+.phone-comparison-nav button {
+  flex-shrink: 0;
+  min-height: var(--target);
+  padding: var(--space-sm);
+  background: var(--paper);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--small-radius);
+  max-width: 100%;
+  text-align: left;
+}
+.phone-comparison-nav button[aria-pressed="true"] {
+  background: var(--pale);
+  border-bottom-color: var(--forest);
+}
+.comparison-table {
+  width: calc(
+    var(--phone-compare-label) + var(--compare-count) *
+      var(--phone-compare-product)
+  );
+  min-width: 0;
+}
+.comparison-table th,
+.comparison-table td {
+  padding: var(--space-sm);
+}
+.comparison-table th:first-child {
+  width: var(--phone-compare-label);
+}
+.comparison-table thead th {
+  width: var(--phone-compare-product);
+  min-width: 0;
+  padding-top: var(--target);
+}
+.comparison-table thead th:first-child {
+  position: sticky;
+  width: var(--phone-compare-label);
+}
+.comparison-table .compare-remove {
+  width: var(--target);
+  height: var(--target);
+  top: 0;
+  right: 0;
+}
+.comparison-table .preference-heading {
+  display: block;
+}
+.comparison-table .preference-heading > div:last-child {
+  text-align: left;
+}
+.comparison-table .cell-source {
+  min-width: var(--target);
+  min-height: var(--target);
+  justify-content: center;
+}
+.compare-controls > button {
+  min-height: var(--target);
+}
+#specs {
+  overflow-x: visible;
+}
+.mantine-Modal-inner {
+  padding: 0;
+}
+.mantine-Modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+}
+.mantine-Modal-header {
+  flex-shrink: 0;
+  padding: var(--phone-gallery-gap);
+}
+.mantine-Modal-close {
+  min-width: var(--target);
+  min-height: var(--target);
+}
+.mantine-Modal-body.lightbox-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--phone-gallery-gap);
+  overflow: hidden;
+}
+.lightbox-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--target) auto var(--target);
+  gap: var(--phone-gallery-gap);
+  margin-bottom: var(--phone-gallery-gap);
+  flex-shrink: 0;
+}
+.lightbox-toolbar > .mantine-Button-root:nth-child(5) {
+  grid-column: 1 / 3;
+}
+.lightbox-toolbar > a {
+  grid-column: 3 / 5;
+  min-height: var(--target);
+  justify-content: center;
+}
+.zoom-viewport {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+.lightbox-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--phone-gallery-gap);
+  margin-top: var(--phone-gallery-gap);
+  flex-shrink: 0;
+}
+.lightbox-thumbs {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+.quality-grid .disclosure-trigger {
+  min-height: var(--target);
+  text-align: left;
+}
+.page-section > h1,
+.page-section .section-head h1 {
+  font-size: var(--font-heading);
+}
+@media (orientation: landscape) and (min-width: 600px) {
+  .lightbox-toolbar {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .lightbox-bottom {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+  .lightbox-thumbs {
+    order: 0;
+    grid-column: auto;
+    width: auto;
+  }
+}
+
+.phone-comparison-nav button {
+  transition:
+    background-color var(--motion-duration) var(--motion-easing),
+    color var(--motion-duration) var(--motion-easing),
+    border-color var(--motion-duration) var(--motion-easing);
+}
+
+.phone-comparison-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--cream);
+}
+
+.phone-comparison-nav {
+  margin-left: 0;
+}
+
+.compare-dock {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.compare-dock > div:first-child {
+  min-width: 0;
+  gap: var(--phone-gallery-gap);
+}
+.compare-dock strong {
+  min-width: 0;
+}

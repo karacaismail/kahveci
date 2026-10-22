@@ -23,7 +23,9 @@ function withoutReduced(s) {
   return s.slice(0, start) + s.slice(end);
 }
 test("normal transitions only use central duration/easing and no entry-only overrides", () => {
-  const normal = withoutReduced(css);
+  const normal =
+    withoutReduced(css) +
+    fs.readFileSync(new URL("../src/phone.css", import.meta.url), "utf8");
   for (const m of normal.matchAll(
     /(?:^|[;{}])\s*(transition(?:-duration|-timing-function)?|animation(?:-duration|-timing-function)?)\s*:\s*([^;{}]+)/g,
   )) {
