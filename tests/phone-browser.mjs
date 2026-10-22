@@ -1,7 +1,11 @@
-import { chromium, expect } from "@playwright/test";
+import { chromium, webkit, expect } from "@playwright/test";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
-const browser = await chromium.launch({ channel: "chrome" });
+const engine = process.env.ATLAS_ENGINE || "chrome";
+const browser =
+  engine === "webkit"
+    ? await webkit.launch()
+    : await chromium.launch({ channel: "chrome" });
 const base = process.env.ATLAS_URL || "http://127.0.0.1:4173";
 const manifest = JSON.parse(
   await fs.readFile("dist/.vite/manifest.json", "utf8"),
@@ -63,7 +67,7 @@ for (const width of [320, 360, 375, 390]) {
     await expect(page.locator(".product-hero")).toBeVisible();
     await readable(page, "product");
     await page.screenshot({
-      path: "evidence/phone-product.png",
+      path: `evidence/${engine}-phone-product.png`,
       fullPage: true,
     });
     await page.locator(".gallery-main").click();
@@ -104,7 +108,7 @@ for (const width of [320, 360, 375, 390]) {
   }
   if (width === 390)
     await page.screenshot({
-      path: "evidence/phone-catalog.png",
+      path: `evidence/${engine}-phone-catalog.png`,
       fullPage: true,
     });
   assert.deepEqual(errors, []);
@@ -134,7 +138,7 @@ for (const props of [
 }
 pass("tablet and narrow desktop retain desktop; neither requests phone CSS");
 await fs.writeFile(
-  "evidence/phone-browser.json",
+  `evidence/${engine}-phone-browser.json`,
   JSON.stringify(report, null, 2),
 );
 await browser.close();

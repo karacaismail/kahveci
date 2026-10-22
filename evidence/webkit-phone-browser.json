@@ -1,0 +1,11 @@
+{
+  "browser": "27.2",
+  "checks": [
+    "phone 320 catalog, fonts, no overflow and conditional CSS",
+    "phone filters, product, gallery, decision, rotation state, equipment, guide and contained comparison scroll",
+    "phone 360 catalog, fonts, no overflow and conditional CSS",
+    "phone 375 catalog, fonts, no overflow and conditional CSS",
+    "phone 390 catalog, fonts, no overflow and conditional CSS",
+    "tablet and narrow desktop retain desktop; neither requests phone CSS"
+  ]
+}

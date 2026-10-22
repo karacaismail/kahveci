@@ -1,6 +1,6 @@
 # Espresso Atlası proje kararları
 
-- 22 Ekim güncellemesi: Mantine, korunmuş masaüstü Chrome + ayrı telefon yerleşimi. Tablet mevcut masaüstüdür. Telefon başlangıç profili screen kısa kenarı<600 CSS px, any-pointer:coarse ve maxTouchPoints>0 birlikte seçilir; UA/cihaz adı kullanılmaz. Yatay çevirme ve dar desktop pencere profil değiştirmez. 320/360/375/390 ve yatay telefon test edilir. Mobil fiziksel cihaz/Safari doğrulaması ayrıca raporlanır.
+- 22 Ekim güncellemesi: Mantine, korunmuş masaüstü Chrome + ayrı telefon yerleşimi. Tablet mevcut masaüstüdür. Telefon başlangıç profili screen kısa kenarı<600 CSS px, any-pointer:coarse ve (maxTouchPoints>0 veya touch-event desteği) birlikte seçilir; UA/cihaz adı kullanılmaz. Yatay çevirme ve dar desktop pencere profil değiştirmez. 320/360/375/390 ve yatay telefon test edilir. Mobil fiziksel cihaz/Safari doğrulaması ayrıca raporlanır.
 - UI fontu Outfit; görünür metin en az 14 CSS px. Renk/yüzey/boşluk/odak/hareket tokenları `src/styles.css` ve `src/motion.ts` içindedir. Kütüphane stilleri tema ve ortak adapter üzerinden uyarlanır.
 - Normal temada çevreleyen odak halkası yok. Yalnız Tab/Shift+Tab merkezi klavye modunu açar; pointer/touch kapatır. Görünür alternatif düz alt çizgidir. Forced colors + klavye modu + focus-visible dar istisnası 2px CanvasText outline.
 - Hareket 180 ms, simetrik cubic-bezier(.65,0,.35,1); giriş/çıkış aynı tokenları kullanır. Mantine Modal, Select, Tooltip adapterları aynı kaynağa bağlıdır. Reduced-motion ayrı istisnadır. Normal componentte yerel easing/süre yazmayın.

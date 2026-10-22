@@ -91,6 +91,7 @@ const layout = selectLayout({
   height: screen.height,
   coarse: matchMedia("(any-pointer: coarse)").matches,
   touchPoints: navigator.maxTouchPoints,
+  touchEvents: "ontouchstart" in window,
 });
 document.documentElement.dataset.layout = layout;
 const phoneStyles =

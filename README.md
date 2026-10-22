@@ -1,6 +1,6 @@
 # Espresso Atlası
 
-Mantine + React espresso karar uygulaması. Masaüstü yerleşimi korunur; kısa ekran kenarı600 CSS px altında, dokunmatik ve coarse pointer yeteneği bulunan ekranlarda telefon görünümü seçilir. Tabletler masaüstünde kalır. Bu fiziksel cihaz kimliği garantisi değildir; UA kullanılmaz. Telefon yatay çevrilince aynı görünüm ve ortak durum korunur.
+Mantine + React espresso karar uygulaması. Masaüstü yerleşimi korunur; kısa ekran kenarı600 CSS px altında, dokunmatik (touch-point veya touch-event desteği) ve coarse pointer yeteneği bulunan ekranlarda telefon görünümü seçilir. Tabletler masaüstünde kalır. Bu fiziksel cihaz kimliği garantisi değildir; UA kullanılmaz. Telefon yatay çevrilince aynı görünüm ve ortak durum korunur.
 
 Yayın: https://karacaismail.github.io/kahveci/
 
@@ -63,3 +63,5 @@ Build `public/tercih-puanlari.csv` ve JSON karşılığını tüm makineler içi
 `node tests/phone-browser.mjs` telefon akışını, tablet/masaüstü ayrımını ve telefon CSS isteğinin koşullu olmasını production build üzerinde doğrular. Ortak Mantine stilleri, iş kuralları ve katalog iki görünümde de kullanılır; yalnız telefon yerleşim stilleri dinamik yüklenir. Ayrı bir telefon uygulaması veya tablet tasarımı yoktur.
 
 `PAGES_BUILD=1 npm run build` /kahveci/ taban yolunu kullanır. GitHub Actions ana branch değişiminde test eder, derler ve Pages artifact olarak yayınlar. Gizli anahtar gerekmez; workflow commit oluşturmaz. Mevcut büyük ortak JS paketi performans sınırı olarak kaydedilmiştir.
+
+Kurulu WebKit için `ATLAS_ENGINE=webkit npm run test:phone` aynı akışı emülasyonda sınar. Bu gerçek iOS Safari sertifikasyonu değildir. Telefon stili yüklenmezse görünür yeniden deneme ekranı gösterilir.

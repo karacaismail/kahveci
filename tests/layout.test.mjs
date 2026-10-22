@@ -26,3 +26,26 @@ test("phone eligibility boundary keeps tablets at 600 and above on desktop", () 
       width < 600 ? "phone" : "desktop",
     );
 });
+
+test("compact coarse touch-event browsers retain phone when touch-point count is unavailable", () => {
+  assert.equal(
+    selectLayout({
+      width: 320,
+      height: 844,
+      coarse: true,
+      touchPoints: 0,
+      touchEvents: true,
+    }),
+    "phone",
+  );
+  assert.equal(
+    selectLayout({
+      width: 320,
+      height: 844,
+      coarse: false,
+      touchPoints: 0,
+      touchEvents: true,
+    }),
+    "desktop",
+  );
+});

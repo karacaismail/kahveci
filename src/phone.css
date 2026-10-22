@@ -390,3 +390,17 @@ footer > div:last-child {
 .aside-title button {
   min-height: var(--target);
 }
+.mantine-Button-root {
+  height: auto;
+  max-width: 100%;
+}
+.mantine-Button-label {
+  white-space: normal;
+  height: auto;
+}
+.mantine-Button-inner {
+  min-width: 0;
+}
+.compare-offer small {
+  font-size: var(--font-small);
+}
