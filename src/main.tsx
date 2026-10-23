@@ -591,10 +591,6 @@ function Card({
         <button className="title-button" onClick={() => go("product/" + p.id)}>
           <h3>{p.name}</h3>
         </button>
-        <p className="card-caption">
-          {p.notes[0] ||
-            "Başlangıç araştırmasından aktarıldı. Teknik bilgiler bağımsız olarak doğrulanmayı bekliyor."}
-        </p>
         <div className="feature-chips">
           <span>
             {p.verified["Portafilter çapı (mm)"]
@@ -607,19 +603,6 @@ function Card({
           {p.images.length > 0 && <span>{p.images.length} görsel</span>}
         </div>
         <ScoreSummary p={p} options={scoreOptions} />
-        <div className="mini-criteria">
-          {qualityCriteria.map((c) => (
-            <Tooltip
-              key={c.key}
-              label={c.label + " · " + stateNames[featureState(p, c.key)]}
-            >
-              <span>
-                <Status p={p} k={c.key} compact />
-                {c.shortLabel}
-              </span>
-            </Tooltip>
-          ))}
-        </div>
         <div className="card-price">
           <div>
             <small>{b ? "Gözlenen en düşük teklif" : "Güncel teklif"}</small>

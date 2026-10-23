@@ -130,9 +130,8 @@ for (const text of [
   await c.uncheck();
   await expect(c).not.toBeChecked();
 }
-await expect(
-  page.locator(".mini-criteria").first().locator(":scope > span"),
-).toHaveCount(8);
+await expect(page.locator(".product-card .mini-criteria")).toHaveCount(0);
+await expect(page.locator(".product-card .card-caption")).toHaveCount(0);
 await page
   .getByRole("combobox", { name: "Kriterde aranan durum", exact: true })
   .click();
@@ -151,7 +150,7 @@ await page
   .click();
 await page.getByRole("option", { name: "Karşılıyor", exact: true }).click();
 pass(
-  "eight primary criterion filters, eight card markers and separate-equipment status filter",
+  "criterion filters preserved and product cards omit detailed criteria and notes",
 );
 // Focus must remain on the same card button after state update.
 const first = page.locator(".compare-icon").first();
