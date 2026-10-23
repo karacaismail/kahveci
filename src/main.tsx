@@ -105,9 +105,11 @@ import {
   matchesQuality,
 } from "./quality.mjs";
 import { motion, installMotionTokens } from "./motion";
+import { createRoutes } from "./routes.mjs";
 installMotionTokens();
 const products = data.products as unknown as Product[],
   equipment = data.equipment as unknown as Product[];
+const productRoutes = createRoutes(products, import.meta.env.BASE_URL);
 const theme = createTheme({
   respectReducedMotion: true,
   fontFamily: "Outfit, sans-serif",
@@ -887,7 +889,7 @@ function App() {
   };
   const [globalQuery, setGlobalQuery] = useState("");
   const [equipmentTarget, setEquipmentTarget] = useState("");
-  const [route, setRoute] = useState(location.hash.slice(1) || "catalog");
+  const [route, setRoute] = useState(productRoutes.resolve(location));
   const [selected, setSelected] = useState<string[]>(() => {
     try {
       const x = JSON.parse(localStorage.getItem("espresso-compare") || "[]");
@@ -935,13 +937,20 @@ function App() {
     [equipKind, setEquipKind] = useState("Tümü");
   useEffect(() => {
     const cb = () => {
-      const nextRoute = location.hash.slice(1) || "catalog";
+      const nextRoute = productRoutes.resolve(location);
+      if (nextRoute.startsWith("product/"))
+        history.replaceState(null, "", productRoutes.href(nextRoute));
       setRoute(nextRoute);
       if (nextRoute === "compare") setActiveComparison(0);
       window.scrollTo(0, 0);
     };
+    cb();
     window.addEventListener("hashchange", cb);
-    return () => window.removeEventListener("hashchange", cb);
+    window.addEventListener("popstate", cb);
+    return () => {
+      window.removeEventListener("hashchange", cb);
+      window.removeEventListener("popstate", cb);
+    };
   }, []);
   useEffect(() => {
     localStorage.setItem("espresso-compare", JSON.stringify(selected));
@@ -987,7 +996,12 @@ function App() {
   ]);
   const go = (r: string) => {
     setToast("");
-    location.hash = r;
+    const target = productRoutes.href(r);
+    if (location.pathname + location.search + location.hash !== target)
+      history.pushState(null, "", target);
+    setRoute(r);
+    if (r === "compare") setActiveComparison(0);
+    window.scrollTo(0, 0);
   };
   const compare = (p: Product) => {
     if (!selected.includes(p.id) && selected.length === 4) {
@@ -1697,7 +1711,7 @@ function App() {
               ].map(([id, t]) => (
                 <a
                   key={id}
-                  href={"#product/" + current.id}
+                  href={productRoutes.href("product/" + current.id)}
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById(id)?.scrollIntoView();
