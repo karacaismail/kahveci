@@ -106,6 +106,7 @@ import {
 } from "./quality.mjs";
 import { motion, installMotionTokens } from "./motion";
 import { createRoutes } from "./routes.mjs";
+import { productImageUrl } from "./image-url.mjs";
 import { additionalQualityCriteria } from "./additional-quality.mjs";
 installMotionTokens();
 const products = data.products as unknown as Product[],
@@ -526,7 +527,7 @@ function Photo({
     >
       {src && !failed ? (
         <img
-          src={src}
+          src={productImageUrl(src, import.meta.env.BASE_URL)}
           alt={`${p.brand} ${p.name} — ürün görseli ${index + 1}`}
           loading="lazy"
           decoding="async"
@@ -2757,7 +2758,10 @@ function App() {
                 maxWidth: "none",
                 objectFit: "contain",
               }}
-              src={imageModal.p.images[imageModal.index]}
+              src={productImageUrl(
+                imageModal.p.images[imageModal.index],
+                import.meta.env.BASE_URL,
+              )}
               alt={imageModal.p.name + " büyütülmüş görsel"}
             />
           )}

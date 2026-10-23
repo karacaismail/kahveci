@@ -1,6 +1,7 @@
 import { chromium, expect } from "@playwright/test";
 import fs from "node:fs/promises";
 import assert from "node:assert/strict";
+import { productImageUrl } from "../src/image-url.mjs";
 import { createRoutes } from "../src/routes.mjs";
 const data = JSON.parse(
   await fs.readFile(new URL("../src/catalog.json", import.meta.url), "utf8"),
@@ -56,7 +57,9 @@ try {
       await Promise.all(Array.from({ length: 6 }, worker));
       return results;
     },
-    [...new Set(added.flatMap((p) => p.images))],
+    [...new Set(added.flatMap((p) => p.images))].map(
+      (url) => new URL(productImageUrl(url, root), base).href,
+    ),
   );
   await fs.writeFile(
     "evidence/new-research/gallery.json",
@@ -94,6 +97,20 @@ try {
     const page = await c.newPage();
     await page.goto(new URL(routes.href("product/elektra-verve"), base).href);
     await expect(page.locator(".quality-grid").first()).toBeVisible();
+    await page.locator(".gallery-main button").click();
+    const zoomImage = page.locator(".zoom-viewport img");
+    await expect(zoomImage).toBeVisible();
+    assert(
+      (await zoomImage.getAttribute("src")).startsWith(
+        root + "images/research/",
+      ),
+    );
+    await expect
+      .poll(() =>
+        zoomImage.evaluate((img) => img.complete && img.naturalWidth > 0),
+      )
+      .toBe(true);
+    await page.keyboard.press("Escape");
     await page
       .locator(".quality-grid")
       .first()
