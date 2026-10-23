@@ -217,13 +217,12 @@ function CriterionMark({ criterion }: { criterion: string }) {
       <Icon weight="duotone" aria-hidden="true" />
       <span>
         {policy.tier === "required"
-          ? "Zorunlu kabul şartı"
+          ? "Gerekli"
           : policy.tier === "conditional"
-            ? "Sütlü içecekte gerekli"
+            ? "Süt için"
             : policy.tier === "optional"
-              ? "Ek tercih avantajı"
+              ? "Ek avantaj"
               : "Ölçüm bilgisi"}
-        <strong>{policy.weight} ağırlık puanı</strong>
       </span>
     </div>
   );
@@ -232,8 +231,10 @@ function Disclosure({
   label,
   children,
   className = "",
+  accessibleLabel,
 }: {
   label: string;
+  accessibleLabel?: string;
   children: React.ReactNode;
   className?: string;
 }) {
@@ -246,6 +247,7 @@ function Disclosure({
         type="button"
         className="disclosure-trigger"
         aria-expanded={opened}
+        aria-label={accessibleLabel}
         aria-controls={id}
         onClick={() => setOpened((value) => !value)}
       >
@@ -1750,54 +1752,36 @@ function App() {
                   <div key={c.key}>
                     <CriterionMark criterion={c.key} />
                     <div className="section-head">
-                      <h3>{c.label}</h3>
+                      <h3>{c.shortLabel}</h3>
                       <Status p={current} k={c.key} />
                     </div>
-                    {layout === "phone" ? (
-                      <>
-                        <strong>{qualityFor(current, c.key).value}</strong>
-                        <Disclosure
-                          label={c.shortLabel + " açıklaması ve kaynakları"}
-                        >
-                          <p className="acceptance-rule">
-                            {
-                              acceptancePolicy[
-                                c.key as keyof typeof acceptancePolicy
-                              ].rule
-                            }
-                          </p>
-                          <p>{c.why}</p>
-                          <p>{qualityFor(current, c.key).reason}</p>
-                          {qualityFor(current, c.key).sources.map(
-                            (url: string, i: number) => (
-                              <Link key={url} href={url}>
-                                Dayanak {i + 1}{" "}
-                              </Link>
-                            ),
-                          )}
-                        </Disclosure>
-                      </>
-                    ) : (
-                      <>
-                        <p className="acceptance-rule">
-                          {
-                            acceptancePolicy[
-                              c.key as keyof typeof acceptancePolicy
-                            ].rule
-                          }
-                        </p>
-                        <p>{c.why}</p>
-                        <strong>{qualityFor(current, c.key).value}</strong>
-                        <p>{qualityFor(current, c.key).reason}</p>
-                        {qualityFor(current, c.key).sources.map(
-                          (url: string, i: number) => (
-                            <Link key={url} href={url}>
-                              Dayanak {i + 1}{" "}
-                            </Link>
-                          ),
-                        )}
-                      </>
-                    )}
+                    <strong className="quality-value">
+                      {qualityFor(current, c.key).value}
+                    </strong>
+                    <Disclosure
+                      label="Ayrıntı"
+                      accessibleLabel={
+                        "Ayrıntı: " + c.shortLabel + " açıklaması ve kaynakları"
+                      }
+                    >
+                      <p>{qualityFor(current, c.key).value}</p>
+                      <p>
+                        {
+                          acceptancePolicy[
+                            c.key as keyof typeof acceptancePolicy
+                          ].rule
+                        }
+                      </p>
+                      <p>{c.why}</p>
+                      <p>{qualityFor(current, c.key).reason}</p>
+                      {qualityFor(current, c.key).sources.map(
+                        (url: string, i: number) => (
+                          <Link key={url} href={url}>
+                            Kaynak {i + 1}
+                          </Link>
+                        ),
+                      )}
+                    </Disclosure>
                   </div>
                 ))}
               </div>

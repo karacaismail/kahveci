@@ -207,11 +207,29 @@ try {
         type: "touchStart",
         touchPoints: [{ x, y }],
       });
-      for (const delta of [15, 30, 45, 60])
+      for (const delta of [15, 30, 45, 60]) {
+        await new Promise((resolve) => setTimeout(resolve, 16));
         await cdp.send("Input.dispatchTouchEvent", {
           type: "touchMove",
           touchPoints: [{ x: x - delta, y: y - delta / 3 }],
         });
+      }
+      const scrollFinished = page.locator(".zoom-viewport").evaluate(
+        (element) =>
+          new Promise((resolve) => {
+            let stableFrames = 0,
+              previous = element.scrollLeft;
+            function check() {
+              const next = element.scrollLeft;
+              stableFrames =
+                Math.abs(next - previous) < 0.1 ? stableFrames + 1 : 0;
+              previous = next;
+              if (stableFrames >= 12) resolve(true);
+              else requestAnimationFrame(check);
+            }
+            requestAnimationFrame(check);
+          }),
+      );
       await cdp.send("Input.dispatchTouchEvent", {
         type: "touchEnd",
         touchPoints: [],
@@ -221,6 +239,7 @@ try {
           page.locator(".zoom-viewport").evaluate((e) => e.scrollLeft),
         )
         .toBeGreaterThan(before);
+      await scrollFinished;
       await cdp.detach();
       checks.push("320: actual emulated touch gesture pans zoomed photo");
     }

@@ -1,5 +1,5 @@
 {
-  "browser": "Google Chrome 155.0.8059.85",
+  "browser": "Google Chrome 156.0.8078.47",
   "viewport": "1512×1100 and 1280×900",
   "url": "http://127.0.0.1:4174/kahveci/",
   "checks": [
@@ -52,7 +52,7 @@
       "status": "pass"
     },
     {
-      "check": "decision inputs update workload scenario and method matches price-independent scoring",
+      "check": "decision inputs update workload scenario without scoring boilerplate",
       "status": "pass"
     },
     {
@@ -119,23 +119,23 @@
     },
     {
       "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
-      "loaded": true
+      "loaded": false
     },
     {
       "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES920/BES920UK/pdp_1300px.png?pdp",
-      "loaded": true
+      "loaded": false
     },
     {
       "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES880/SES880BSS4EEU1/pdp_1300px.png?pdp",
-      "loaded": true
+      "loaded": false
     },
     {
       "url": "https://ascaso.com/wp-content/uploads/2024/09/DREAM-001-scaled-e1726226223342.jpg",
-      "loaded": true
+      "loaded": false
     },
     {
       "url": "https://images.philips.com/is/image/philipsconsumer/vrs_65d3e4d8_a0a7_42b9_87ca4db9c6fca9be?wid=1400&hei=1400&fit=constrain",
-      "loaded": true
+      "loaded": false
     }
   ],
   "errors": [],
@@ -145,11 +145,11 @@
       "type": "document"
     },
     {
-      "url": "http://127.0.0.1:4174/kahveci/assets/index-BfMOVTDb.css",
+      "url": "http://127.0.0.1:4174/kahveci/assets/index-CLLWQ8f1.css",
       "type": "stylesheet"
     },
     {
-      "url": "http://127.0.0.1:4174/kahveci/assets/index-DGUmtkeP.js",
+      "url": "http://127.0.0.1:4174/kahveci/assets/index-C2qumX_p.js",
       "type": "script"
     },
     {
@@ -173,19 +173,15 @@
       "type": "font"
     },
     {
-      "url": "http://127.0.0.1:4174/kahveci/assets/outfit-latin-600-normal-B7SfZ07L.woff2",
-      "type": "font"
-    },
-    {
       "url": "http://127.0.0.1:4174/kahveci/assets/outfit-latin-500-normal-DKnIMDSk.woff2",
       "type": "font"
     },
     {
-      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
-      "type": "image"
+      "url": "http://127.0.0.1:4174/kahveci/assets/outfit-latin-600-normal-B7SfZ07L.woff2",
+      "type": "font"
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES990/SES990BSS4EEU1/pdp1.png?pdp",
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
       "type": "image"
     },
     {
@@ -193,11 +189,11 @@
       "type": "image"
     },
     {
-      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
       "type": "image"
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES990/SES990BSS4EEU1/pdp1.png?pdp",
       "type": "image"
     },
     {
@@ -209,6 +205,10 @@
       "type": "image"
     },
     {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
+      "type": "image"
+    },
+    {
       "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES920/BES920UK/pdp_1300px.png?pdp",
       "type": "image"
     },
@@ -217,7 +217,7 @@
       "type": "image"
     },
     {
-      "url": "https://images.philips.com/is/image/philipsconsumer/vrs_65d3e4d8_a0a7_42b9_87ca4db9c6fca9be?wid=1400&hei=1400&fit=constrain",
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/0ES601EU_01.jpg?v=1759493940",
       "type": "image"
     },
     {
@@ -225,23 +225,11 @@
       "type": "image"
     },
     {
+      "url": "https://images.philips.com/is/image/philipsconsumer/vrs_65d3e4d8_a0a7_42b9_87ca4db9c6fca9be?wid=1400&hei=1400&fit=constrain",
+      "type": "image"
+    },
+    {
       "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL042TEMD_frontale-2.webp",
-      "type": "image"
-    },
-    {
-      "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL92T_frontale-2.webp?x30689",
-      "type": "image"
-    },
-    {
-      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
-      "type": "other"
-    },
-    {
-      "url": "https://www.lelit.com/wp-content/uploads/2024/02/PL162T_frontale-2.webp?x30689",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/0ES601EU_01.jpg?v=1759493940",
       "type": "image"
     },
     {
@@ -249,11 +237,27 @@
       "type": "image"
     },
     {
-      "url": "https://www.ranciliogroup.com/app/uploads/2019/09/Silvia-Pro-X.png",
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL92T_frontale-2.webp?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://www.lelit.com/wp-content/uploads/2024/02/PL162T_frontale-2.webp?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://ascaso.com/wp-content/uploads/2024/09/baby-t-plus-2.png",
       "type": "image"
     },
     {
       "url": "https://ascaso.com/wp-content/uploads/2024/10/FOTO-TERCIO-01-STEEL.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "other"
+    },
+    {
+      "url": "https://www.ranciliogroup.com/app/uploads/2019/09/Silvia-Pro-X.png",
       "type": "image"
     },
     {
@@ -265,31 +269,7 @@
       "type": "image"
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES810/BES810BSSUK/pdp_1300px.png?pdp",
-      "type": "image"
-    },
-    {
-      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
-      "type": "other"
-    },
-    {
-      "url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/gaggia-milano/thumb/137045_large.jpg",
-      "type": "image"
-    },
-    {
-      "url": "https://www.cafelat.com/uploads/1/5/3/6/15367184/drinks_orig.jpg",
-      "type": "image"
-    },
-    {
       "url": "https://www.lelit.com/wp-content/uploads/2024/03/MAIN-e1741266073723.png?x30689",
-      "type": "image"
-    },
-    {
-      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.karaca.com/rcman/cw1000h1000q90gm/image/banner/000001000237179003-0.jpg",
       "type": "image"
     },
     {
@@ -297,39 +277,11 @@
       "type": "image"
     },
     {
-      "url": "https://ascaso.com/wp-content/uploads/2024/09/baby-t-plus-2.png",
+      "url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/gaggia-milano/thumb/137045_large.jpg",
       "type": "image"
     },
     {
-      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
-      "type": "other"
-    },
-    {
-      "url": "https://global.solis.com/cdn/shop/files/1170BaristaPerfettaPlusBlack_1.png?v=1719979246",
-      "type": "image"
-    },
-    {
-      "url": "https://www.wacaco.com/cdn/shop/products/Picopresso-308-PNG-LD_58cced72-f01b-46de-a2d3-c874f0e41819.png?v=1678885971",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_4.jpg?v=1771320829",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_5.jpg?v=1771320829",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_9.jpg?v=1771320829",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_0.jpg?v=1759832734",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_2.jpg?v=1771320829",
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/MAIN-e1741266073723.png?x30689",
       "type": "image"
     },
     {
@@ -337,11 +289,51 @@
       "type": "image"
     },
     {
-      "url": "https://www.gaggia.com/app/uploads/2023/11/Classic-Trequarti-Bianco_2018.png",
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES810/BES810BSSUK/pdp_1300px.png?pdp",
       "type": "image"
     },
     {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_6.jpg?v=1771320829",
+      "url": "https://global.solis.com/cdn/shop/files/1170BaristaPerfettaPlusBlack_1.png?v=1719979246",
+      "type": "image"
+    },
+    {
+      "url": "https://www.cafelat.com/uploads/1/5/3/6/15367184/drinks_orig.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://www.wacaco.com/cdn/shop/products/Picopresso-308-PNG-LD_58cced72-f01b-46de-a2d3-c874f0e41819.png?v=1678885971",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "other"
+    },
+    {
+      "url": "https://cdn.karaca.com/rcman/cw1000h1000q90gm/image/banner/000001000237179003-0.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_0.jpg?v=1759832734",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "other"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_2.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_5.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_4.jpg?v=1771320829",
       "type": "image"
     },
     {
@@ -349,7 +341,7 @@
       "type": "image"
     },
     {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_1_27e3fb7c-8728-433a-b6dd-c22424eedacf.jpg?v=1771320829",
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_9.jpg?v=1771320829",
       "type": "image"
     },
     {
@@ -357,7 +349,23 @@
       "type": "image"
     },
     {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_6.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_1_27e3fb7c-8728-433a-b6dd-c22424eedacf.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES876/SES876BSS4GUK1/pdp.png?pdp",
+      "type": "image"
+    },
+    {
       "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
       "type": "image"
     },
     {

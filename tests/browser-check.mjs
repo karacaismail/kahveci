@@ -215,7 +215,10 @@ const icon = await page
     width: e.getBoundingClientRect().width,
     color: getComputedStyle(e).color,
   }));
-assert.equal(icon.width, 52);
+assert(
+  icon.width >= 32 && icon.width <= 40,
+  "compact criterion pictogram stays readable",
+);
 assert.equal(icon.color, "rgb(34, 115, 68)");
 await expect(page.locator("#preference .preference-panel")).toHaveCount(1);
 const initialScore = Number(

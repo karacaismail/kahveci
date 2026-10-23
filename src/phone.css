@@ -616,3 +616,28 @@ footer > div:last-child {
 .compare-dock strong {
   min-width: 0;
 }
+
+.quality-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--criterion-gap);
+  align-items: start;
+}
+.quality-grid > div {
+  min-width: 0;
+  padding: var(--space-sm);
+}
+.quality-grid h3 {
+  font-size: var(--font-body);
+}
+.quality-grid .criterion-mark {
+  flex-wrap: wrap;
+}
+.quality-grid .criterion-mark span {
+  font-size: var(--font-small);
+}
+.quality-grid .disclosure-trigger {
+  gap: 0;
+}
+.quality-grid > div:has(.disclosure-trigger[aria-expanded="true"]) {
+  grid-column: 1 / -1;
+}

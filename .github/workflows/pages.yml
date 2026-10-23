@@ -40,6 +40,9 @@ jobs:
       - run: npm run test:browser
         env:
           ATLAS_URL: http://127.0.0.1:4173/kahveci/
+      - run: node tests/compact-browser.mjs
+        env:
+          ATLAS_URL: http://127.0.0.1:4173/kahveci/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
