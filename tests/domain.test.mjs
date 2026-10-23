@@ -96,7 +96,7 @@ import fs from "node:fs";
 const catalog = JSON.parse(
   fs.readFileSync(new URL("../src/catalog.json", import.meta.url), "utf8"),
 );
-test("all verified single-boiler architectures get the same high-volume penalty", () => {
+test("daily cup count does not invent an unmeasured architecture penalty", () => {
   for (const name of [
     "Anna PL41TEM",
     "Classic E24",
@@ -114,11 +114,7 @@ test("all verified single-boiler architectures get the same high-volume penalty"
     };
     const low = rankProducts([p], { ...opts, cups: 5 })[0].score;
     const high = rankProducts([p], { ...opts, cups: 25 })[0].score;
-    assert.equal(
-      high,
-      Math.max(0, low - 15),
-      name + " bounded high-volume penalty",
-    );
+    assert.equal(high, low, name + " has no inferred capacity penalty");
   }
 });
 test("unverified architecture cannot become a recommendation penalty", () => {

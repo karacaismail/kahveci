@@ -1,3 +1,7 @@
+import {
+  additionalQualityCriteria,
+  evaluateAdditionalQuality,
+} from "./additional-quality.mjs";
 export const qualityCriteria = [
   {
     key: "Öğütüm kontrolü",
@@ -57,6 +61,7 @@ export const qualityCriteria = [
   },
 ];
 export const extraQualityCriteria = [
+  ...additionalQualityCriteria,
   {
     key: "Doz ve çıktı",
     label: "Doz ve fincan çıktısı kontrolü",
@@ -134,7 +139,13 @@ export function evaluateQuality(p) {
       "Makineye ek bütçe ve uyumlu değirmen seçimi gerekir; bu, espresso kalitesinin düşük olduğunu söylemez.",
       e,
     );
-  else if (e.some((r) => /bıçak|blade/i.test(r.value)))
+  else if (
+    e.some(
+      (r) =>
+        /bıçak|blade/i.test(r.value) &&
+        !/seramik|çapak|burr|konik|flat|düz/i.test(r.value),
+    )
+  )
     q["Öğütüm kontrolü"] = cell(
       "no",
       "Bıçaklı öğütüm",
@@ -193,7 +204,10 @@ export function evaluateQuality(p) {
       "Pompa tepe basıncı bu işarete katılmaz. Demleme basıncı ve Türkiye sürümündeki OPV ayarı için kaynak/ölçüm gerekir.",
     );
   e = evidence(p, "PID");
-  const temp = evidence(p, /Sıcaklık seçimi|Sıcaklık ayarı/);
+  const temp = evidence(
+    p,
+    /Sıcaklık seçimi|Sıcaklık ayarı|Grup sıcaklık göstergesi/,
+  ).filter((r) => !/kanıt(?:ı|a)?\s+değil|yok işaretli/i.test(r.value));
   const positivePid = e.some(
     (r) =>
       !absent(r.value) &&
@@ -329,7 +343,7 @@ export function evaluateQuality(p) {
     );
   e = evidence(
     p,
-    /Dozlama|Öğütme dozlama|Çıktı|Hacim|Kahve miktarı|Su miktarı ayarı|Kahve gücü ayarı|Tartıyla durdurma/,
+    /^Doz ve çıktı$|Dozlama|Öğütme dozlama|Çıktı|Hacim|Kahve miktarı|Su miktarı ayarı|Kahve gücü ayarı|Tartıyla durdurma/i,
   );
   q["Doz ve çıktı"] = e.length
     ? cell(
@@ -360,7 +374,12 @@ export function evaluateQuality(p) {
       );
   e = evidence(
     p,
-    /Temizlik|Su filtresi|sertliği|sertlik ayarı|Çıkarılabilir demleme|Bakım|Backflush/i,
+    /Temizlik|Su filtresi|Su yumuşatıcı|sertliği|sertlik ayarı|Çıkarılabilir demleme|Bakım|Backflush/i,
+  );
+  e = e.filter(
+    (r) =>
+      !/^Bakım$/i.test(r.key) ||
+      /yıka|temiz|backflush|kireç|rinse|clean|çıkarılabilir/i.test(r.value),
   );
   q["Bakım ve su"] = e.length
     ? cell(
@@ -389,6 +408,7 @@ export function evaluateQuality(p) {
     : unknown(
         "Bu veri setinde bağımsız shot tutarlılığı veya 25 içeceklik servis kapasitesi testi yok. Donanımdan kapasite garantisi çıkarılmadı.",
       );
+  Object.assign(q, evaluateAdditionalQuality(p));
   for (const [key, value] of Object.entries(q)) {
     if (value.state !== "unknown") continue;
     const checked = (p.researchChecks || []).filter(

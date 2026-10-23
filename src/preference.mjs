@@ -1,4 +1,6 @@
 import { evaluateQuality } from "./quality.mjs";
+import { additionalQualityCriteria } from "./additional-quality.mjs";
+import researchPolicy from "./research-policy.json" with { type: "json" };
 export const acceptancePolicy = {
   "Öğütüm kontrolü": {
     tier: "required",
@@ -61,23 +63,63 @@ export const acceptancePolicy = {
     rule: "Bağımsız seri servis/tutarlılık ölçümü varsa ayrıca okunur. Bu veri setinde ölçüm bulunmadığından varsayımsal kapasite puanı verilmez.",
   },
 };
-export function evaluatePreference(p, options) {
-  const q = evaluateQuality(p),
-    milk = Number.isFinite(options.milkShare) ? options.milkShare : 50;
-  const rows = Object.entries(acceptancePolicy).map(([key, policy]) => {
-    const value = q[key];
-    let weight = policy.weight;
-    if (value.state === "na" || (key === "Buhar iş akışı" && milk === 0))
+for (const c of additionalQualityCriteria)
+  acceptancePolicy[c.key] = {
+    tier: c.measured ? "informational" : "optional",
+    weight: 0,
+    rule: c.why,
+  };
+acceptancePolicy["Su sertliği yönetimi"].tier = "required";
+acceptancePolicy["Bakım ve su"].tier = "informational";
+acceptancePolicy["Temizlik erişimi"].tier = "optional";
+export function evaluatePreference(p, options = {}) {
+  const q = evaluateQuality(p);
+  const milk = Math.max(
+    0,
+    Math.min(100, Number.isFinite(options.milkShare) ? options.milkShare : 50),
+  );
+  const rows = researchPolicy.criteria.map((c) => {
+    let value = q[c.key];
+    // These are alternative controls within one benefit, never additive points.
+    if (c.key === "PID" && q["Sıcaklık ayarı"].state === "yes")
+      value = q["Sıcaklık ayarı"];
+    if (c.key === "Ön demleme" && q["Akış profili"].state === "yes")
+      value = q["Akış profili"];
+    if (c.key === "Doz ve çıktı" && q["Çıktı kontrol yöntemi"].state === "yes")
+      value = q["Çıktı kontrol yöntemi"];
+    if (
+      c.key === "Temizlik erişimi" &&
+      ["unknown", "unpublished"].includes(value.state) &&
+      q["3 yollu solenoid"].state === "yes"
+    )
+      value = q["3 yollu solenoid"];
+    if (
+      c.key === "Parça ekosistemi" &&
+      !Object.keys(p.verified || {}).some((k) =>
+        /Yedek parça|Türkiye.*servis|Parça kataloğu|Garanti/i.test(k),
+      )
+    )
+      value = {
+        state: "unknown",
+        value: "Parça ve servis bilgisi yok",
+        reason: "Portafiltre çapı tek başına parça ve servis desteği değildir.",
+        sources: [],
+      };
+    let weight =
+      c.weights.sade * (1 - milk / 100) + (c.weights.sutlu * milk) / 100;
+    const external = c.key === "Öğütüm kontrolü" && value.state === "external";
+    if (
+      value.state === "na" ||
+      external ||
+      (c.key === "Buhar iş akışı" && milk === 0)
+    )
       weight = 0;
+    const known = ["yes", "limited", "no"].includes(value.state);
     const factor =
-      value.state === "yes"
-        ? 1
-        : ["limited", "external"].includes(value.state)
-          ? 0.5
-          : 0;
+      value.state === "yes" ? 1 : value.state === "limited" ? 0.5 : 0;
     return {
-      key,
-      label: key,
+      key: c.key,
+      label: c.shortLabel,
       weight,
       factor,
       points: weight * factor,
@@ -85,152 +127,105 @@ export function evaluatePreference(p, options) {
       value: value.value,
       reason: value.reason,
       sources: value.sources,
-      tier: policy.tier,
+      tier:
+        c.tier === "zorunlu"
+          ? "required"
+          : c.tier === "koşullu"
+            ? "conditional"
+            : "optional",
+      known,
     };
   });
+  const rawPoints = rows.reduce((n, r) => n + r.points, 0);
+  const maxPoints = rows.reduce((n, r) => n + r.weight, 0);
+  const knownWeight = rows
+    .filter((r) => r.known)
+    .reduce((n, r) => n + r.weight, 0);
+  const missingWeight = maxPoints - knownWeight;
+  const score = knownWeight ? Math.round((rawPoints / knownWeight) * 100) : 0;
+  const scoreMin = maxPoints ? Math.round((rawPoints / maxPoints) * 100) : 0;
+  const partialWeight = rows
+    .filter((r) => r.state === "limited")
+    .reduce((n, r) => n + r.weight * 0.5, 0);
+  const scoreMax = maxPoints
+    ? Math.round(
+        ((rawPoints + missingWeight + partialWeight) / maxPoints) * 100,
+      )
+    : 100;
+  const evidence = maxPoints ? Math.round((knownWeight / maxPoints) * 100) : 0;
+  const required = rows.filter(
+    (r) => r.weight > 0 && ["required", "conditional"].includes(r.tier),
+  );
+  const pending = [
+    ...required.filter((r) => !["yes", "no"].includes(r.state)),
+    ...rows.filter(
+      (r) => r.key === "Öğütüm kontrolü" && r.state === "external",
+    ),
+  ];
+  const failed = required.filter((r) => r.state === "no");
+  const insufficientEvidence = evidence < 30 || !required.some((r) => r.known);
+  const reasons = rows
+    .filter((r) => r.points > 0)
+    .sort((a, b) => b.points - a.points)
+    .slice(0, 4)
+    .map((r) => ({ ...r, points: Math.round(r.points * 10) / 10 }));
+  // Keep detail-only information alongside scored groups without rewarding it twice.
+  for (const c of additionalQualityCriteria)
+    if (!rows.some((r) => r.key === c.key))
+      rows.push({
+        key: c.key,
+        label: c.shortLabel,
+        weight: 0,
+        factor: 0,
+        points: 0,
+        ...q[c.key],
+        tier: "informational",
+      });
   const validBudget = Number.isFinite(options.budget) && options.budget > 0;
   const knownTotal = Number.isFinite(options.total) && options.total >= 0;
   const ratio =
     knownTotal && validBudget ? options.total / options.budget : null;
-  const auto = p.category?.includes("Tam otomatik"),
-    manual =
-      p.category?.toLowerCase().includes("manuel") &&
-      !p.category?.toLowerCase().includes("yarı");
-  const workflow =
-    options.goal === "convenience"
-      ? auto
-        ? 1
-        : p.integrated
-          ? 0.75
-          : manual
-            ? 0.2
-            : 0.45
-      : auto
-        ? 0.4
-        : 1;
-  rows.push({
-    key: "Kullanım tercihi",
-    label: "Kontrol / kolaylık tercihi",
-    weight: 6,
-    factor: workflow,
-    points: 6 * workflow,
-    state: "yes",
-    value:
-      options.goal === "convenience"
-        ? "Kolay paylaşım önceliği"
-        : "Reçete kontrolü önceliği",
-    reason:
-      "Seçtiğiniz iş akışı ile katalogdaki makine sınıfının eşleşmesi; otomatik veya manuel olma bir tat puanı değildir.",
-    sources: [],
-    tier: "preference",
-  });
-  const warmKey = Object.keys(p.verified || {}).find((k) =>
-    /^Isınma süresi/.test(k),
-  );
-  const warmValue = warmKey ? p.specs[warmKey] : null;
-  const warmSeconds =
-    warmValue && !/\?|belirsiz|ölçülmedi/i.test(warmValue)
-      ? Number.parseFloat(warmValue.replace(",", "."))
-      : NaN;
-  const validWarm = Number.isFinite(warmSeconds) && warmSeconds >= 0;
-  const warmFactor = validWarm
-    ? warmSeconds <= 60
-      ? 1
-      : warmSeconds <= 180
-        ? 0.6
-        : 0.3
-    : 0;
-  rows.push({
-    key: "Isınma kolaylığı",
-    label: "Kaynaklı ısınma süresi",
-    weight: 2,
-    factor: warmFactor,
-    points: 2 * warmFactor,
-    state: validWarm ? "yes" : "unknown",
-    value: validWarm ? warmValue : "Doğrulanmadı",
-    reason:
-      "Yalnız saniye olarak kaynaklanan hazır olma beyanı. Grup/portafiltrenin tam ısındığını veya seri servis kararlılığını kanıtlamaz.",
-    sources: warmKey ? [p.verified[warmKey]] : [],
-    tier: "preference",
-  });
-  const rawPoints = rows.reduce((n, r) => n + r.points, 0),
-    maxPoints = rows.reduce((n, r) => n + r.weight, 0);
-  const penalty =
-    options.cups >= 15 &&
-    milk > 0 &&
-    p.boilerArchitecture === "single" &&
-    p.boilerArchitectureSource
-      ? 15
-      : 0;
-  const score = Math.max(
-    0,
-    Math.min(100, Math.round((rawPoints / maxPoints) * 100) - penalty),
-  );
-  const missingWeight = rows
-    .filter((r) => ["unknown", "unpublished"].includes(r.state))
-    .reduce((n, r) => n + r.weight, 0);
-  const unawardedPartial = rows
-    .filter((r) => ["limited", "external"].includes(r.state))
-    .reduce((n, r) => n + r.weight * (1 - r.factor), 0);
-  const evidence = Math.round(((maxPoints - missingWeight) / maxPoints) * 100);
-  const required = rows.filter(
-    (r) =>
-      (r.tier === "required" || (r.tier === "conditional" && milk > 0)) &&
-      r.weight > 0,
-  );
-  const pending = required.filter((r) => !["yes", "no"].includes(r.state));
-  const failed = required.filter((r) => r.state === "no");
-  const reasons = rows
-    .filter((r) => r.points > 0 && r.weight > 0)
-    .sort((a, b) => b.points - a.points)
-    .slice(0, 3)
-    .map((r) => ({
-      key: r.key,
-      label: r.label,
-      points: Math.round(r.points * 10) / 10,
-      value: r.value,
-      state: r.state,
-    }));
-  if (penalty)
-    reasons.push({
-      key: "Servis temposu",
-      label: "Ardışık sütlü servis geçişi",
-      points: -penalty,
-      value:
-        "Kaynaklı tek kazan; 15+ günlük içecek ve sütlü servis varsayımı. Ölçülmüş kapasite testi değildir.",
-      state: "limited",
-    });
+  const sensitivity = [];
+  if (knownWeight)
+    for (const row of rows.filter((r) => r.known && r.weight > 0))
+      for (const change of [-0.25, 0.25])
+        sensitivity.push(
+          Math.round(
+            ((rawPoints + row.points * change) /
+              (knownWeight + row.weight * change)) *
+              100,
+          ),
+        );
   return {
     score,
-    budgetStatus: ratio === null ? "unknown" : ratio <= 1 ? "within" : "over",
+    scoreMin,
+    scoreMax,
+    knownWeight,
     evidence,
-    possibleMax: Math.max(
-      score,
-      Math.min(
-        100,
-        Math.round(
-          ((rawPoints + missingWeight + unawardedPartial) / maxPoints) * 100,
-        ) - penalty,
-      ),
-    ),
+    insufficientEvidence,
+    possibleMax: scoreMax,
     rawPoints,
     maxPoints,
-    penalty,
+    penalty: 0,
     rows,
     pending,
     failed,
+    sensitivity: sensitivity.length
+      ? [Math.min(...sensitivity), Math.max(...sensitivity)]
+      : [0, 100],
     reasons: reasons.length
       ? reasons
       : [
           {
             key: "Kanıt eksik",
-            label: "Puanı destekleyecek bilgi yok",
+            label: "Puan için bilgi eksik",
             points: 0,
-            value: "Araştırma eksikliği ürün kusuru sayılmaz.",
+            value: "",
             state: "unknown",
           },
         ],
     total: knownTotal ? options.total : null,
+    budgetStatus: ratio === null ? "unknown" : ratio <= 1 ? "within" : "over",
     acceptance: failed.length
       ? "Karşılanmayan şart var"
       : pending.length

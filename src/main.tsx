@@ -106,6 +106,7 @@ import {
 } from "./quality.mjs";
 import { motion, installMotionTokens } from "./motion";
 import { createRoutes } from "./routes.mjs";
+import { additionalQualityCriteria } from "./additional-quality.mjs";
 installMotionTokens();
 const products = data.products as unknown as Product[],
   equipment = data.equipment as unknown as Product[];
@@ -188,6 +189,7 @@ const stateNames = {
   na: "Uygulanamaz",
 };
 const criteria = [...qualityCriteria, ...extraQualityCriteria];
+const additionalKeys = new Set(additionalQualityCriteria.map((c) => c.key));
 
 type PreferenceOptions = {
   budget: number;
@@ -296,7 +298,7 @@ function ScoreSummary({
         <div>
           <small>TERCİH PUANINIZ</small>
           <strong>
-            {r.score}
+            {r.insufficientEvidence ? "—" : r.score}
             <span>/100</span>
           </strong>
         </div>
@@ -326,22 +328,9 @@ function ScoreSummary({
       {expanded && (
         <>
           <p>
-            Ham hesap: {Number(r.rawPoints.toFixed(1))} / {r.maxPoints} × 100 −{" "}
-            {r.penalty} = {r.score}/100. Eksik/kısmi başlıkların tam
-            karşılandığı matematiksel tavan {r.possibleMax}/100. Bu bir tahmin
-            veya kazanılacak puan vaadi değildir. Kısmen belgelenmiş başlıklar
-            kaynak kapsamına dahildir; bu oran tam uygunluk oranı değildir.
-            Kurulum: {money(r.total)}; bütçe: {money(options.budget)}. Fiyat ve
-            bütçe puana/kabul şartlarına dahil değildir. Öğütücü/aksesuar
-            değerleri yalnız maliyet planlaması için karar atölyesinde
-            değiştirilebilir.
+            Puan aralığı: {r.scoreMin}–{r.scoreMax} / 100 · Ağırlık değişimine
+            göre: {r.sensitivity[0]}–{r.sensitivity[1]}
           </p>
-          {r.penalty > 0 && (
-            <p>
-              Ardışık sütlü servis varsayımı ve kaynaklı tek kazan nedeniyle −
-              {r.penalty} puan. Günlük fincan sayısı seri servis testi değildir.
-            </p>
-          )}
           <div className="score-gaps">
             <div>
               <h3>Karşılanmayan şartlar</h3>
@@ -477,6 +466,34 @@ function Status({
     </span>
   );
 }
+function QualityTile({ p, c }: { p: Product; c: (typeof criteria)[number] }) {
+  return (
+    <div>
+      <CriterionMark criterion={c.key} />
+      <div className="section-head">
+        <h3>{c.shortLabel}</h3>
+        <Status p={p} k={c.key} />
+      </div>
+      <strong className="quality-value">{qualityFor(p, c.key).value}</strong>
+      <Disclosure
+        label="Ayrıntı"
+        accessibleLabel={
+          "Ayrıntı: " + c.shortLabel + " açıklaması ve kaynakları"
+        }
+      >
+        <p>{qualityFor(p, c.key).value}</p>
+        <p>{acceptancePolicy[c.key as keyof typeof acceptancePolicy].rule}</p>
+        <p>{c.why}</p>
+        <p>{qualityFor(p, c.key).reason}</p>
+        {qualityFor(p, c.key).sources.map((url: string, i: number) => (
+          <Link key={url} href={url}>
+            Kaynak {i + 1}
+          </Link>
+        ))}
+      </Disclosure>
+    </div>
+  );
+}
 function Link({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a href={href} target="_blank" rel="noreferrer">
@@ -607,8 +624,25 @@ function Card({
         <ScoreSummary p={p} options={scoreOptions} />
         <div className="card-price">
           <div>
-            <small>{b ? "Gözlenen en düşük teklif" : "Güncel teklif"}</small>
-            <strong>{b ? money(b.price) : "Doğrulanmadı"}</strong>
+            <small>
+              {b
+                ? "Gözlenen en düşük teklif"
+                : p.foreignOffers?.length
+                  ? "Yurt dışı teklif"
+                  : "Güncel teklif"}
+            </small>
+            <strong>
+              {b
+                ? money(b.price)
+                : p.foreignOffers?.length
+                  ? new Intl.NumberFormat("tr-TR", {
+                      style: "currency",
+                      currency: p.foreignOffers[0].currency,
+                    }).format(p.foreignOffers[0].amount)
+                  : p.offers.length
+                    ? "Teklif ayrıntıda"
+                    : "Fiyat yok"}
+            </strong>
             <small>
               {b?.conditional && "Koşullu kampanya · "}
               {b?.evidence === "search-index"
@@ -635,12 +669,7 @@ function Offers({ p }: { p: Product }) {
     <div className="offers">
       {!p.offers.some((o) => !o.superseded) ? (
         <div className="empty-inline">
-          Bu model için doğrulanabilir Türkiye teklifi bulunamadı. Eski
-          metindeki{" "}
-          {p.legacyPrice && p.legacyPrice !== "?"
-            ? p.legacyPrice + " TL"
-            : "fiyat"}{" "}
-          güncel teklif olarak kullanılmıyor.
+          Türkiye fiyatı bulunamadı.
           <div className="buy-search">
             <Link
               href={
@@ -668,7 +697,10 @@ function Offers({ p }: { p: Product }) {
             .map((o, i) => (
               <div
                 className={
-                  "offer " + (o.available === false ? "unavailable" : "")
+                  "offer " +
+                  (o.available === false || o.exact === false
+                    ? "unavailable"
+                    : "")
                 }
                 key={i}
               >
@@ -682,13 +714,16 @@ function Offers({ p }: { p: Product }) {
                     {o.available === false
                       ? " · Stok/SKU uygunluğu teyitsiz veya stok dışı"
                       : ""}
+                    {o.exact === false ? " · Varyant teyidi gerekiyor" : ""}
                     {o.conditional ? " · Koşullu kampanya" : ""}
                   </small>
                   <p>{o.note}</p>
                 </div>
                 <strong>{money(o.price)}</strong>
                 <Link href={o.url}>
-                  {o.available === false ? "Kaydı gör" : "Teklifi incele"}
+                  {o.available === false || o.exact === false
+                    ? "Kaydı gör"
+                    : "Teklifi incele"}
                 </Link>
               </div>
             ))}
@@ -718,6 +753,32 @@ function Offers({ p }: { p: Product }) {
           </div>
         </>
       )}
+      {!!p.foreignOffers?.length && (
+        <section className="purchase-alternatives">
+          <h3>Yurt dışı fiyatları</h3>
+          {p.foreignOffers.map((o) => (
+            <div className="offer" key={o.url}>
+              <div>
+                <strong>{o.seller}</strong>
+                <small>
+                  {o.observedAt} ·{" "}
+                  {o.evidence === "search-index"
+                    ? "Arama kaydı"
+                    : "Mağaza sayfası"}
+                </small>
+                <p>{o.note}</p>
+              </div>
+              <strong>
+                {new Intl.NumberFormat("tr-TR", {
+                  style: "currency",
+                  currency: o.currency,
+                }).format(o.amount)}
+              </strong>
+              <Link href={o.url}>Mağazaya git</Link>
+            </div>
+          ))}
+        </section>
+      )}
       {!!p.purchaseLinks?.length && (
         <section className="purchase-alternatives">
           <h3>Alternatif mağaza ürün sayfaları</h3>
@@ -726,7 +787,11 @@ function Offers({ p }: { p: Product }) {
             durumu kesinleştirilemeyen sayfalar en düşük fiyat hesabına girmez.
           </p>
           {p.purchaseLinks
-            .filter((link) => link.exact !== false)
+            .filter(
+              (link) =>
+                link.exact !== false &&
+                !p.foreignOffers?.some((o) => o.url === link.url),
+            )
             .map((link) => (
               <div className="purchase-link" key={link.url}>
                 <Link href={link.url}>{link.seller}</Link>
@@ -1055,7 +1120,7 @@ function App() {
     );
     let list = products.filter(
       (p) =>
-        (view === "all" || !!query.trim() || p.featured) &&
+        (view === "all" || !!query.trim() || !!brand || p.featured) &&
         (!query.trim() || matchedIds.has(p.id)) &&
         (!brand || p.brand === brand) &&
         (!category || formatCategory(p) === category) &&
@@ -1140,8 +1205,12 @@ function App() {
               "Teklif kaynağı",
               "Kontrol tarihi",
               "Tercih puanı /100",
+              "Puan alt sınırı",
+              "Puan üst sınırı",
+              "Bilgi yetersiz",
               "Kanıt kapsamı %",
               "Tercih nedenleri",
+              "Yurt dışı teklifler",
               ...criteria.flatMap((c) => [
                 c.label + " — durum",
                 c.label + " — bulgu",
@@ -1161,9 +1230,17 @@ function App() {
                 o?.url ?? "",
                 o?.observedAt ?? "",
                 preferenceScore(p, scoreOptions).score,
+                preferenceScore(p, scoreOptions).scoreMin,
+                preferenceScore(p, scoreOptions).scoreMax,
+                preferenceScore(p, scoreOptions).insufficientEvidence,
                 preferenceScore(p, scoreOptions).evidence,
                 preferenceScore(p, scoreOptions)
                   .reasons.map((r) => r.label + ": " + r.points)
+                  .join(" | "),
+                (p.foreignOffers || [])
+                  .map(
+                    (o) => `${o.seller}: ${o.amount} ${o.currency} · ${o.url}`,
+                  )
                   .join(" | "),
                 ...criteria.flatMap((c) => {
                   const q = qualityFor(p, c.key);
@@ -1210,7 +1287,7 @@ function App() {
       <div className="topbar">
         <span>Espresso seçimi, pazarlama vaatlerinden daha fazlası.</span>
         <span>
-          Türkiye pazarı <span className="top-dot" /> 22 Ekim 2026 araştırma
+          Türkiye pazarı <span className="top-dot" /> 23 Ekim 2026 araştırma
           görüntüsü
         </span>
       </div>
@@ -1745,43 +1822,37 @@ function App() {
                 </p>
               )}
               <div className="quality-grid">
-                {criteria.map((c) => (
-                  <div key={c.key}>
-                    <CriterionMark criterion={c.key} />
-                    <div className="section-head">
-                      <h3>{c.shortLabel}</h3>
-                      <Status p={current} k={c.key} />
-                    </div>
-                    <strong className="quality-value">
-                      {qualityFor(current, c.key).value}
-                    </strong>
-                    <Disclosure
-                      label="Ayrıntı"
-                      accessibleLabel={
-                        "Ayrıntı: " + c.shortLabel + " açıklaması ve kaynakları"
-                      }
-                    >
-                      <p>{qualityFor(current, c.key).value}</p>
-                      <p>
-                        {
-                          acceptancePolicy[
-                            c.key as keyof typeof acceptancePolicy
-                          ].rule
-                        }
-                      </p>
-                      <p>{c.why}</p>
-                      <p>{qualityFor(current, c.key).reason}</p>
-                      {qualityFor(current, c.key).sources.map(
-                        (url: string, i: number) => (
-                          <Link key={url} href={url}>
-                            Kaynak {i + 1}
-                          </Link>
-                        ),
-                      )}
-                    </Disclosure>
-                  </div>
-                ))}
+                {criteria
+                  .filter((c) => !additionalKeys.has(c.key))
+                  .map((c) => (
+                    <QualityTile key={c.key} p={current} c={c} />
+                  ))}
               </div>
+              <Disclosure label="16 ölçüm ve kullanım ayrıntısı">
+                <div className="quality-grid quality-extended">
+                  {criteria
+                    .filter((c) => additionalKeys.has(c.key))
+                    .map((c) => (
+                      <QualityTile key={c.key} p={current} c={c} />
+                    ))}
+                </div>
+              </Disclosure>
+              <a
+                href={
+                  import.meta.env.BASE_URL + "espresso-kalite-arastirmasi.md"
+                }
+                target="_blank"
+                rel="noreferrer"
+              >
+                Kriter araştırmasını oku
+              </a>
+              {!!current.researchNotes?.length && (
+                <Disclosure label="Bu modelde araştırılan eksikler">
+                  {current.researchNotes.map((note) => (
+                    <p key={note}>{note}</p>
+                  ))}
+                </Disclosure>
+              )}
               <div className="tradeoffs">
                 <div>
                   <h3>Bu modelin somut farkları</h3>
@@ -2363,13 +2434,16 @@ function App() {
                           product: Product;
                           total: number | null;
                           score: number;
+                          insufficientEvidence: boolean;
                         },
                         i: number,
                       ) => (
                         <div key={r.product.id} className="rank-row">
                           <span className="rank-number">
                             0{i + 1}
-                            <small>{r.score}/100</small>
+                            <small>
+                              {r.insufficientEvidence ? "—" : `${r.score}/100`}
+                            </small>
                           </span>
                           <Photo p={r.product} />
                           <div>

@@ -60,7 +60,7 @@ const rows = data.products.map((p) => {
 });
 const budget = rows.filter((p) => p.withinBudget);
 const result = {
-  checked: "2026-10-22",
+  checked: "2026-10-23",
   ceiling: 50000,
   scope:
     "Listelenen uygun fiyat gözlemlerine göre; fiyatı bilinmeyen modeller bütçe dışında varsayılmaz. Fiyatlar canlı sepet garantisi değildir.",
@@ -175,6 +175,9 @@ await fs.writeFile(
         "Marka",
         "Model",
         "Tercih puanı /100",
+        "Alt sınır",
+        "Üst sınır",
+        "Bilgi yetersiz",
         "Kanıt kapsamı %",
         "Kurulum TL",
         "Bütçe durumu",
@@ -185,6 +188,9 @@ await fs.writeFile(
         p.brand,
         p.model,
         p.preference.score,
+        p.preference.scoreMin,
+        p.preference.scoreMax,
+        p.preference.insufficientEvidence,
         p.preference.evidence,
         p.preference.total,
         p.preference.budgetStatus,

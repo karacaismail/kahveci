@@ -46,6 +46,9 @@ jobs:
       - run: node tests/semantic-browser.mjs
         env:
           ATLAS_URL: http://127.0.0.1:4173/kahveci/
+      - run: node tests/researched-brands-browser.mjs
+        env:
+          ATLAS_URL: http://127.0.0.1:4173/kahveci/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

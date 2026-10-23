@@ -1,0 +1,2467 @@
+{
+  "schemaNote": "Araştırma çıktısıdır; src/catalog.json'a doğrudan aktarılmadı. Alan durumları: verified / partial / conflict / unpublished. Kalite kriteri 'candidateState' değerleri öneridir; puan uydurulmadı, puan motoruna entegrasyon Codex'in RED→kod/veri→GREEN akışıyla yapılacak. offersTRY.price yalnız TRY; EUR/USD 'foreignPrices' veya 'foreignListPrice' içinde ayrı tutulur.",
+  "observedAt": "2026-10-23",
+  "scope": "La Spaziale, Elektra ve La Cimbali için ev/kompakt profesyonel kullanıma uygun seçilmiş modeller. Markaların tam kataloğu değildir.",
+  "evidenceKindVocabulary": {
+    "manufacturer": "Üretici sitesi veya üretici PDF'i (üretici alan adında)",
+    "manufacturer-document-on-retailer": "Üretici kılavuzu, distribütör/perakendeci sunucusunda",
+    "retailer": "Perakendeci beyanı",
+    "source-page": "Teklif: satıcı ürün sayfası bu tarihte açıldı",
+    "search-index": "Teklif/fiyat: fiyat karşılaştırma veya arama dizini özeti"
+  },
+  "products": [
+    {
+      "suggestedId": "la-spaziale-s1-mini-vivaldi-ii",
+      "brand": "La Spaziale",
+      "family": "S1",
+      "name": "S1 Mini Vivaldi II",
+      "variantNote": "Tek grup, depolu sürüm. S1 Vivaldi II (şebeke bağlantılı, 2,5 L buhar kazanı) ve S1 Dream ile karıştırılmamalı.",
+      "category": "Yarı otomatik",
+      "currentStatus": {
+        "value": "Üreticinin güncel S1 ürün listesinde (sayfa tarihi 28 Haziran 2024)",
+        "state": "verified",
+        "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+        "checked": "2026-10-23",
+        "evidenceKind": "manufacturer"
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Üretici 'profesyonel kahve makinesi' diyor; broşür evde profesyonel makine arayan kullanıcıları da hedefliyor.",
+        "water": "Dahili 3 L depo (resmi); şebeke bağlantısı resmi listede yalnız Vivaldi II için.",
+        "electric": "230/110 V; sayfa 2200 W, broşür 1200 W buhar + 800 W grup rezistansı diyor (çelişki aşağıda).",
+        "size": "415 × 415 × 385 mm, 28 kg (S1 ailesi ortak tablo)",
+        "daily5to25": "Makul aday (çift kazan, depolu) — Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Kazan tipi": {
+          "value": "Çift kazan: buhar/sıcak su kazanı 1,2 L + kahve kazanı 0,45 L",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Su haznesi (L)": {
+          "value": "3 (dahili depo, su eksikliği göstergesi)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Şebeke suyu": {
+          "value": null,
+          "state": "unpublished",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Resmi listede su bağlantısı yalnız Vivaldi II için yazıyor; Mini için yok. Bu, özelliğin bulunmadığı anlamına gelmez."
+        },
+        "Güç (W)": {
+          "value": "2200 W (sayfa) — broşür: 1200 W buhar kazanı + 800 W grup rezistansı",
+          "state": "conflict",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "note": "Ürün sayfası ve broşür farklı güç ifadesi veriyor; sayfada ayrıca 'W+ 2700 230 Vac' satırı var, anlamı açıklanmıyor."
+        },
+        "Voltaj": {
+          "value": "230/110 V, 50/60 Hz",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Boyutlar": {
+          "value": "415 × 415 × 385 mm (G × D × Y)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "note": "Aynı ölçü S1 Dream/Dream-T/Vivaldi II/Rossini için ortak tabloda verilmiş."
+        },
+        "Ağırlık": {
+          "value": "28 kg",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Kontrol": {
+          "value": "Elektronik, oranlı doz ayarı; LED ekranda grup sıcaklığı (1 °C adım); çift skalalı manometre; S1 Timer uygulaması; uygulama ile firmware güncelleme",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Sıcaklık seçimi": {
+          "value": "Kahve grubu sıcaklığı 1 °C adımlarla LED'de gösterilir; buhar/sıcak su kazanı basınç-sıcaklık ayarı",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Buhar / sıcak su": {
+          "value": "1 buhar çubuğu + 1 sıcak su çıkışı (yarı otomatik sıcak su)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Bakım": {
+          "value": "Ekonomi modu; buhar kazanı ısıtmasını kapatabilme; arıza teşhis alarmı; opsiyonel doğrudan tahliye",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Portafilter çapı (mm)": {
+          "value": "53",
+          "state": "partial",
+          "source": "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii",
+          "checked": "2026-10-23",
+          "evidenceKind": "retailer",
+          "note": "Yalnız perakendeci beyanı; üretici kaynağında çap yok."
+        },
+        "Pompa": {
+          "value": "Vibrasyon pompası (52 W, 'up to 18 bar')",
+          "state": "partial",
+          "source": "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii",
+          "checked": "2026-10-23",
+          "evidenceKind": "retailer",
+          "note": "Perakendeci beyanı. 18 bar pompa tepe basıncıdır, demleme basıncı değildir."
+        },
+        "Isınma süresi (sn)": {
+          "value": "en az 420 sn, önerilen 900 sn",
+          "state": "partial",
+          "source": "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii",
+          "checked": "2026-10-23",
+          "evidenceKind": "retailer",
+          "note": "Perakendeci beyanı; ölçüm koşulu yok."
+        },
+        "Doz ve çıktı": {
+          "value": "Programlanabilir/oranlı doz (elektronik)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "external",
+          "value": "Harici öğütücü gerekir (dahili öğütücü yok)",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Kaynakta dahili öğütücü geçmiyor; portafiltreli yarı otomatik."
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Demleme basıncı/OPV açıklanmıyor. Çift skalalı manometre var; perakendecinin 18 bar değeri pompa tepe değeridir."
+        },
+        "PID": {
+          "candidateState": "partial",
+          "value": "Elektronik sıcaklık ayarı, 1 °C adım gösterge",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Üretici Mini için 'PID' kelimesini kullanmıyor (Dream için kullanıyor). Ölçülmüş kararlılık verisi yok."
+        },
+        "Basınçsız basket": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+            "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii"
+          ],
+          "checked": "2026-10-23",
+          "note": "Sepet tipi resmi kaynakta yok; perakendeci tek/çift sepet + 53 mm portafiltre diyor, tek duvarlı olduğu açık yazmıyor."
+        },
+        "Buhar iş akışı": {
+          "candidateState": "partial",
+          "value": "Ayrı 1,2 L buhar kazanı (eşzamanlı demleme+buhar mimari olarak mümkün)",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Toparlanma süresi/buhar gücü ölçümü yok."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Resmi kaynakta geçmiyor."
+        },
+        "Ön demleme": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf",
+            "https://www.wholelattelove.com/la-spaziale-s1-mini-vivaldi-ii-red"
+          ],
+          "checked": "2026-10-23",
+          "note": "Resmi broşürde 'elektronik grup ön demleme' yalnız Vivaldi II için. Perakendeci Mini'ye opsiyonel pasif ön demleme odası takılabildiğini söylüyor — standart özellik sayılmamalı."
+        },
+        "Parça ekosistemi": {
+          "candidateState": "partial",
+          "value": "Üreticinin servis portalı var (giriş gerekli); 150+ ülkede distribütör beyanı",
+          "sources": [
+            "https://portal.laspaziale.net/web/login",
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Açık parça kataloğu ve Türkiye yetkili servisi doğrulanamadı."
+        }
+      },
+      "offersTRY": [],
+      "purchaseLinksTR": [],
+      "foreignPrices": [
+        {
+          "seller": "Whole Latte Love (ABD)",
+          "currency": "USD",
+          "amount": 2495.0,
+          "url": "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "note": "Siyah, SKU 18224; 1 yıl garanti Chris Coffee Service; sayfa 'Add to cart' + 'Notify me' içeriyor, stok kesin değil."
+        },
+        {
+          "seller": "Italian Kitchen Aids",
+          "currency": "EUR",
+          "amount": 1990.0,
+          "url": "https://www.italiankitchenaids.com/product/la-spaziale-s1-mini-vivaldi-ii/",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "note": "Arama özeti; sayfa açılmadı."
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/MINIVIVALDI_II_highres.jpg",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "angle": "ön 3/4 (üretici)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "2048x1366",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/MINIVIVALDI-RETRO.png",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "angle": "arka 3/4 (üretici)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "2048x1366",
+          "proxyOrAi": false,
+          "note": "S1 kasası; arka görünüşte Mini ayırt edilemiyor, üretici Mini sayfasında yayımlıyor."
+        },
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/Disegni_Assieme-S1-Minivivaldi.jpg",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-mini-vivaldi-ii/",
+          "angle": "teknik çizim",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "701x248",
+          "proxyOrAi": false,
+          "note": "Fotoğraf değil, ölçü çizimi."
+        },
+        {
+          "url": "https://www.wholelattelove.com/cdn/shop/products/2067_original_mini_vivaldi_ii_black.jpg",
+          "sourcePage": "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii",
+          "angle": "ön (siyah, perakendeci)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "700x700",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://www.wholelattelove.com/cdn/shop/products/4541_original_mini_vivaldi_ii_black_angle_view.jpg",
+          "sourcePage": "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii",
+          "angle": "yan açı (siyah, perakendeci)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "600x578",
+          "proxyOrAi": false
+        }
+      ],
+      "researchGaps": [
+        "Gerçek demleme basıncı (bar) ve OPV ayarı resmi S1 sayfası ve S1 broşüründe (rev. S1_10/2021) yok.",
+        "Üç yollu solenoid resmi kaynakta geçmiyor.",
+        "Portafiltre çapı resmi kaynakta yok; 53 mm yalnız perakendeci (Whole Latte Love) beyanı.",
+        "Pompa tipi resmi S1 Vivaldi II/Mini/Dream sayfalarında yok (yalnız Armonia için vibrasyon pompası yazıyor).",
+        "Türkiye'de TL fiyatlı mağaza teklifi bulunamadı (23.10.2026 aramaları).",
+        "Resmi servis portalı giriş gerektiriyor; parça kataloğu açık erişimde incelenemedi."
+      ]
+    },
+    {
+      "suggestedId": "la-spaziale-s1-vivaldi-ii",
+      "brand": "La Spaziale",
+      "family": "S1",
+      "name": "S1 Vivaldi II",
+      "variantNote": "Şebeke bağlantılı, 2,5 L buhar kazanlı sürüm; Mini Vivaldi II değil.",
+      "category": "Yarı otomatik",
+      "currentStatus": {
+        "value": "Üreticinin güncel S1 listesinde (sayfa tarihi 28 Haziran 2024)",
+        "state": "verified",
+        "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+        "checked": "2026-10-23",
+        "evidenceKind": "manufacturer"
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Profesyonel tek grup; ev veya küçük ofis için kompakt boyut.",
+        "water": "Resmi listede su bağlantısı var; dahili depo resmi listede yalnız Mini ve Rossini için yazıyor. Perakendeci beyanları çelişkili (3 L depo / yalnız şebeke).",
+        "electric": "230/110 V; sayfa 2200 W, broşür 1250 W buhar + 800 W grup rezistansı.",
+        "size": "415 × 415 × 385 mm, 28 kg",
+        "daily5to25": "Aday; şebeke tesisatı gerekebilir — Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Kazan tipi": {
+          "value": "Çift kazan: buhar/sıcak su 2,5 L + kahve 0,45 L",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Şebeke suyu": {
+          "value": "Su bağlantısı (Vivaldi II)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Su haznesi (L)": {
+          "value": null,
+          "state": "unpublished",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Resmi kaynak Vivaldi II için dahili depo yazmıyor; perakendeci kaynakları çelişkili. Bu, özelliğin bulunmadığı anlamına gelmez."
+        },
+        "Güç (W)": {
+          "value": "2200 W (sayfa) — broşür: 1250 W buhar + 800 W grup",
+          "state": "conflict",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "note": "Sayfadaki 'W+ 2700 230 Vac' satırı açıklanmıyor."
+        },
+        "Voltaj": {
+          "value": "230/110 V, 50/60 Hz",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Boyutlar": {
+          "value": "415 × 415 × 385 mm",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Ağırlık": {
+          "value": "28 kg",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Kontrol": {
+          "value": "Elektronik oranlı doz; LED sıcaklık göstergesi (1 °C); çift skalalı manometre; S1 Timer uygulaması; uygulama ile firmware güncelleme",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Ön demleme": {
+          "value": "Elektronik grup ön demleme",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Buhar / sıcak su": {
+          "value": "1 buhar çubuğu + 1 sıcak su çıkışı",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Bakım": {
+          "value": "Ekonomi modu; kazan ısıtmasını kapatabilme; arıza alarmı; opsiyonel doğrudan tahliye",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Pompa": {
+          "value": null,
+          "state": "conflict",
+          "sources": [
+            "https://www.wholelattelove.com/la-spaziale-s1-mini-vivaldi-ii-red"
+          ],
+          "checked": "2026-10-23",
+          "note": "Resmi kaynakta yok. Perakendeci 'standart Vivaldi II rotary pompa ve yalnız şebeke' diyor; diğer perakendeciler vibrasyon pompası/depo yazıyor. Pazar sürümüne göre değişebilir; doğrulanmadı."
+        },
+        "Portafilter çapı (mm)": {
+          "value": "53",
+          "state": "partial",
+          "source": "https://www.wholelattelove.com/products/la-spaziale-s1-mini-vivaldi-ii",
+          "checked": "2026-10-23",
+          "evidenceKind": "retailer",
+          "note": "Perakendecinin S1 ailesi beyanı; üretici kaynağında yok."
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "external",
+          "value": "Harici öğütücü gerekir",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Çift skalalı manometre var, demleme basıncı/OPV değeri açıklanmıyor."
+        },
+        "PID": {
+          "candidateState": "partial",
+          "value": "Elektronik sıcaklık kontrolü, 1 °C adım",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "'PID' kelimesi Vivaldi II için kullanılmıyor; ölçülmüş kararlılık yok."
+        },
+        "Basınçsız basket": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Buhar iş akışı": {
+          "candidateState": "partial",
+          "value": "Ayrı 2,5 L buhar kazanı",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Toparlanma ölçümü yok."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Ön demleme": {
+          "candidateState": "verified",
+          "value": "Elektronik grup ön demleme",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Süre/ayar aralığı açıklanmıyor."
+        },
+        "Parça ekosistemi": {
+          "candidateState": "partial",
+          "value": "Servis portalı (giriş gerekli)",
+          "sources": [
+            "https://portal.laspaziale.net/web/login"
+          ],
+          "checked": "2026-10-23",
+          "note": "Türkiye servis/parça bulunabilirliği doğrulanmadı."
+        }
+      },
+      "offersTRY": [],
+      "purchaseLinksTR": [],
+      "foreignPrices": [
+        {
+          "seller": "Majesty Coffee / Voltage Coffee Supply (ABD)",
+          "currency": "USD",
+          "amount": 2795.0,
+          "url": "https://majestycoffee.com/products/la-spaziale-s1-vivaldi-ii-vivaldi-ii",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "note": "Arama özeti; sayfa bu turda açılmadı. Voltage sayfası 'Direct-Plumb' sürümü."
+        },
+        {
+          "seller": "Bertazzo Food (İtalya)",
+          "currency": "EUR",
+          "amount": 1980.0,
+          "url": "https://www.bertazzofood.com/en/product/espresso-coffee-machine-la-spaziale-s1-vivaldi-ii-black/",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "note": "Arama özetine göre sayfa ~850 gün güncellenmemiş; eski olabilir."
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/VIVALDI_II_highres.jpg",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "angle": "ön 3/4 (üretici)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "2048x1366",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/VIVALDI-II_disegno_tecnico.png",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "angle": "teknik çizim",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "973x368",
+          "proxyOrAi": false,
+          "note": "Fotoğraf değil."
+        },
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/07/Colori_Macchine_S1_tutte.jpg",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-vivaldi-ii/",
+          "angle": "S1 renk seçenekleri yan görünüş",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "1821x501",
+          "proxyOrAi": false,
+          "note": "Aile görseli; exact model ayırt edilmez, açı sayılmamalı."
+        }
+      ],
+      "researchGaps": [
+        "Gerçek demleme basıncı (bar) ve OPV ayarı resmi S1 sayfası ve S1 broşüründe (rev. S1_10/2021) yok.",
+        "Üç yollu solenoid resmi kaynakta geçmiyor.",
+        "Portafiltre çapı resmi kaynakta yok; 53 mm yalnız perakendeci (Whole Latte Love) beyanı.",
+        "Pompa tipi resmi S1 Vivaldi II/Mini/Dream sayfalarında yok (yalnız Armonia için vibrasyon pompası yazıyor).",
+        "Türkiye'de TL fiyatlı mağaza teklifi bulunamadı (23.10.2026 aramaları).",
+        "Resmi servis portalı giriş gerektiriyor; parça kataloğu açık erişimde incelenemedi.",
+        "İkinci gerçek fotoğraf açısı (üretici dışı) bu turda doğrulanmadı."
+      ]
+    },
+    {
+      "suggestedId": "la-spaziale-s1-dream",
+      "brand": "La Spaziale",
+      "family": "S1",
+      "name": "S1 Dream",
+      "variantNote": "Şebeke bağlantılı Dream. Depolu kardeşi S1 Dream-T (3 L depo, 1,2 L buhar kazanı, elektronik ön demleme ve şebeke basınç sensörü YOK) ayrı SKU'dur.",
+      "category": "Yarı otomatik",
+      "currentStatus": {
+        "value": "Üreticinin güncel S1 listesinde (sayfa tarihi 27 Haziran 2024)",
+        "state": "verified",
+        "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+        "checked": "2026-10-23",
+        "evidenceKind": "manufacturer"
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Kompakt profesyonel; şebeke bağlantısı gerektirir (Dream).",
+        "water": "Doğrudan şebeke bağlantısı (yalnız Dream). Depolu kullanım için Dream-T.",
+        "electric": "230/110 V; sayfa 2200 W; ekonomi modunda en fazla 1250 W; broşür 1250 W buhar + 800 W grup.",
+        "size": "415 × 415 × 385 mm, 28 kg",
+        "daily5to25": "Aday; tesisat koşulu var — Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Kazan tipi": {
+          "value": "Çift kazan: buhar/sıcak su 2,5 L + kahve 0,45 L",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Şebeke suyu": {
+          "value": "Doğrudan şebeke bağlantısı (yalnız Dream)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "PID": {
+          "value": "Buhar/sıcak su kazanı ve kahve grubu için P.I.D. elektronik sıcaklık regülasyonu",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Ön demleme": {
+          "value": "Elektronik ön demleme (yalnız Dream)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Basınç": {
+          "value": "Şebeke suyu ve pompa için dijital basınç sensörü (yalnız Dream)",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "note": "Sensör var; demleme basıncı değeri veya ayar aralığı açıklanmıyor."
+        },
+        "Kontrol": {
+          "value": "128 × 64 piksel grafik ekran; kapasitif dokunmatik tuş takımı; programlanabilir doz; zamanlayıcı; SD kartla yazılım güncelleme; kahve sayacı",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ]
+        },
+        "Bakım": {
+          "value": "Planlı servis uyarısı; su yumuşatıcı kartuş takibi; grup yıkama döngüsü; otomatik kapanma; ekonomi modu",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Güç (W)": {
+          "value": "2200 W (sayfa); ekonomi modunda maks. 1250 W",
+          "state": "conflict",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "note": "Broşür 1250 W buhar + 800 W grup rezistansı olarak veriyor."
+        },
+        "Boyutlar": {
+          "value": "415 × 415 × 385 mm",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Ağırlık": {
+          "value": "28 kg",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Buhar / sıcak su": {
+          "value": "1 sıcak su çıkışı (2 programlanabilir seçim); buhar çubuğu",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Öğütme ayarı uyarısı": {
+          "value": "Akışa göre 'kaba/ince öğütüm' uyarısı",
+          "state": "verified",
+          "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Bu bir öğütücü değildir; harici öğütücü için geri bildirim uyarısıdır."
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "external",
+          "value": "Harici öğütücü gerekir; makine öğütüm kaba/ince uyarısı veriyor",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Uyarı fonksiyonu öğütücü ayarı kanıtı değildir."
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Dijital pompa basınç sensörü var; değer/ayar açıklanmıyor."
+        },
+        "PID": {
+          "candidateState": "verified",
+          "value": "P.I.D. (kazan + grup)",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "PID ölçülmüş kararlılık değildir."
+        },
+        "Basınçsız basket": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Buhar iş akışı": {
+          "candidateState": "partial",
+          "value": "Ayrı 2,5 L buhar kazanı",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Toparlanma ölçümü yok."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Ön demleme": {
+          "candidateState": "verified",
+          "value": "Elektronik ön demleme",
+          "sources": [
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+            "https://www.laspaziale.com/wp-content/uploads/2024/10/Brochure_S1.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Dream-T'de yok."
+        },
+        "Parça ekosistemi": {
+          "candidateState": "partial",
+          "value": "Servis portalı, SD güncelleme, planlı servis uyarısı",
+          "sources": [
+            "https://portal.laspaziale.net/web/login",
+            "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Türkiye servisi doğrulanmadı."
+        }
+      },
+      "offersTRY": [],
+      "purchaseLinksTR": [],
+      "foreignPrices": [],
+      "gallery": [
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/DREAM-NERA.png",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "angle": "ön 3/4, metal siyah (üretici)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "1600x1065",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/DREAM_disegno_tecnico.jpg",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream/",
+          "angle": "teknik çizim",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "984x431",
+          "proxyOrAi": false,
+          "note": "Fotoğraf değil."
+        }
+      ],
+      "researchGaps": [
+        "Gerçek demleme basıncı (bar) ve OPV ayarı resmi S1 sayfası ve S1 broşüründe (rev. S1_10/2021) yok.",
+        "Üç yollu solenoid resmi kaynakta geçmiyor.",
+        "Portafiltre çapı resmi kaynakta yok; 53 mm yalnız perakendeci (Whole Latte Love) beyanı.",
+        "Pompa tipi resmi S1 Vivaldi II/Mini/Dream sayfalarında yok (yalnız Armonia için vibrasyon pompası yazıyor).",
+        "Türkiye'de TL fiyatlı mağaza teklifi bulunamadı (23.10.2026 aramaları).",
+        "Resmi servis portalı giriş gerektiriyor; parça kataloğu açık erişimde incelenemedi.",
+        "Dream için yurt dışı fiyat bu turda toplanmadı.",
+        "Dream için ikinci gerçek fotoğraf açısı yok."
+      ],
+      "siblingVariant": {
+        "name": "S1 Dream-T",
+        "source": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream-t/",
+        "facts": "3 L dahili depo; buhar kazanı 1,2 L; kahve kazanı 0,45 L; PID; ekonomi modunda maks. 1200 W; elektronik ön demleme ve şebeke bağlantısı yalnız Dream'de (broşür).",
+        "image": {
+          "url": "https://www.laspaziale.com/wp-content/uploads/2024/06/DREAM-T-ROSSA-1.png",
+          "sourcePage": "https://www.laspaziale.com/en/portfolio-item/en-s1-dream-t/",
+          "angle": "ön 3/4, metal kırmızı (üretici)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "2048x1366",
+          "proxyOrAi": false
+        }
+      }
+    },
+    {
+      "suggestedId": "elektra-micro-casa-leva",
+      "brand": "Elektra",
+      "family": "Micro Casa",
+      "name": "Micro Casa Leva",
+      "variantNote": "Kollu (manuel) ev makinesi. Kaplama SKU'ları: S1 (bakır-pirinç), S1C (krom), S1CO (krom-pirinç). Micro Casa Semiautomatica ve Mini Verticale ayrı modeller.",
+      "category": "Manuel kollu",
+      "currentStatus": {
+        "value": "Üreticinin güncel Heritage/Home listesinde",
+        "state": "verified",
+        "source": "https://elektracoffee.com/product/micro-casa-leva/",
+        "checked": "2026-10-23",
+        "evidenceKind": "manufacturer"
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Ev makinesi (2009 kılavuzu 'household coffee machines').",
+        "water": "Depo/şebeke yok: kazan kapağından elle doldurulur; doldurmadan önce makine kapatılıp basınç boşaltılmalı.",
+        "electric": "800 W; 120 V veya 220–240 V 50/60 Hz",
+        "size": "260 × 490 × 260 mm (G × Y × D), 10 kg",
+        "daily5to25": "Sınırlı: tek kazan, buhar ve kahve aynı kazandan; 25 içeceğe yakın kullanımda yeniden doldurma ve soğutma molası gerekir — Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Kazan tipi": {
+          "value": "Tek kazan, 1,8 L",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/micro-casa-leva/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ]
+        },
+        "Su haznesi (L)": {
+          "value": "Yok — kazanın 3/4'ü elle doldurulur",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer",
+          "note": "Kılavuz 2009 (kod 03718035), ABD distribütörü 1st-line'da barındırılıyor."
+        },
+        "Güç (W)": {
+          "value": "800",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/micro-casa-leva/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Voltaj": {
+          "value": "120 V 50/60 Hz; 220–240 V 50/60 Hz",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/micro-casa-leva/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Boyutlar": {
+          "value": "260 × 490 × 260 mm (G × Y × D)",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/micro-casa-leva/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "2009 kılavuzu: yükseklik 45 cm, taban çapı 26 cm."
+        },
+        "Ağırlık": {
+          "value": "10 kg",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/micro-casa-leva/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ]
+        },
+        "Kontrol": {
+          "value": "Manuel kol: kol indirilir, ilk damlalardan sonra bırakılır; kol kendiliğinden yükselirken kahve akmaya devam eder",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Basınç göstergesi": {
+          "value": "Kazan basınç manometresi + kazan su seviye camı + kazan emniyet valfi",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Buhar / sıcak su": {
+          "value": "Buhar çubuğu (aynı kazandan)",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Doz ve çıktı": {
+          "value": "Yaklaşık 7 g/porsiyon, ~25 sn'de ~25 cc öneri; 1 ve 2 fincan filtre",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer",
+          "note": "Kılavuzdaki genel tavsiye; makinenin ölçülmüş performansı değildir."
+        },
+        "Pod": {
+          "value": "Kılavuz pod kitini N-S-V modelleri için anıyor; L (Leva) için değil",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Kutu içeriği": {
+          "value": "1 fincan filtre, 2 fincan filtre, ölçü kaşığı, tamper",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "external",
+          "value": "Harici öğütücü gerekir",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Kılavuz keskin bıçaklı/uygun öğütücü öneriyor."
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/micro-casa-leva/",
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Kazan manometresi var; demleme (piston) basıncı açıklanmıyor."
+        },
+        "PID": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/micro-casa-leva/",
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Sıcaklık/basınç kontrol tipi (presostat vb.) resmi kaynakta yok; PID beyanı yok."
+        },
+        "Basınçsız basket": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "1 ve 2 fincan filtre var; duvar tipi ve çap açıklanmıyor."
+        },
+        "Buhar iş akışı": {
+          "candidateState": "partial",
+          "value": "Tek kazandan buhar; ayrı buhar kazanı yok",
+          "sources": [
+            "https://elektracoffee.com/product/micro-casa-leva/",
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Toparlanma süresi yok."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "not-applicable-candidate",
+          "value": "Pompasız manuel kol; kaynakta solenoid yok",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Puan motorunda NA kararı Codex'e bırakıldı; mekanik kol tahliyesi solenoid sayılmamalı."
+        },
+        "Ön demleme": {
+          "candidateState": "partial",
+          "value": "Kullanıcı kolu indirip ilk damlaları bekleyerek kontrol eder",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2017/10/Elektra-Home-manual.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Üretici 'ön demleme' terimini kullanmıyor; özellik olarak onaylanmamalı."
+        },
+        "Parça ekosistemi": {
+          "candidateState": "partial",
+          "value": "Üretici sitesinde Technical Center; ABD distribütöründe kılavuz ve eğitim belgesi",
+          "sources": [
+            "https://elektracoffee.com/product/micro-casa-leva/",
+            "https://www.1st-line.com/technical-support/elektra-technical-support/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Parça kataloğu/Türkiye servisi doğrulanmadı."
+        }
+      },
+      "offersTRY": [
+        {
+          "seller": "Mutfak10",
+          "price": 146525.5,
+          "currency": "TRY",
+          "url": "https://www.mutfak10.com/urun/elektra-micro-casa-leva-s1-yari-otomatik-espresso-kahve-makinesi-bakir/",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": true,
+          "available": true,
+          "note": "S1 bakır; KDV dahil; meta instock; havale %3 indirim ayrıca. Akakçe: 'Stokta 10 adet, 1 iş günü'."
+        },
+        {
+          "seller": "Mutfak10",
+          "price": 146525.5,
+          "currency": "TRY",
+          "url": "https://www.mutfak10.com/urun/elektra-micro-casa-leva-s1c-yari-otomatik-espresso-kahve-makinesi-krom/",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": true,
+          "available": true,
+          "note": "S1C krom; KDV dahil; meta instock."
+        },
+        {
+          "seller": "Mutfak10",
+          "price": 146525.5,
+          "currency": "TRY",
+          "url": "https://www.mutfak10.com/urun/elektra-micro-casa-leva-s1co-yari-otomatik-espresso-kahve-makinesi-krom-pirinc/",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": true,
+          "available": true,
+          "note": "S1CO krom-pirinç; KDV dahil; meta instock."
+        },
+        {
+          "seller": "MDA Coffee",
+          "price": 95550.0,
+          "currency": "TRY",
+          "url": "https://www.mdacoffee.com/elektra-micro-casa-leva-tek-gruplu-espresso-makinesi",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": "partial",
+          "available": null,
+          "note": "Kaplama belirtilmiyor; €1.750 KDV dahil'den TL'ye çevrilmiş fiyat (kart tek çekim 98.416,50 TL). Sayfada hem 'Kritik Stok' hem 'Gelince Haber Ver' var — stok belirsiz. Sayfa 'dahili su tankı' yazıyor; üretici kaynağıyla çelişiyor.",
+          "foreignListPrice": {
+            "currency": "EUR",
+            "amount": 1750.0
+          }
+        }
+      ],
+      "purchaseLinksTR": [
+        {
+          "seller": "Akakçe (Mutfak10)",
+          "url": "https://www.akakce.com/endustriyel-kahve-makinesi/en-ucuz-elektra-micro-casa-leva-s1-yari-otomatik-espresso-kahve-makinesi-bakir-fiyati,1216753330.html",
+          "checked": "2026-10-23",
+          "exact": true,
+          "region": "TR",
+          "note": "Fiyat karşılaştırma sayfası; tek satıcı."
+        },
+        {
+          "seller": "Cafemarkt",
+          "url": "https://www.cafemarkt.com/elektra-micro-casa-leva-s1c-yari-otomatik-espresso-kahve-makinesi-krom",
+          "checked": "2026-10-23",
+          "exact": true,
+          "region": "TR",
+          "note": "23.10.2026'da ürün URL'si marka kategorisine yönlendi; ürün kaldırılmış olabilir. Fiyat kullanılmadı."
+        }
+      ],
+      "foreignPrices": [
+        {
+          "seller": "1st-line Equipment (ABD)",
+          "currency": "USD",
+          "amount": 2029.0,
+          "url": "https://www.1st-line.com/buy/elektra-microcasa-leva-espresso-machine/",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "note": "Doğrudan erişim 403; arama özeti."
+        },
+        {
+          "seller": "1st in Coffee (ABD)",
+          "currency": "USD",
+          "amount": 1999.0,
+          "url": "https://www.1stincoffee.com/elektra-lever-s1.htm",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "note": "Arama özetine göre stokta yok."
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/03/Hero-Image.jpeg",
+          "sourcePage": "https://elektracoffee.com/product/micro-casa-leva/",
+          "angle": "tam ön (krom, üretici)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "1500x980",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/03/S1CO-R-1.jpg",
+          "sourcePage": "https://elektracoffee.com/product/micro-casa-leva/",
+          "angle": "üst detay: kol ve kartal (S1CO)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "556x556",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/03/S1CO-R-3.jpg",
+          "sourcePage": "https://elektracoffee.com/product/micro-casa-leva/",
+          "angle": "detay: grup ve fincan tablası (S1CO)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "619x619",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/03/S1CO-back-4.jpg",
+          "sourcePage": "https://elektracoffee.com/product/micro-casa-leva/",
+          "angle": "arka/yan detay: buhar vanası (S1CO)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "863x863",
+          "proxyOrAi": false
+        }
+      ],
+      "researchGaps": [
+        "Elektra'nın eski alan adı elektrasrl.com 23.10.2026'da ilgisiz bir alan adına (talwalkars.net) yönleniyor; eski kılavuzlardaki 'www.elektrasrl.com' bağlantıları kullanılmamalı. Güncel resmi site elektracoffee.com (VEA Group S.p.A.).",
+        "Türkiye yetkili servis/distribütörü doğrulanmadı.",
+        "Demleme basıncı, piston/yay mekanizması tipi ve sepet çapı resmi kaynakta yok.",
+        "Isınma süresi açıklanmıyor.",
+        "Kılavuz 2009 baskısı; güncel revizyon bulunamadı."
+      ]
+    },
+    {
+      "suggestedId": "elektra-verve-mini",
+      "brand": "Elektra",
+      "family": "Verve",
+      "name": "Verve Mini",
+      "variantNote": "Depolu, vibrasyon pompalı ev sürümü. Verve (rotary pompa, 5 L depo/şebeke, 120 V seçeneği) ayrı modeldir. Renk: Çelik/Ahşap veya Çelik/Mat Siyah.",
+      "category": "Yarı otomatik",
+      "currentStatus": {
+        "value": "Üreticinin güncel Contemporary/Home listesinde",
+        "state": "verified",
+        "source": "https://elektracoffee.com/product/verve-mini/",
+        "checked": "2026-10-23",
+        "evidenceKind": "manufacturer"
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Üretici 'Home Line' ve ev baristaları için diyor.",
+        "water": "Yalnız entegre 2 L depo.",
+        "electric": "220–240 V 50/60 Hz, 1600 W (broşür: 1000 W buhar kazanı + 600 W grup)",
+        "size": "311 × 409 × 452 mm (G × Y × D), 21 kg",
+        "daily5to25": "Aday; 2 L depo sık doldurma gerektirebilir — Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Kazan tipi": {
+          "value": "Çift kazan: 1,6 L yalıtımlı bakır buhar kazanı + 140 cc grup kazanı",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ]
+        },
+        "Su haznesi (L)": {
+          "value": "2 (entegre)",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ]
+        },
+        "Pompa": {
+          "value": "Vibrasyon",
+          "state": "verified",
+          "source": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Güç (W)": {
+          "value": "1600 (buhar kazanı 1000 W + grup 600 W)",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ]
+        },
+        "Voltaj": {
+          "value": "220–240 V 50/60 Hz (sayfa); broşür 230–115 V",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ],
+          "note": "ABD'de 115 V sürüm perakendecide görülüyor; Türkiye için 230 V."
+        },
+        "Boyutlar": {
+          "value": "311 × 409 × 452 mm (G × Y × D)",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ]
+        },
+        "Ağırlık": {
+          "value": "21 kg (sevkiyat 25 kg)",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Kontrol": {
+          "value": "Ekran yok; tüm ayarlar Wi-Fi web uygulaması üzerinden; manuel aktivasyon",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ]
+        },
+        "Fincan ısıtıcı": {
+          "value": "Yok",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/verve-mini/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Basınç göstergesi": {
+          "value": "Ön panelde manometre görünür",
+          "state": "partial",
+          "source": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Yalnız broşür fotoğrafı; metinde tanım yok."
+        },
+        "Fincan açıklığı": {
+          "value": "Çizimde 111 mm ve 96,5 mm ölçüleri",
+          "state": "partial",
+          "source": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Çizim ölçüsü; etiketlenmemiş, fincan açıklığı olarak kesinleşmedi."
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "external",
+          "value": "Harici öğütücü gerekir",
+          "sources": [
+            "https://elektracoffee.com/product/verve-mini/"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/verve-mini/",
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Verve Mini kılavuzu bulunamadı; Verve kılavuzundaki 8–9 bar bu SKU'ya aktarılmadı."
+        },
+        "PID": {
+          "candidateState": "partial",
+          "value": "Bağımsız kahve ve buhar kazanları, uygulama ile ayar",
+          "sources": [
+            "https://elektracoffee.com/product/verve-mini/",
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Üretici kaynağında 'PID' kelimesi yok; TR perakendeci 'PID' yazıyor (doğrulanmadı)."
+        },
+        "Basınçsız basket": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/verve-mini/",
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Buhar iş akışı": {
+          "candidateState": "partial",
+          "value": "Ayrı 1,6 L bakır buhar kazanı, 'kuru buhar' beyanı",
+          "sources": [
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Toparlanma ölçümü yok."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/verve-mini/",
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Ön demleme": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/verve-mini/",
+            "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-MINI-SEP.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Resmi sayfa/broşürde yok; TR perakendeci 'ön demleme fonksiyonu' yazıyor (doğrulanmadı)."
+        },
+        "Parça ekosistemi": {
+          "candidateState": "partial",
+          "value": "Üretici Technical Center ve destek iletişimi",
+          "sources": [
+            "https://elektracoffee.com/product/verve-mini/"
+          ],
+          "checked": "2026-10-23",
+          "note": "ABD distribütörü destek sayfasında Verve Mini belgesi listelenmiyor."
+        }
+      },
+      "offersTRY": [
+        {
+          "seller": "MDA Coffee",
+          "price": 131040.0,
+          "currency": "TRY",
+          "url": "https://www.mdacoffee.com/elektra-verve-mini-tek-gruplu-espresso-makinesi",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": true,
+          "available": null,
+          "note": "€2.400 KDV dahil'den çevrilmiş TL (kart tek çekim 134.971,20 TL). 'Kritik Stok' ve 'Gelince Haber Ver' birlikte görünüyor — stok belirsiz. Sayfadaki 30 kg / 320×490×500 mm üretici verisiyle çelişiyor.",
+          "foreignListPrice": {
+            "currency": "EUR",
+            "amount": 2400.0
+          }
+        }
+      ],
+      "purchaseLinksTR": [
+        {
+          "seller": "Espresso Perfetto",
+          "url": "https://www.espressoperfetto.com/urun/elektra-verve-mini",
+          "checked": "2026-10-23",
+          "exact": true,
+          "region": "TR",
+          "note": "Arama sonucu vardı; 23.10.2026'da URL 404 döndü. Fiyat kullanılmadı."
+        }
+      ],
+      "foreignPrices": [
+        {
+          "seller": "Die Baristamacher (Almanya)",
+          "currency": "EUR",
+          "amount": 1980.0,
+          "url": "https://www.diebaristamacher.de/Elektra-Verve-Mini/SW10004",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "note": "Arama özeti; sayfa açılmadı."
+        },
+        {
+          "seller": "Bertazzo Food (İtalya)",
+          "currency": "EUR",
+          "amount": 2049.18,
+          "url": "https://www.bertazzofood.com/en/product/elektra-verve-mini/",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "note": "Arama özetine göre ~851 gün önceki veri; eski olabilir."
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini-Black_full.jpg",
+          "sourcePage": "https://elektracoffee.com/product/verve-mini/",
+          "angle": "ön 3/4 sağ (siyah)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "856x920",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini-Black_Back.jpg",
+          "sourcePage": "https://elektracoffee.com/product/verve-mini/",
+          "angle": "arka (siyah)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "883x973",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini_Wood-Frontale.jpg",
+          "sourcePage": "https://elektracoffee.com/product/verve-mini/",
+          "angle": "tam ön (ahşap)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "770x953",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini_Wood_Tre-Quarti.jpg",
+          "sourcePage": "https://elektracoffee.com/product/verve-mini/",
+          "angle": "3/4 (ahşap)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "679x1030",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini_Wood-Back-Dx.jpg",
+          "sourcePage": "https://elektracoffee.com/product/verve-mini/",
+          "angle": "arka sağ (ahşap)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "797x866",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini_Wood_Dettaglio.jpg",
+          "sourcePage": "https://elektracoffee.com/product/verve-mini/",
+          "angle": "detay (ahşap)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "1115x842",
+          "proxyOrAi": false
+        }
+      ],
+      "galleryExcludedAsDuplicateOrUnverified": [
+        "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini-Wood_Front-DX.jpg (siyah ön 3/4 ile aynı açı, farklı renk)",
+        "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini-Wood_Back2.jpg (arka; siyah arka ile aynı açı)",
+        "https://elektracoffee.com/wp-content/uploads/2025/04/Verve-Mini-wood_resize.jpg (görsel içeriği bu turda açılıp kontrol edilmedi)"
+      ],
+      "researchGaps": [
+        "Elektra'nın eski alan adı elektrasrl.com 23.10.2026'da ilgisiz bir alan adına (talwalkars.net) yönleniyor; eski kılavuzlardaki 'www.elektrasrl.com' bağlantıları kullanılmamalı. Güncel resmi site elektracoffee.com (VEA Group S.p.A.).",
+        "Türkiye yetkili servis/distribütörü doğrulanmadı.",
+        "Verve Mini kullanım/servis kılavuzu bulunamadı: demleme basıncı, ön demleme, sıcaklık aralığı, ısınma süresi açıklanmıyor.",
+        "Sepet çapı/tipi resmi kaynakta yok.",
+        "TR'de stok kesin bir teklif bulunamadı."
+      ]
+    },
+    {
+      "suggestedId": "elektra-verve",
+      "brand": "Elektra",
+      "family": "Verve",
+      "name": "Verve",
+      "variantNote": "Rotary pompalı, 5 L depo veya şebeke; 120 V ve 220–240 V sürümleri. Kılavuz ürün kodu 'SPF – SPF*'. Verve Mini değil. Cafemarkt'taki 'Verve Tall Cup' ilanı farklı bir kurulum olabilir.",
+      "category": "Yarı otomatik",
+      "currentStatus": {
+        "value": "Üreticinin güncel Contemporary/Professional listesinde",
+        "state": "verified",
+        "source": "https://elektracoffee.com/product/elektra-verve/",
+        "checked": "2026-10-23",
+        "evidenceKind": "manufacturer"
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Üretici: ev baristaları, küçük restoranlar, butik kafeler. Kılavuz 'yarı profesyonel', ev ve benzeri kullanım (ofis mutfağı, B&B) diyor.",
+        "water": "5 L entegre depo veya şebeke (0,15–0,6 MPa; sertlik ≤20 °F; aksi halde yumuşatıcı/regülatör)",
+        "electric": "1600 W; 120 V 50/60 Hz veya 220–240 V 50/60 Hz; topraklı hat şart",
+        "size": "380 × 425 × 449 mm (G × Y × D), 29 kg",
+        "daily5to25": "Aday — Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Kazan tipi": {
+          "value": "Çift kazan: 1,6 L buhar + 0,14 L kahve (grup) kazanı",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/elektra-verve/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Su haznesi (L)": {
+          "value": "5 (entegre) veya şebeke",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/elektra-verve/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ]
+        },
+        "Şebeke suyu": {
+          "value": "Var: 1/4\" bağlantı, ~1,7 m PTFE hortum; 1,5–6 bar giriş; uygulamadan depo/şebeke seçimi",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer",
+          "note": "Kılavuz 06606035, baskı 01/12/2020; ABD distribütörü 1st-line'da barındırılıyor."
+        },
+        "Pompa": {
+          "value": "Rotary",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/elektra-verve/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Güç (W)": {
+          "value": "1600",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/elektra-verve/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Voltaj": {
+          "value": "120 V 50/60 Hz; 220–240 V 50/60 Hz",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/elektra-verve/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Boyutlar": {
+          "value": "380 × 425 × 449 mm (G × Y × D)",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/elektra-verve/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Ağırlık": {
+          "value": "29 kg (sevkiyat 36 kg)",
+          "state": "verified",
+          "source": "https://elektracoffee.com/product/elektra-verve/",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Sıcaklık seçimi": {
+          "value": "Kahve sıcaklığı 70–95 °C ayarlanabilir; grup kazanı hassas sensörle kontrol, ön ısıtıcıdan geçen su",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Buhar kazanı kontrolü": {
+          "value": "Buhar kazanı basıncı presostatla kontrol edilir (ısıtıcıyı açar/kapatır); seviye probu ile otomatik doldurma",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer",
+          "note": "Buhar tarafı PID değil, presostat."
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "value": "Pompa basıncı yaklaşık 8–9 bar (manometreden okunur); makinenin sol alt deliğindeki vida ile ayarlanabilir; 12 bar üzeri arıza",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer",
+          "note": "Üretici kılavuzundaki işletme hedefi; bağımsız ölçüm değildir."
+        },
+        "Ön demleme": {
+          "value": "İki fazlı otomatik döngü: ön demleme şebeke suyu basıncıyla veya önceki çekimden kalan basınçla; süresi uygulamadan ayarlanır (ekranda 15 sn örnek)",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer",
+          "note": "Depodan çalışırken şebeke basıncı yoktur; o durumda 'kalan basınç' ifadesi geçerli. Etkinin ölçümü yok."
+        },
+        "Basınç göstergesi": {
+          "value": "Buhar kazanı manometresi + demleme/şebeke basıncı manometresi",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Isınma süresi (sn)": {
+          "value": "yaklaşık 600 (10 dakika)",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Kontrol": {
+          "value": "Ekran yok; Wi-Fi ile akıllı telefon tarayıcısı (ELEKTRA.COM yerel arayüz); ön demleme süresi, kahve sıcaklığı, gece döngüsü, kahve sayacı; 2 uyarı ışığı; kol ile manuel dağıtım",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Fincan açıklığı": {
+          "value": "109 mm (opsiyonel yükseltme ızgarası ile 80 mm)",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        },
+        "Bakım": {
+          "value": "Haftalık kör filtreli yıkama (500 kahvede uyarı); depodaki yumuşatıcı 2000 kahvede değişim uyarısı; tahliye bağlantısı opsiyonel",
+          "state": "verified",
+          "source": "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer-document-on-retailer"
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "external",
+          "value": "Harici öğütücü gerekir",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "verified",
+          "value": "~8–9 bar, vida ile ayarlanabilir pompa basıncı",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Üretici hedef değeri; ölçüm değil. Kaynak distribütör sunucusunda üretici kılavuzu."
+        },
+        "PID": {
+          "candidateState": "partial",
+          "value": "Grup kazanı hassas sensörle 70–95 °C; buhar presostatlı",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Kılavuz 'PID' terimini kullanmıyor; ölçülmüş kararlılık yok."
+        },
+        "Basınçsız basket": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/elektra-verve/",
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Kör filtre kutuda var; sepet çapı/duvar tipi yok."
+        },
+        "Buhar iş akışı": {
+          "candidateState": "partial",
+          "value": "Ayrı 1,6 L buhar kazanı, joystick buhar/sıcak su vanaları",
+          "sources": [
+            "https://elektracoffee.com/product/elektra-verve/",
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Toparlanma ölçümü yok."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://elektracoffee.com/product/elektra-verve/",
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Kılavuzda kazan su giriş solenoidi geçiyor; grup tahliye (3 yollu) solenoidi geçmiyor — bu solenoid kanıtı sayılmamalı."
+        },
+        "Ön demleme": {
+          "candidateState": "verified",
+          "value": "Ayarlanabilir süreli ön demleme (şebeke/kalan basınç)",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Depodan kullanımda basınç kaynağı sınırlı olabilir."
+        },
+        "Parça ekosistemi": {
+          "candidateState": "partial",
+          "value": "Yetkili servis + orijinal parça şartı; ABD distribütöründe kılavuz/ikon sözlüğü",
+          "sources": [
+            "https://www.1st-line.com/wp-content/uploads/2020/12/06606035-Instruction-Manual-Verve.pdf",
+            "https://www.1st-line.com/technical-support/elektra-technical-support/"
+          ],
+          "checked": "2026-10-23",
+          "note": "Türkiye servisi doğrulanmadı."
+        }
+      },
+      "offersTRY": [
+        {
+          "seller": "MDA Coffee",
+          "price": 185640.0,
+          "currency": "TRY",
+          "url": "https://www.mdacoffee.com/elektra-verve-tek-gruplu-espresso-makinesi",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": true,
+          "available": null,
+          "note": "€3.400 KDV dahil'den çevrilmiş TL (kart tek çekim 191.209,20 TL). Stok belirsiz ('Kritik Stok' + 'Gelince Haber Ver'). Sayfadaki 8 L kazan/2300 W/30 kg üretici verisiyle çelişiyor.",
+          "foreignListPrice": {
+            "currency": "EUR",
+            "amount": 3400.0
+          }
+        },
+        {
+          "seller": "Cafemarkt",
+          "price": 157169.68,
+          "currency": "TRY",
+          "url": "https://www.cafemarkt.com/elektra-verve-tall-cup-tam-otomatik-espresso-kahve-makinesi-tek-gruplu-inox-ahsap",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": "partial",
+          "available": false,
+          "note": "Marka kategori sayfasında 'Tükendi'. İlan 'Verve Tall Cup … Tam Otomatik, Inox Ahşap' diyor; üretici Verve'ü manuel aktivasyonlu yarı otomatik olarak tanımlıyor — varyant eşleşmesi kısmi."
+        }
+      ],
+      "purchaseLinksTR": [],
+      "foreignPrices": [],
+      "gallery": [
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2024/12/Image-2.jpg",
+          "sourcePage": "https://elektracoffee.com/product/elektra-verve/",
+          "angle": "ön 3/4 (ahşap, stüdyo)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "740x752",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2024/12/Elektra_Verve_back.png",
+          "sourcePage": "https://elektracoffee.com/product/elektra-verve/",
+          "angle": "arka 3/4 (beyaz/ahşap)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "1000x990",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2024/12/IMG_E9097-scaled.jpg",
+          "sourcePage": "https://elektracoffee.com/product/elektra-verve/",
+          "angle": "yan, kullanım ortamı",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "2048x2048",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2024/12/unnamed-3.jpg",
+          "sourcePage": "https://elektracoffee.com/product/elektra-verve/",
+          "angle": "sol yan, kullanım ortamı",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "512x512",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://elektracoffee.com/wp-content/uploads/2024/12/02-06-2025-Elektra-573-scaled.jpg",
+          "sourcePage": "https://elektracoffee.com/product/elektra-verve/",
+          "angle": "ön, mutfak tezgâhı (öğütücüyle)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "1707x2560",
+          "proxyOrAi": false
+        }
+      ],
+      "researchGaps": [
+        "Elektra'nın eski alan adı elektrasrl.com 23.10.2026'da ilgisiz bir alan adına (talwalkars.net) yönleniyor; eski kılavuzlardaki 'www.elektrasrl.com' bağlantıları kullanılmamalı. Güncel resmi site elektracoffee.com (VEA Group S.p.A.).",
+        "Türkiye yetkili servis/distribütörü doğrulanmadı.",
+        "Sepet çapı açıklanmıyor (perakendeciler 58 mm diyor; doğrulanmadı).",
+        "Yurt dışı fiyat bu turda toplanmadı."
+      ]
+    },
+    {
+      "suggestedId": "la-cimbali-m21-junior-s1",
+      "brand": "La Cimbali",
+      "family": "M21 Junior",
+      "name": "M21 Junior S/1",
+      "variantNote": "Depolu yarı otomatik sürüm (resmi föyde 'M21 C' / 'M21 S'). M21 Junior DT/1 hacimsel pompalı, programlanabilir dozlu ayrı SKU. Eski M21 (çok gruplu) ile karıştırılmamalı.",
+      "category": "Yarı otomatik",
+      "currentStatus": {
+        "value": "Belirsiz: teknik föyler cimbali.com'da duruyor; ancak 23.10.2026'da güncel 'Traditional machines' listesinde yok ve /m21-junior ürün URL'si HTTP 403 döndürüyor.",
+        "state": "partial",
+        "sources": [
+          "https://www.cimbali.com/products/traditional-machines",
+          "https://www.cimbali.com/products/traditional-machines/m21-junior",
+          "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf"
+        ],
+        "checked": "2026-10-23",
+        "note": "Üretimden kalktığı iddia edilmiyor; TR satıcılar satmaya devam ediyor."
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Küçük ticari tek grup; dar alan için tasarlanmış. Ev için ağır ve büyük.",
+        "water": "Dahili 2,5 L depo (S); şebekeye doğrudan bağlanmıyor (yalnız perakendeci açıklaması).",
+        "electric": "220 V'ta maks. 1900 W",
+        "size": "320 × 470 × 430 mm, 33 kg (föy tablosu DT ve S için ortak)",
+        "daily5to25": "Mümkün fakat ticari makine; 33 kg ve 1900 W. Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Su haznesi (L)": {
+          "value": "2,5",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf"
+          ]
+        },
+        "Pompa": {
+          "value": "Dahili vibrasyon pompası (S); DT'de hacimsel pompa",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf"
+          ]
+        },
+        "Güç (W)": {
+          "value": "1900 (220 V'ta maksimum)",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Boyutlar": {
+          "value": "320 × 470 × 430 mm (G × D × Y)",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Föy tablosu DT ve S ayrımı yapmıyor."
+        },
+        "Ağırlık": {
+          "value": "33 kg",
+          "state": "partial",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Föy tablosu ortak; Avustralya perakendecisi S için 25 kg, 335 × 455 × 425 mm veriyor (doğrulanmadı)."
+        },
+        "Kontrol": {
+          "value": "Sürekli (continuous) dağıtım; DT'de programlanabilir doz",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Buhar / sıcak su": {
+          "value": "1 paslanmaz çok yönlü buhar çubuğu + 1 paslanmaz çok yönlü sıcak su çubuğu",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Portafiltre": {
+          "value": "Yeni pirinç portafiltre, mikrometrik çıkışlar, düz tabanlı fincan, anatomik sap",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Çap belirtilmiyor."
+        },
+        "Opsiyon": {
+          "value": "Çekmeceli taban ünitesi 590 × 475 × 85 mm; maks. kit yüksekliği 550 mm",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Kazan tipi": {
+          "value": null,
+          "state": "unpublished",
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+            "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Resmi föylerde kazan hacmi/mimarisi (ısı eşanjörü vb.) yok; perakendeci '2,5 L kazan' beyanı tank ile karışıyor olabilir. Bu, özelliğin bulunmadığı anlamına gelmez."
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "external",
+          "value": "Harici öğütücü gerekir",
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Föy ayrıca öğütücü-dozör için taban ünitesinden söz ediyor."
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+            "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Ön paneldeki manometre fotoğrafta görünüyor; değer açıklanmıyor."
+        },
+        "PID": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+            "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Sıcaklık kontrol tipi açıklanmıyor."
+        },
+        "Basınçsız basket": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Buhar iş akışı": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Buhar çubuğu var; kazan mimarisi/eşzamanlılık resmi kaynakta yok."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+            "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Ön demleme": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf",
+            "https://www.cimbali.com/sites/default/files/m21junior-dati_tecnici-cimbali.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Parça ekosistemi": {
+          "candidateState": "partial",
+          "value": "Büyük ticari üretici; TR'de çok sayıda satıcı",
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/lacimbali_m21_junior_scheda_tecnica_en.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Model güncel listede değil; parça sürekliliği doğrulanmadı."
+        }
+      },
+      "offersTRY": [
+        {
+          "seller": "Barmarketim",
+          "price": 183998.1,
+          "currency": "TRY",
+          "url": "https://www.barmarketim.com/la-cimbali-m21-junior-s-1-yari-otomatik-espresso-kahve-makinesi-pmu22",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": true,
+          "available": true,
+          "note": "SKU 'M21 JUNIOR S/1'; indirimli fiyat (liste 236.788,82 TL); havale 176.638,18 TL; 'Stok Durumu Var'; garanti 1 yıl."
+        },
+        {
+          "seller": "Akakçe → Ankarabilluriye.com.tr",
+          "price": 160844.4,
+          "currency": "TRY",
+          "url": "https://www.akakce.com/endustriyel-kahve-makinesi/en-ucuz-la-cimbali-m21-s-1-junior-yari-otomatik-espresso-makinesi-fiyati,165241761.html",
+          "observedAt": "2026-10-23",
+          "evidence": "search-index",
+          "exact": "partial",
+          "available": true,
+          "note": "Kargo dahil; 'Stokta 100+ adet, 15 iş günü'. Satıcı ilan başlığı 'M21 Junior Espresso & Cappuccino Makinesi' — S/1 mi DT/1 mi açık değil."
+        },
+        {
+          "seller": "Mutfak10",
+          "price": 166462.45,
+          "currency": "TRY",
+          "url": "https://www.mutfak10.com/urun/la-cimbali-m21-junior-s-1-yari-otomatik-espresso-kahve-makinesi/",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": true,
+          "available": false,
+          "note": "KDV dahil; 'Stokta yok' (meta out of stock). En düşük hesaba girmez."
+        },
+        {
+          "seller": "Horecamark",
+          "price": 58800.0,
+          "currency": "TRY",
+          "url": "https://www.horecamark.com/la-cimbali-m21-junior-tek-gruplu-yari-otomatik-espresso-makinesi",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": "partial",
+          "available": null,
+          "note": "Sayfa başlığı '49,000.00 TL + KDV', meta 58.800 TRY ve 'in stock'. Diğer tekliflerin yaklaşık üçte biri; sayfa gövdesinde fiyat/stok doğrulanamadı. Eski/hatalı olabilir — en düşük hesaba alınmamalı."
+        }
+      ],
+      "purchaseLinksTR": [],
+      "foreignPrices": [],
+      "gallery": [
+        {
+          "url": "https://www.mutfak10.com/wp-content/uploads/2023/09/la-cimbali-m21-junior-s-1-yar-14776_1-1.webp",
+          "sourcePage": "https://www.mutfak10.com/urun/la-cimbali-m21-junior-s-1-yari-otomatik-espresso-kahve-makinesi/",
+          "angle": "tam ön (satıcı)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "900x900",
+          "proxyOrAi": false,
+          "note": "Tuş takımı görüntüsü; S/DT ayrımı görselden kesinleşmiyor."
+        },
+        {
+          "url": "https://www.mutfak10.com/wp-content/uploads/2023/09/la-cimbali-m21-junior-s-1-yar-14776_2-1.webp",
+          "sourcePage": "https://www.mutfak10.com/urun/la-cimbali-m21-junior-s-1-yari-otomatik-espresso-kahve-makinesi/",
+          "angle": "ön 3/4, öğütücüyle ortam (satıcı)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "900x900",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://platincdn.com/1917/pictures/SVKPGGGHKT1292024152715_m21-trequarti-tazzine-trasp.webp",
+          "sourcePage": "https://www.barmarketim.com/la-cimbali-m21-junior-s-1-yari-otomatik-espresso-kahve-makinesi-pmu22",
+          "angle": "sağ 3/4 (satıcı; dosya adı Cimbali 'trequarti')",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "1280x1920",
+          "proxyOrAi": false,
+          "note": ".webp uzantılı fakat PNG içerik."
+        }
+      ],
+      "researchGaps": [
+        "Kazan hacmi/mimarisi, demleme basıncı, sıcaklık kontrolü, ön demleme, solenoid, sepet çapı ve ısınma süresi resmi kaynaklarda yok.",
+        "Güncel üretim durumu belirsiz (ürün sayfası 403).",
+        "Üretici fotoğrafı açık URL olarak bulunamadı (resmi föy PDF içinde gömülü).",
+        "Yurt dışı fiyat toplanmadı."
+      ]
+    },
+    {
+      "suggestedId": "la-cimbali-s-lite",
+      "brand": "La Cimbali",
+      "family": "S-Line",
+      "name": "S-Lite",
+      "variantNote": "Süper otomatik (dahili öğütücülü). İki depo sürümü: 2 L (320 mm genişlik, 19 kg) ve 8 L (420 mm, 20,5 kg); şebeke bağlantısı opsiyonel. Gerilim sürümleri 220–240 V / 120 V / 100 V. TR ilanları depo sürümünü belirtmiyor.",
+      "category": "Tam otomatik",
+      "currentStatus": {
+        "value": "Üreticinin güncel Fully Automatic listesinde; 'en küçük LaCimbali'",
+        "state": "verified",
+        "source": "https://www.cimbali.com/products/fully-automatic-machines/s-lite",
+        "checked": "2026-10-23",
+        "evidenceKind": "manufacturer"
+      },
+      "usageFit": {
+        "homeOrCompactPro": "Ofis, küçük işletme, bistro hedefli kompakt profesyonel. Ev için tasarlandığı iddia edilmiyor.",
+        "water": "Dahili depo 2 L veya 8 L; şebeke bağlantısı opsiyonel (kit).",
+        "electric": "2900 W; 220–240 V (yüksek akım: 230 V'ta ~12,6 A — ayrı/uygun sigortalı hat önerilir, hesaplama editoryal).",
+        "size": "2 L: 320 × 512 × 535 mm (G × D × Y), 19 kg; 8 L: 420 × 512 × 535 mm, 20,5 kg",
+        "daily5to25": "Kapasite fazlasıyla yeterli (üretici 'günde 80 fincana kadar' öneriyor); ev için güç ve maliyet ağır. Günlük 5–25 içecek uygunluğu üretici kapasite beyanı değildir; editoryal kullanım notudur."
+      },
+      "fields": {
+        "Entegre öğütücü ve kademe": {
+          "value": "1 öğütücü, seramik bıçaklar; 750 g çekirdek haznesi",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Öğütüm ayar kademe sayısı açıklanmıyor."
+        },
+        "Öğütülmüş kahve girişi": {
+          "value": "Var (dek/öğütülmüş kahve girişi)",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Demleme ünitesi": {
+          "value": "Plastik kahve grubu; doz 16 g'a kadar",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Kazan tipi": {
+          "value": "Thermoblock",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Pompa": {
+          "value": "Vibrasyon",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Güç (W)": {
+          "value": "2900",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Voltaj": {
+          "value": "220–240 V / 120 V / 100 V",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Su haznesi (L)": {
+          "value": "2 veya 8 (sürüme göre)",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.cimbali.com/products/fully-automatic-machines/s-lite"
+          ]
+        },
+        "Şebeke suyu": {
+          "value": "Opsiyonel (su besleme bağlantı kiti)",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.cimbali.com/products/fully-automatic-machines/s-lite"
+          ]
+        },
+        "Boyutlar": {
+          "value": "2 L: 320 × 512 × 535 mm; 8 L: 420 × 512 × 535 mm",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Ağırlık": {
+          "value": "19 kg (2 L) / 20,5 kg (8 L)",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Süt sistemi": {
+          "value": "Venturi emişli süt sistemi; otomatik süt yıkama",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Kontrol": {
+          "value": "10,1\" dokunmatik ekran; 24 seçime kadar; USB; Wi-Fi/telemetri; MDB ödeme sistemi opsiyonel",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Fincan açıklığı": {
+          "value": "Kahve çıkışı yüksekliği 85–175 mm",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Posa": {
+          "value": "45 porsiyon (10 g/porsiyon)",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Damlama tepsisi": {
+          "value": "~1,7 L",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer"
+        },
+        "Çıktı": {
+          "value": "Saatte: 80 espresso (50 ml), 75 americano (240 ml), 65 cappuccino (200 ml); 30 L/sa sıcak su; önerilen günlük 80 fincana kadar",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "note": "Üretici kapasite beyanı; ölçüm koşulları açıklanmıyor."
+        },
+        "Bakım": {
+          "value": "Otomatik kahve yıkama döngüsü (tablet) — AWS; otomatik süt yıkama",
+          "state": "verified",
+          "source": "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+          "checked": "2026-10-23",
+          "evidenceKind": "manufacturer",
+          "extraSources": [
+            "https://www.cimbali.com/products/fully-automatic-machines/s-lite"
+          ]
+        }
+      },
+      "qualityCriteria": {
+        "Öğütüm kontrolü": {
+          "candidateState": "partial",
+          "value": "Dahili tek öğütücü, seramik bıçak",
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Ayar aralığı/kademe açıklanmıyor."
+        },
+        "Gerçek demleme basıncı (bar)": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+            "https://www.cimbali.com/products/fully-automatic-machines/s-lite"
+          ],
+          "checked": "2026-10-23",
+          "note": "Kapalı otomatik grup; basınç değeri yok."
+        },
+        "PID": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Thermoblock; kontrol tipi açıklanmıyor."
+        },
+        "Basınçsız basket": {
+          "candidateState": "not-applicable-candidate",
+          "value": "Portafiltre yok (otomatik plastik grup)",
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Mevcut sözleşmede kapalı otomatik grup için NA."
+        },
+        "Buhar iş akışı": {
+          "candidateState": "partial",
+          "value": "Venturi süt sistemi; ayrı buhar çubuğu tanımı yok",
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Manuel buhar çubuğu olmadığı resmi kaynakta açıkça yazmıyor; sütlü içecek otomatik."
+        },
+        "3 yollu solenoid": {
+          "candidateState": "not-applicable-candidate",
+          "value": "Portafiltreli grup yok",
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "Mevcut sözleşmede kapalı otomatik grup için NA."
+        },
+        "Ön demleme": {
+          "candidateState": "unpublished",
+          "value": null,
+          "sources": [
+            "https://www.cimbali.com/sites/default/files/documenti/e_gruppocimbali_brochure_slite_en_it_digital.pdf",
+            "https://www.cimbali.com/products/fully-automatic-machines/s-lite"
+          ],
+          "checked": "2026-10-23",
+          "note": ""
+        },
+        "Parça ekosistemi": {
+          "candidateState": "verified",
+          "value": "Global Remote Service (abonelik, ayrı satılır), telemetri, Cup4You uygulaması",
+          "sources": [
+            "https://www.cimbali.com/products/fully-automatic-machines/s-lite",
+            "https://www.cimbali.com/sites/default/files/documenti/gc-folder-global-remote-service_0.pdf"
+          ],
+          "checked": "2026-10-23",
+          "note": "TR yetkili servis ağı doğrulanmadı; Escobarista kendini 'La Cimbali Türkiye Distribütörü' olarak tanıtıyor (satıcı beyanı)."
+        }
+      },
+      "offersTRY": [
+        {
+          "seller": "Mutfak10",
+          "price": 195360.0,
+          "currency": "TRY",
+          "url": "https://www.mutfak10.com/urun/la-cimbali-s-lite-super-otomatik-kahve-makinesi/",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": "partial",
+          "available": true,
+          "note": "KDV dahil; meta instock; havale %3 ile 189.499,20 TL. Depo sürümü (2 L/8 L) belirtilmiyor. Akakçe en düşük fiyatı da 195.360 TL gösteriyor."
+        },
+        {
+          "seller": "Cafemutfak",
+          "price": 200836.08,
+          "currency": "TRY",
+          "url": "https://www.cafemutfak.com/urun/la-cimbali-s-lite-super-otomatik-espresso-kahve-makinesi",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": "partial",
+          "available": null,
+          "note": "Sayfada '167.363,40 TL + KDV'; KDV dahil tutar %20 ile hesaplandı ve sayfadaki 200.836,08 TL ile uyumlu. 'Sepete Ekle' var; stok açık yazmıyor. Depo sürümü belirtilmiyor."
+        },
+        {
+          "seller": "Escobarista",
+          "price": 214409.16,
+          "currency": "TRY",
+          "url": "https://www.escobarista.com/urun/la-cimbali-s-lite-super-otomatik-kahve-makinesi",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": "partial",
+          "available": null,
+          "note": "4.308 EUR + KDV liste; havale 210.120,98 TL; stok kodu SU5T3J2S1E (depo sürümü açık değil). 'Sepete Ekle' var.",
+          "foreignListPrice": {
+            "currency": "EUR",
+            "amount": 4308.0,
+            "vat": "hariç"
+          }
+        },
+        {
+          "seller": "Cafemarkt",
+          "price": 220211.55,
+          "currency": "TRY",
+          "url": "https://www.cafemarkt.com/cimbali-s-lite-super-otomatik-espresso-kahve-makinesi",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "exact": "partial",
+          "available": true,
+          "note": "KDV dahil, ücretsiz kargo; meta in stock. Depo sürümü belirtilmiyor."
+        }
+      ],
+      "purchaseLinksTR": [
+        {
+          "seller": "Akakçe",
+          "url": "https://www.akakce.com/endustriyel-kahve-makinesi/en-ucuz-la-cimbali-s-lite-tam-otomatik-kahve-makinesi-fiyati,546713605.html",
+          "checked": "2026-10-23",
+          "exact": "partial",
+          "region": "TR",
+          "note": "En düşük 195.360 TL; +3 fiyat."
+        }
+      ],
+      "foreignPrices": [
+        {
+          "seller": "WebstaurantStore (ABD)",
+          "currency": "USD",
+          "amount": 4770.0,
+          "url": "https://www.webstaurantstore.com/lacimbali-s-lite-super-automatic-espresso-machine-with-2-liter-water-tank-120v/83BSLITE2.html",
+          "observedAt": "2026-10-23",
+          "evidence": "source-page",
+          "note": "2 L depo, 120 V sürüm; JSON-LD InStock."
+        }
+      ],
+      "gallery": [
+        {
+          "url": "https://www.cimbali.com/sites/default/files/7_s-lite_b_frontale_trasp.jpg",
+          "sourcePage": "https://www.cimbali.com/products/fully-automatic-machines/s-lite",
+          "angle": "tam ön",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "800x800",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://www.cimbali.com/sites/default/files/8_s-lite_b_trequarti_trasp.jpg",
+          "sourcePage": "https://www.cimbali.com/products/fully-automatic-machines/s-lite",
+          "angle": "ön 3/4",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "800x800",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://www.cimbali.com/sites/default/files/0_s-lite_laterale_trasp.jpg",
+          "sourcePage": "https://www.cimbali.com/products/fully-automatic-machines/s-lite",
+          "angle": "yan",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "800x800",
+          "proxyOrAi": false
+        },
+        {
+          "url": "https://www.cimbali.com/sites/default/files/5_s-lite_acqua_b_frontale_trasp.jpg",
+          "sourcePage": "https://www.cimbali.com/products/fully-automatic-machines/s-lite",
+          "angle": "tam ön ('acqua' sürüm)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "800x800",
+          "proxyOrAi": false,
+          "note": "Dosya adındaki 'acqua' su/depo sürümünü gösteriyor olabilir; hangi sürüm olduğu kesin değil."
+        },
+        {
+          "url": "https://www.cimbali.com/sites/default/files/6_s-lite_acqua_b_trequarti_trasp.jpg",
+          "sourcePage": "https://www.cimbali.com/products/fully-automatic-machines/s-lite",
+          "angle": "ön 3/4 ('acqua' sürüm)",
+          "httpStatus": 200,
+          "accessibleAt": "2026-10-23",
+          "pixels": "800x800",
+          "proxyOrAi": false
+        }
+      ],
+      "researchGaps": [
+        "Öğütücü ayar kademesi, demleme basıncı, sıcaklık kontrol tipi, ön demleme açıklanmıyor.",
+        "Manuel buhar çubuğu varlığı resmi tabloda belirtilmiyor (yalnız Venturi süt sistemi).",
+        "TR tekliflerinin depo sürümü (2 L/8 L) belirsiz.",
+        "Isınma süresi açıklanmıyor."
+      ]
+    }
+  ],
+  "brandLevelNotes": {
+    "La Spaziale": "Resmi sitede ev/kompakt adayları yalnız S1 ailesi (Dream, Dream-T, Vivaldi II, Mini Vivaldi II, Rossini, Armonia 2 grup). Türkiye'de TL teklif veya distribütör bulunamadı.",
+    "Elektra": "2023–2024'ten itibaren VEA Group S.p.A. bünyesinde (resmi About sayfası). Resmi site elektracoffee.com; eski elektrasrl.com alan adı ilgisiz siteye yönleniyor.",
+    "La Cimbali": "Güncel 'Traditional machines' listesi M23 UP, M26, M40, M200 vb. ticari çok gruplu makinelerden oluşuyor; ev/kompakt için öne çıkan güncel model süper otomatik S-Lite. M21 Junior'ın güncel durumu belirsiz."
+  },
+  "excludedCandidates": [
+    {
+      "name": "La Spaziale S1 Rossini",
+      "reason": "Kapsamı iki-üç modelle sınırladık; resmi broşürde var (yarı otomatik sürekli dağıtım, 3 L depo, otomatik buhar döngüsü, 0,45 L kahve kazanı); buhar kazanı tabloda yer almıyor. Derinlemesine araştırılmadı."
+    },
+    {
+      "name": "Elektra Micro Casa Semiautomatica / Mini Verticale",
+      "reason": "Resmi listede mevcut; bu turda derinlemesine araştırılmadı."
+    },
+    {
+      "name": "La Cimbali M23 UP",
+      "reason": "2 ve 3 grup ticari makine; ev için önerilmez."
+    }
+  ]
+}

@@ -72,5 +72,11 @@ export function preferenceScore(product, options = {}) {
 export function rankProducts(products, options) {
   return products
     .map((product) => ({ product, ...preferenceScore(product, options) }))
-    .sort((a, b) => b.score - a.score || b.evidence - a.evidence);
+    .sort(
+      (a, b) =>
+        Number(a.failed.length > 0) - Number(b.failed.length > 0) ||
+        Number(a.insufficientEvidence) - Number(b.insufficientEvidence) ||
+        b.score - a.score ||
+        b.evidence - a.evidence,
+    );
 }

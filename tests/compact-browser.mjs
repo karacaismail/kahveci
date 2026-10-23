@@ -14,7 +14,7 @@ try {
     });
     const page = await context.newPage();
     await page.goto(base + "#product/sage-breville-barista-pro-ses878");
-    const grid = page.locator(".quality-grid");
+    const grid = page.locator(".quality-grid").first();
     await expect(grid.locator(":scope > div")).toHaveCount(12);
     await expect(grid.locator('[aria-expanded="true"]')).toHaveCount(0);
     const metrics = await grid.evaluate((element) => ({
@@ -47,6 +47,18 @@ try {
     });
     await trigger.click();
     await expect(trigger).toHaveAttribute("aria-expanded", "false");
+    const more = page.getByRole("button", {
+      name: "16 ölçüm ve kullanım ayrıntısı",
+      exact: true,
+    });
+    await more.click();
+    await expect(page.locator(".quality-extended > div")).toHaveCount(16);
+    await expect(
+      page
+        .locator(".quality-extended")
+        .getByRole("heading", { name: "Isı tutarlılığı", exact: true }),
+    ).toBeVisible();
+    await more.click();
     console.log(
       `PASS ${width}: compact height ${metrics.height}px, readable text, no overflow, accessible expandable criterion and sources`,
     );

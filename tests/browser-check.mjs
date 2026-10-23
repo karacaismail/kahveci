@@ -85,9 +85,9 @@ for (const format of ["CSV", "JSON"]) {
   const text = await fs.readFile(file, "utf8");
   if (format === "JSON") {
     const data = JSON.parse(text);
-    assert.equal(Object.keys(data.products[0].quality).length, 12);
+    assert.equal(Object.keys(data.products[0].quality).length, 28);
     assert.ok(data.products[0].quality.PID.sources);
-    assert.equal(data.products.length, 183);
+    assert.equal(data.products.length, 191);
     assert.ok(data.equipment.every((p) => Number.isFinite(p.preference.score)));
     assert.ok(
       data.products.every(
@@ -205,7 +205,9 @@ await page
   .getByRole("button", { name: "Ninja Luxe Café Premier incele", exact: true })
   .click();
 await expect(page.locator("h1")).toContainText("Luxe Café");
-await expect(page.locator(".quality-grid > div")).toHaveCount(12);
+await expect(
+  page.locator(".quality-grid:not(.quality-extended) > div"),
+).toHaveCount(12);
 await expect(page.locator(".criterion-mark.required")).toHaveCount(7);
 const icon = await page
   .locator(".criterion-mark.required svg")
@@ -246,9 +248,9 @@ await scoreDisclosure.click();
 pass(
   "score disclosure has immediate semantic states and positive reciprocal motion",
 );
-await expect(page.locator(".score-table-scroll tbody tr")).toHaveCount(14);
+await expect(page.locator(".score-table-scroll tbody tr")).toHaveCount(25);
 pass(
-  "all-machine preference scores, seven large green Phosphor acceptance markers and 14-row score reasons",
+  "all-machine preference scores, seven large green Phosphor acceptance markers and consolidated score reasons plus measurement details",
 );
 await expect(page.locator("#quality")).toContainText(
   "Espresso kalite kriterleri",

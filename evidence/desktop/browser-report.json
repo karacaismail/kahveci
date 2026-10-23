@@ -36,7 +36,7 @@
       "status": "pass"
     },
     {
-      "check": "all-machine preference scores, seven large green Phosphor acceptance markers and 14-row score reasons",
+      "check": "all-machine preference scores, seven large green Phosphor acceptance markers and consolidated score reasons plus measurement details",
       "status": "pass"
     },
     {
@@ -94,14 +94,6 @@
       "loaded": true
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
-      "loaded": true
-    },
-    {
-      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
-      "loaded": true
-    },
-    {
       "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
       "loaded": true
     },
@@ -110,32 +102,44 @@
       "loaded": true
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES876/SES876BSS4GUK1/pdp.png?pdp",
-      "loaded": true
-    },
-    {
-      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
-      "loaded": true
-    },
-    {
-      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
-      "loaded": true
-    },
-    {
       "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES920/BES920UK/pdp_1300px.png?pdp",
       "loaded": true
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES880/SES880BSS4EEU1/pdp_1300px.png?pdp",
+      "url": "https://www.ranciliogroup.com/app/uploads/2019/09/Silvia-Pro-X.png",
       "loaded": true
     },
     {
-      "url": "https://ascaso.com/wp-content/uploads/2024/09/DREAM-001-scaled-e1726226223342.jpg",
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
       "loaded": true
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
+      "loaded": true
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES876/SES876BSS4GUK1/pdp.png?pdp",
+      "loaded": false
+    },
+    {
+      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
+      "loaded": false
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
+      "loaded": false
+    },
+    {
+      "url": "https://nivona.lt/file/2809.png",
+      "loaded": false
     },
     {
       "url": "https://images.philips.com/is/image/philipsconsumer/vrs_65d3e4d8_a0a7_42b9_87ca4db9c6fca9be?wid=1400&hei=1400&fit=constrain",
-      "loaded": true
+      "loaded": false
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES881/SES881BSS4GUK1/pdp.png?pdp",
+      "loaded": false
     }
   ],
   "errors": [],
@@ -149,7 +153,7 @@
       "type": "stylesheet"
     },
     {
-      "url": "http://127.0.0.1:4174/kahveci/assets/index-C_cPEX6d.js",
+      "url": "http://127.0.0.1:4174/kahveci/assets/index-D3jKnkaa.js",
       "type": "script"
     },
     {
@@ -181,15 +185,7 @@
       "type": "font"
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
-      "type": "image"
-    },
-    {
       "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
-      "type": "image"
-    },
-    {
-      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
       "type": "image"
     },
     {
@@ -197,15 +193,7 @@
       "type": "image"
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES990/SES990BSS4EEU1/pdp1.png?pdp",
-      "type": "image"
-    },
-    {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES876/SES876BSS4GUK1/pdp.png?pdp",
-      "type": "image"
-    },
-    {
-      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
       "type": "image"
     },
     {
@@ -213,11 +201,23 @@
       "type": "image"
     },
     {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES990/SES990BSS4EEU1/pdp1.png?pdp",
+      "type": "image"
+    },
+    {
       "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
       "type": "image"
     },
     {
-      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES880/SES880BSS4EEU1/pdp_1300px.png?pdp",
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-ses500-bss-the-bambino-plus-espre-b2-90d.jpg",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES876/SES876BSS4GUK1/pdp.png?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://static.ticimax.cloud/3530/uploads/urunresimleri/buyuk/sage-ses450-bss-the-bambino-espresso-m-acafb8.jpg",
       "type": "image"
     },
     {
@@ -225,7 +225,15 @@
       "type": "image"
     },
     {
+      "url": "https://www.ranciliogroup.com/app/uploads/2019/09/Silvia-Pro-X.png",
+      "type": "image"
+    },
+    {
       "url": "https://images.philips.com/is/image/philipsconsumer/vrs_65d3e4d8_a0a7_42b9_87ca4db9c6fca9be?wid=1400&hei=1400&fit=constrain",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES880/SES880BSS4EEU1/pdp_1300px.png?pdp",
       "type": "image"
     },
     {
@@ -245,11 +253,27 @@
       "type": "image"
     },
     {
+      "url": "https://nivona.lt/file/2809.png",
+      "type": "image"
+    },
+    {
       "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
       "type": "other"
     },
     {
-      "url": "https://ascaso.com/wp-content/uploads/2024/09/DREAM-001-scaled-e1726226223342.jpg",
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL91T_frontale-2.webp?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://www.aksesu.com/image/f/9/77c1b213465d6153039128592fbe849c/cache/catalog/shop/elektronik/elektrikli-ev-aletleri/icecek-hazirlama/espresso-cappuccino-makinesi/ep5443-70-lattego-tam-otomatik-kahve-ve-espresso-makinesi-0-1000x1000.png",
+      "type": "image"
+    },
+    {
+      "url": "https://www.lelit.com/wp-content/uploads/2024/03/MAIN-e1741266073723.png?x30689",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
       "type": "image"
     },
     {
@@ -261,31 +285,7 @@
       "type": "image"
     },
     {
-      "url": "https://nivona.lt/file/2809.png",
-      "type": "image"
-    },
-    {
-      "url": "https://www.ranciliogroup.com/app/uploads/2019/09/Silvia-Pro-X.png",
-      "type": "image"
-    },
-    {
-      "url": "https://www.lelit.com/wp-content/uploads/2024/03/PL91T_frontale-2.webp?x30689",
-      "type": "image"
-    },
-    {
-      "url": "https://www.gaggia.com/app/uploads/2023/07/Magenta_Milk_ambientata_desktop.jpg",
-      "type": "image"
-    },
-    {
-      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
-      "type": "image"
-    },
-    {
-      "url": "https://www.gaggia.com/app/uploads/2023/11/Classic-Trequarti-Bianco_2018.png",
-      "type": "image"
-    },
-    {
-      "url": "https://www.gaggia.com/app/uploads/2023/07/Magenta_Plus_ambientata_desktop.jpg",
+      "url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/gaggia-milano/thumb/137045_large.jpg",
       "type": "image"
     },
     {
@@ -293,23 +293,11 @@
       "type": "image"
     },
     {
-      "url": "https://www.bezzera.it/uploads/prod_images/Magica/MAGICA%20MN%20PID%20NEW%20GRID.jpg",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/gaggia-milano/thumb/137045_large.jpg",
-      "type": "image"
-    },
-    {
-      "url": "https://www.mutbex.com/lelit-grace-pl81t-espresso-coffee-machine-espresso-and-cappuccino-machines-lelit-33027-16-B.jpg",
-      "type": "image"
-    },
-    {
       "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES810/BES810BSSUK/pdp_1300px.png?pdp",
       "type": "image"
     },
     {
-      "url": "https://cdn.karaca.com/rcman/cw1000h1000q90gm/image/banner/000001000237179003-0.jpg",
+      "url": "https://www.mutbex.com/lelit-grace-pl81t-espresso-coffee-machine-espresso-and-cappuccino-machines-lelit-33027-16-B.jpg",
       "type": "image"
     },
     {
@@ -321,15 +309,11 @@
       "type": "image"
     },
     {
-      "url": "https://www.cafelat.com/uploads/1/5/3/6/15367184/drinks_orig.jpg",
-      "type": "image"
-    },
-    {
-      "url": "https://www.wacaco.com/cdn/shop/products/Picopresso-308-PNG-LD_58cced72-f01b-46de-a2d3-c874f0e41819.png?v=1678885971",
-      "type": "image"
-    },
-    {
       "url": "https://www.coffeelso.com/idea/da/61/myassets/products/217/5fa9d20a1822bae54f6c4d7a-2020-11-9-espresso-gc-black-2000x2000-p-800.jpeg?revision=1750778794",
+      "type": "image"
+    },
+    {
+      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
       "type": "image"
     },
     {
@@ -337,7 +321,7 @@
       "type": "image"
     },
     {
-      "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "url": "https://www.cafelat.com/uploads/1/5/3/6/15367184/drinks_orig.jpg",
       "type": "image"
     },
     {
@@ -345,23 +329,7 @@
       "type": "other"
     },
     {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_0.jpg?v=1759832734",
-      "type": "image"
-    },
-    {
-      "url": "https://bucket-smeg.4flow.cloud/OBJECTS/JPG%2072%20dpi/EMC02BLMEU.jpg?token4f=4a55c162163055ccd3d6cd4c1a459bd3?token4f=8343fb5c5af8b3e6ba65a093ac4dd510",
-      "type": "image"
-    },
-    {
       "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_4.jpg?v=1771320829",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_9.jpg?v=1771320829",
-      "type": "image"
-    },
-    {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_2.jpg?v=1771320829",
       "type": "image"
     },
     {
@@ -369,7 +337,15 @@
       "type": "image"
     },
     {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_1_27e3fb7c-8728-433a-b6dd-c22424eedacf.jpg?v=1771320829",
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_7.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_2.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://www.bezzera.it/uploads/prod_images/Magica/MAGICA%20MN%20PID%20NEW%20GRID.jpg",
       "type": "image"
     },
     {
@@ -377,20 +353,44 @@
       "type": "image"
     },
     {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_9.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
       "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_8.jpg?v=1771320829",
       "type": "image"
     },
     {
-      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_7.jpg?v=1771320829",
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_0.jpg?v=1759832734",
+      "type": "image"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0658/3972/6781/files/ES601_1_27e3fb7c-8728-433a-b6dd-c22424eedacf.jpg?v=1771320829",
+      "type": "image"
+    },
+    {
+      "url": "https://bucket-smeg.4flow.cloud/OBJECTS/JPG%2072%20dpi/EMC02BLMEU.jpg?token4f=4a55c162163055ccd3d6cd4c1a459bd3?token4f=8343fb5c5af8b3e6ba65a093ac4dd510",
+      "type": "image"
+    },
+    {
+      "url": "https://assets.sageappliances.com/cdn-cgi/image/width=1300,format=auto/BES878/SES878BTR4GEU1/pdp_1300px.png?pdp",
       "type": "image"
     },
     {
       "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
+      "type": "image"
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
       "type": "image"
     },
     {
       "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",
       "type": "other"
+    },
+    {
+      "url": "https://static.ticimax.cloud/60788/uploads/urunresimleri/buyuk/sage-bes875-the-barista-express-espres--4253-.jpg",
+      "type": "image"
     },
     {
       "url": "https://assets-dam.foodthinkers.com/ZKCA55LU/at/nvjk5xcj8xk3b9xgv54ps8rx/pdp.jpg?pdp",

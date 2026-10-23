@@ -68,7 +68,7 @@ Kurulu WebKit için `ATLAS_ENGINE=webkit npm run test:phone` aynı akışı emü
 
 ## Genel arama
 
-Üstteki “Tüm verilerde ara” alanı yazdıkça bütün183makineyi,47ekipmanı ve265kavram/veri alanını arar. Tüm iç içe katalog alanları, teknik değerler, kaynak/görsel adresleri, eski ve güncel fiyat gözlemleri, satıcılar, araştırma notları ve senaryodaki puan gerekçeleri kapsamdadır. Türkçe karakterler isteğe bağlıdır;58mm/58 mm ve41.999/41999 eşleşir. Sözcükler birlikte aranır, tırnaklı ifade aynı sırayı gerektirir. İnternet araması değildir. Eşleşme özellik onayı veya güncel stok iddiası değildir. Makine,ekipman,kavram türüyle süzülür ve eşleşen alan gösterilir. Katalogdaki yerel arama da aynı motoru kullanır; diğer filtreler korunur.
+Üstteki “Tüm verilerde ara” alanı yazdıkça bütün191makineyi,47ekipmanı ve katalogdan türetilen kavram/veri alanlarını arar. Tüm iç içe katalog alanları, teknik değerler, kaynak/görsel adresleri, eski ve güncel fiyat gözlemleri, satıcılar, araştırma notları ve senaryodaki puan gerekçeleri kapsamdadır. Türkçe karakterler isteğe bağlıdır;58mm/58 mm ve41.999/41999 eşleşir. Sözcükler birlikte aranır, tırnaklı ifade aynı sırayı gerektirir. İnternet araması değildir. Eşleşme özellik onayı veya güncel stok iddiası değildir. Makine,ekipman,kavram türüyle süzülür ve eşleşen alan gösterilir. Katalogdaki yerel arama da aynı motoru kullanır; diğer filtreler korunur.
 
 `node tests/search-browser.mjs`320pxtelefon ve1512pxmasaüstü arama akışını production build üzerinde doğrular.
 
@@ -77,3 +77,6 @@ Kurulu WebKit için `ATLAS_ENGINE=webkit npm run test:phone` aynı akışı emü
 `npm run test:phone:detail`, 320/360/375/390 telefon profillerinde filtreleri, ürün kanıtlarını, dört makine karşılaştırmasını ve galeriyi sınar. 844×320 yatay görünüm, kapatma, klavye odağı ve karşılaştırmaya geri dönüş de kapsamdadır. Chrome 320 profilinde CDP dokunma hareketi denenir. `ATLAS_ENGINE=webkit npm run test:phone:detail`, kurulu WebKit ile aynı akışı emülasyonda doğrular.
 
 Telefon karşılaştırmasında 104 px kriter ve 184 px ürün sütunu, ürüne geçiş düğmeleri ve sabit kriter sütunu bulunur. Galeri telefonda tam ekrandır; ürün kanıtları açılır bölümlerdedir. Masaüstü düzeni korunur. Ayrıntılar [evidence/PHONE_QA.md](evidence/PHONE_QA.md) dosyasındadır. Fiziksel cihaz testi yapılmadı.
+
+
+23 Ekim araştırması: 191 makine; La Spaziale, Elektra ve La Cimbali için sekiz kaynaklı yeni model. 16 yeni ölçüm/kullanım ayrıntısı yalnız ürün sayfasında açılır. Puan motoru 11 sade/sütlü ağırlık grubu kullanır; eksik bilgi aralığı ve kapsam ayrı tutulur. Güncel gerekçeler public/espresso-kalite-arastirmasi.md içinde. Yeni kapılar tests/research-scoring.test.mjs, tests/new-brands.test.mjs ve tests/researched-brands-browser.mjs. Native EUR/USD teklifler foreignOffers altında; stok/variant teyitsiz kayıtlar uygun TL minimumuna girmez.

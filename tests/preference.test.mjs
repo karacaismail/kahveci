@@ -85,15 +85,15 @@ test("NA basket architecture is excluded, not called bad espresso", () => {
   assert.equal(r.rows.find((x) => x.key === "Basınçsız basket").weight, 0);
   assert.ok(!r.failed.some((x) => x.key === "Basınçsız basket"));
 });
-test("steam relevance follows milk requirement and single boiler penalty is explicit", () => {
+test("steam relevance follows milk requirement without an architecture penalty", () => {
   const p = model(
     { "Süt sistemi": "Manuel buhar çubuğu" },
     { boilerArchitecture: "single", boilerArchitectureSource: url },
   );
   const low = preferenceScore(p, options),
     busy = preferenceScore(p, { ...options, cups: 25 });
-  assert.equal(busy.score, Math.max(0, low.score - 15));
-  assert.equal(busy.penalty, 15);
+  assert.equal(busy.score, Math.max(0, low.score));
+  assert.equal(busy.penalty, 0);
   assert.equal(
     preferenceScore(p, { ...options, cups: 25, milkShare: 0 }).penalty,
     0,

@@ -1,0 +1,379 @@
+{
+  "date": "2026-10-23",
+  "criteria": [
+    {
+      "id": "ogutum-kontrolu",
+      "key": "Öğütüm kontrolü",
+      "label": "Espresso aralığında öğütüm kontrolü",
+      "tier": "zorunlu",
+      "weights": {
+        "sade": 18,
+        "sutlu": 14
+      },
+      "sources": [
+        {
+          "url": "https://researchportal.port.ac.uk/en/publications/systematically-improving-espresso-insights-from-mathematical-mode/",
+          "note": "Cameron ve ark. 2020, Matter 2(3):631–648 — EY tepe noktası, ince öğütmede homojen olmayan akış"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10920694",
+          "note": "Smrke, Eiermann, Yeretzian 2024, Sci Rep — fines (<100 µm) ve geçirgenlik"
+        },
+        {
+          "url": "https://kaffeemacher.de/en/blogs/kaffeewissen/test-protocol-espresso-grinders",
+          "note": "Kaffeemacher/ZHAW öğütücü test protokolü (x50, Qf<100, retention, doz SD)"
+        },
+        {
+          "url": "https://www.test.de/presse/pressemitteilungen/Kaffeevollautomaten-und-Kaffeemuehlen-Die-besten-Maschinen-und-Muehlen-fuer-Kaffeefans-5542526-0/",
+          "note": "Stiftung Warentest 2019: bıçaklı öğütücülerde doğru inceliği bulmak zor; 10/11 tam otomatik lezzetli espresso"
+        },
+        {
+          "url": "https://kaffeemacher.de/blogs/kaffeewissen/sage-barista-pro-espressomaschine",
+          "note": "Sage Barista Pro entegre doz 18,0–18,6 g, öğütülmüş kahve ~30 °C ısınma"
+        },
+        {
+          "url": "https://www.delonghi.com/en-gb/faqs/Magnifica-Evo-Next-grinder-settings/a/583894",
+          "note": "De'Longhi 13 kademe, ayar yalnız öğütücü çalışırken, etki iki fincan sonra"
+        }
+      ],
+      "shortLabel": "Öğütüm ayarı"
+    },
+    {
+      "id": "demleme-sicakligi",
+      "key": "PID",
+      "label": "Demleme sıcaklığı yönetimi ve kararlılığı",
+      "tier": "zorunlu",
+      "weights": {
+        "sade": 17,
+        "sutlu": 13
+      },
+      "sources": [
+        {
+          "url": "https://static1.squarespace.com/static/65fb773fac2112270b71798a/t/69f0e4b0d4db0c64912308d8/1777394866548/2026+World+Barista+Championship+Official+Rules+and+Regulations.pdf",
+          "note": "WBC 2026: demleme sıcaklığı 90,5–96 °C"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1002/jsfa.1304&resultType=core&format=json",
+          "note": "Andueza 2003: 88/92/96/98 °C; 92 °C optimum; fizikokimyasal parametreler sıcaklık seçiminde 'not very useful'"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=andueza%20espresso%20coffee%20pressure%20temperature&format=json&resultType=core&pageSize=5",
+          "note": "Klotz 2020, Foods 9(1):36 — çoğu tadımcı 80 ile 93 °C'yi ayırt edemedi"
+        },
+        {
+          "url": "https://kaffeemacher.de/en/blogs/kaffeewissen/thermoblock-espressomaschinen-test",
+          "note": "Aynı Scace protokolünde termoblok SD 0,75 °C (Ascaso Steel Duo PID) – 2,77 °C (Quick Mill Luna); 'kararlılık etikete değil kontrol ayarına ve sensör yerine bağlı'"
+        },
+        {
+          "url": "https://kaffeemacher.de/en/blogs/kaffeewissen/lelit-elizabeth-3",
+          "note": "Çift kazan Elizabeth 3: 5 şotta 1,96 °C aralık (2 dk arayla 0,92)"
+        },
+        {
+          "url": "https://kaffeemacher.de/en/blogs/kaffeewissen/lelit-mara-x",
+          "note": "HX MaraX: yıkama sırası tek başına 3–4 °C fark"
+        },
+        {
+          "url": "https://www.espressoparts.com/blogs/barista-basics-tutorials/thermofilters",
+          "note": "Scace ölçüm protokolü: 75 mL ±%5, ilk 3 s atılır"
+        },
+        {
+          "url": "https://www.which.co.uk/reviews/coffee-machines/article/how-we-test-coffee-machines",
+          "note": "Which? fincan içi 60–88 °C hedefi (demleme sıcaklığı değil)"
+        }
+      ],
+      "shortLabel": "Sıcaklık kontrolü"
+    },
+    {
+      "id": "demleme-basinci-ve-akis",
+      "key": "Gerçek demleme basıncı (bar)",
+      "label": "Gerçek demleme basıncı ve OPV tavanı",
+      "tier": "zorunlu",
+      "weights": {
+        "sade": 16,
+        "sutlu": 12
+      },
+      "sources": [
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1021/jf0206623&resultType=core&format=json",
+          "note": "Andueza 2002 JAFC 50(25):7426 — 7/9/11 atm; 9 atm köpük tutarlılığı; 11 atm ayrışır"
+        },
+        {
+          "url": "https://arxiv.org/abs/2512.21528",
+          "note": "Waszkiewicz ve ark., Physics of Fluids 2026 — akış <5 bar Darcy, üstünde doyma; 9 bar kol makinesi mirası"
+        },
+        {
+          "url": "https://wcc.coffee/s/2026-World-Barista-Championship-Official-Rules-and-Regulations.pdf",
+          "note": "WBC 2026 §3.1 G: 8,5–9,5 bar sabit"
+        },
+        {
+          "url": "https://www.breville.com/us/en/products/espresso/bes450.html",
+          "note": "Breville Bambino: '15 bar Italian pump … 9 bar extraction' (beyan)"
+        },
+        {
+          "url": "https://completehomebarista.com/guides/what-is-opv-espresso-machine/",
+          "note": "Fabrika OPV tablosu (Classic Pro 12–13, Silvia 10–11, Dedica 11–12, Bambino 9–10 bar) — yöntem belirtilmemiş"
+        },
+        {
+          "url": "https://climpsonandsons.com/blogs/journal/exploring-low-pressure-extraction-9-bar-vs-6-bar-espresso",
+          "note": "6 vs 9 bar kör kafe tadımı; EY farkı yok, düşük basınç tercih"
+        }
+      ],
+      "shortLabel": "Demleme basıncı"
+    },
+    {
+      "id": "akis-ve-profil-kontrolu",
+      "key": "Ön demleme",
+      "label": "Ön demleme ve basınç/akış profili kontrolü",
+      "tier": "ek tercih",
+      "weights": {
+        "sade": 5,
+        "sutlu": 3
+      },
+      "sources": [
+        {
+          "url": "https://decentespresso.com/docs/the_impact_of_the_preinfusion_flow_rate_on_espresso_extraction",
+          "note": "Ön demleme akışı 2,4–8 mL/s: tepe basıncı değişti, EY %19,5–20,0 sabit"
+        },
+        {
+          "url": "https://decentespresso.com/docs/are_flow_profiles_better_than_pressure_profiles",
+          "note": "Decent: akış profili tek başına daha iyi şot garantisi değil"
+        },
+        {
+          "url": "https://www.essentialutensil.au/cdn/shop/files/Flair-Espresso-Flair-58-User-Manual.pdf",
+          "note": "Flair 58 kılavuzu: 6–10 bar, 30–35 s hedef; gösterge bölgeleri"
+        }
+      ],
+      "shortLabel": "Ön ıslatma / akış"
+    },
+    {
+      "id": "sepet-ve-puck",
+      "key": "Basınçsız basket",
+      "label": "Tek duvarlı sepet, sepet doz aralığı ve puck hazırlığı",
+      "tier": "zorunlu",
+      "weights": {
+        "sade": 12,
+        "sutlu": 9
+      },
+      "sources": [
+        {
+          "url": "https://portal.fis.tum.de/en/publications/time-resolved-extraction-of-caffeine-and-trigonelline-from-finely/",
+          "note": "Kuhn ve ark. 2017 J. Food Eng.: 'Tamping pressure … has no detectable effect'"
+        },
+        {
+          "url": "https://kaffeemacher.ch/en/blogs/kaffeewissen/anpressdruck-tampen",
+          "note": "150 şot, 10/15/20 kg: akış süresi p=0,242, TDS p=0,097"
+        },
+        {
+          "url": "https://www.breville.com/us/en/blog/coffee-and-espresso/pressurized-vs-non-pressurized-portafilter.html",
+          "note": "Breville: basınçlı sepet 'may not give the same full-bodied flavor'"
+        },
+        {
+          "url": "https://www.choice.com.au/home-and-living/kitchen/coffee-machines/articles/how-we-test-coffee-machines",
+          "note": "CHOICE: tek duvarlı sepet test koşulu; ağırlıklar 60/20/15/5"
+        },
+        {
+          "url": "https://www.essentialutensil.au/cdn/shop/files/VST-Precision-Filter-Basket-Spec-Sheet.pdf",
+          "note": "VST: delik toleransı ±30 µm, nominal doz bantları (18 g sepet 17–19 g)"
+        }
+      ],
+      "shortLabel": "Tek duvarlı sepet"
+    },
+    {
+      "id": "doz-cikti-tekrarlanabilirlik",
+      "key": "Doz ve çıktı",
+      "label": "Çıktı kontrolü ve ölçülmüş tekrarlanabilirlik",
+      "tier": "zorunlu",
+      "weights": {
+        "sade": 10,
+        "sutlu": 8
+      },
+      "sources": [
+        {
+          "url": "https://kaffeemacher.de/en/blogs/kaffeewissen/espresso-machines-test-protocol",
+          "note": "Volumetrik sapma puanları ±0,5/±2/±4 g; KM 5 çift şot, WBC 14 şot"
+        },
+        {
+          "url": "https://www.test.de/Kaffeevollautomaten-im-Test-4635644-0/",
+          "note": "Stiftung Warentest 17.07.2026: ardışık espressolarda 'relative Mengenschwankungen', 40 g"
+        },
+        {
+          "url": "https://news.uoregon.edu/content/uo-chemist-helps-find-path-consistently-good-espresso",
+          "note": "Cameron/Hendon: 15 g + kaba öğütme, 'make it 100 times in a row'"
+        },
+        {
+          "url": "https://www.decentespresso.com/blog/the_decent_scale_with_the_de1",
+          "note": "Tartıyla durdurma, damlama telafisi 4–10 g"
+        },
+        {
+          "url": "https://www.1st-line.com/buy/jura-e4-super-automatic-espresso-machine/",
+          "note": "Jura E4 demleme ünitesi 5–16 g (perakendeci aktarımı)"
+        }
+      ],
+      "shortLabel": "Çıktı kontrolü"
+    },
+    {
+      "id": "sut-ve-buhar",
+      "key": "Buhar iş akışı",
+      "label": "Süt sistemi, buhar performansı ve sütlü servis iş akışı",
+      "tier": "koşullu",
+      "weights": {
+        "sade": 0,
+        "sutlu": 22
+      },
+      "sources": [
+        {
+          "url": "https://helda.helsinki.fi/server/api/core/bitstreams/c104024c-8f61-44c0-9ca4-db61c98ba8c6/content",
+          "note": "Ho ve ark. 2024 IJDT 77(3): 65–70 °C arzu edilir; 75–85 °C denatürasyon; kondensat %4–6 (ev termoblok) vs %10–12"
+        },
+        {
+          "url": "https://www.test.de/Milchaufschaeumer-im-Test-Gute-und-schlechte-Schaumschlaeger-6166383-0/",
+          "note": "Stiftung Warentest: 100 ml köpürtme süresi protokolü, köpük 64–70 °C"
+        },
+        {
+          "url": "https://www.test.de/Kaffeevollautomaten-im-Test-4635644-6321558/",
+          "note": "Süt köpüğü yalnız süt sistemi varsa puanlanır; ardışık cappuccino tutarlılığı"
+        },
+        {
+          "url": "https://www.expertreviews.co.uk/gaggia/1411696/gaggia-classic-2019-review",
+          "note": "Gaggia Classic Pro espresso→buhar ~45 s; 160 ml ~45 s"
+        },
+        {
+          "url": "https://www.zh.ch/de/news-uebersicht/mitteilungen/2025/gesundheit/lebensmittel/-mikrobiologische-qualitaet-von-milchgetraenken-aus-kaffeeautoma.html",
+          "note": "Zürih Kanton Lab 2024: 15 süt içeceğinin 4'ünde Enterobacteriaceae aşımı (ticari)"
+        },
+        {
+          "url": "https://www.espressoparts.com/products/ascaso-steel-duo-pid-inox",
+          "note": "Ascaso çift termoblok 'unlimited steam' (pazarlama, ölçüm yok)"
+        }
+      ],
+      "shortLabel": "Süt sistemi"
+    },
+    {
+      "id": "su-ve-kirec",
+      "key": "Su sertliği yönetimi",
+      "label": "Su yönetimi ve kireç koruması",
+      "tier": "zorunlu",
+      "weights": {
+        "sade": 7,
+        "sutlu": 6
+      },
+      "sources": [
+        {
+          "url": "https://researchportal.bath.ac.uk/en/publications/the-role-of-dissolved-cations-in-coffee-extraction/",
+          "note": "Hendon, Colonna-Dashwood 2014 JAFC 62(21):4947"
+        },
+        {
+          "url": "https://techcenter.lamarzocco.com/en/watercalculator",
+          "note": "La Marzocco: sertlik 70–100, alkalinite 40–80, klorür <30 ppm, LSI 0,1–0,7"
+        },
+        {
+          "url": "https://www.iski.gov.tr/web/assets/SayfalarDocs/sukalite/sukalite_ocak2018.pdf",
+          "note": "İSKİ Ocak 2018: sertlik 123–213 mg/L CaCO3, klorür 22,7–87,2 mg/L (veri 2018 tarihli)"
+        },
+        {
+          "url": "https://dailycoffeenews.com/2018/08/29/a-practical-water-guide-for-coffee-professionals-part-ii-the-sensory-data",
+          "note": "Royal Coffee kör panel: alkalinite:sertlik ~1:2–3"
+        },
+        {
+          "url": "https://www.delonghi.com/en-us/faqs/Magnifica-Evo:-Descaling-and-Cleaning/a/570259",
+          "note": "Kireç çözme uyarı sayacı + sertlik testi + filtre önerisi"
+        }
+      ],
+      "shortLabel": "Su bakımı"
+    },
+    {
+      "id": "temizlik-ve-is-akisi",
+      "key": "Temizlik erişimi",
+      "label": "Temizlik donanımı ve şot sonrası iş akışı",
+      "tier": "ek tercih",
+      "weights": {
+        "sade": 6,
+        "sutlu": 6
+      },
+      "sources": [
+        {
+          "url": "https://www.wholelattelove.com/blogs/tech-tips/3-way-solenoid-valve",
+          "note": "3 yollu valf: basınç tahliyesi, kuru puck, backflush (satıcı teknik notu)"
+        },
+        {
+          "url": "https://tomscoffeecorner.com/delonghi-dedica-the-ultimate-review/",
+          "note": "Dedica: 3 yollu valf yok, 60 s bekleme, backflush yapılamaz"
+        },
+        {
+          "url": "https://www.test.de/Kaffeevollautomaten-im-Test-4635644-6321558/",
+          "note": "Stiftung Warentest: 300 içecek sonrası kirlenme, Reparierbarkeit uzman değerlendirmesi"
+        }
+      ],
+      "shortLabel": "Temizlik"
+    },
+    {
+      "id": "servis-ve-parca",
+      "key": "Parça ekosistemi",
+      "label": "Türkiye servis ağı, yedek parça ve onarılabilirlik",
+      "tier": "zorunlu",
+      "weights": {
+        "sade": 9,
+        "sutlu": 7
+      },
+      "sources": [
+        {
+          "url": "https://orgtr.org/satis-sonrasi-hizmetler-yonetmeligi/",
+          "note": "Satış Sonrası Hizmetler Yönetmeliği ek 15.3.8 çay/kahve makineleri: 7 yıl, 20 iş günü, 30 servis (ikincil kopya; mevzuat.gov.tr alınamadı)"
+        },
+        {
+          "url": "https://www.alomaliye.com/2014/06/13/garanti-belgesi-yonetmeligi/",
+          "note": "Garanti Belgesi Yönetmeliği md. 6: en az iki yıl"
+        },
+        {
+          "url": "https://www.which.co.uk/reviews/coffee-machines/article/which-coffee-machine-brand/top-coffee-machine-brands",
+          "note": "Which? Nisan 2025, 5.864 makine: arıza türleri"
+        },
+        {
+          "url": "https://www.1st-line.com/technical-support/lelit-technical-support-page/parts-diagram-lelit-pl162t-bianca/",
+          "note": "Lelit parça şeması örneği"
+        },
+        {
+          "url": "https://www.adherent.com/wp-content/uploads/2025/04/Prepare-to-Repair-2025-Right-to-Repair-Requirements-in-the-EU-US-and-Beyond-Compliance-Risks.pdf",
+          "note": "AB 2024/1799 Ek II'de kahve makinesi yok (ikincil özet)"
+        }
+      ],
+      "shortLabel": "Parça ve servis"
+    },
+    {
+      "id": "bagimsiz-olcum-kaniti",
+      "key": "Kapasite kanıtı",
+      "label": "Bağımsız ölçüm ve kör tadım kaydı",
+      "tier": "bilgilendirici",
+      "weights": {
+        "sade": 0,
+        "sutlu": 0
+      },
+      "sources": [
+        {
+          "url": "https://www.test.de/Siebtraegermaschinen-im-Test-5819615-5819619/",
+          "note": "Stiftung Warentest portafiltre yöntemi 40/30/20/5/5"
+        },
+        {
+          "url": "https://www.which.co.uk/reviews/coffee-machines/article/how-we-test-coffee-machines-as45b5u3hlPB",
+          "note": "Which? 40/25/10/10/10/5; 'ignoring price'; Best Buy ≥70 %"
+        },
+        {
+          "url": "https://www.thestandard.com.hk/news/article/338662/Espresso-machine-test-most-deliver-but-some-run-hot-and-cold",
+          "note": "HK/ICRT 2026: 1.–3. fincan arası 12,5 °C sapma (basın aktarımı)"
+        },
+        {
+          "url": "https://www.test.de/presse/pressemitteilungen/Maschinen-fuer-Espresso-und-Cappuccino-Grosse-Preisunterschiede-bei-gleich-guter-Qualitaet-5101257-0/",
+          "note": "'Große Preisunterschiede bei gleich guter Qualität' (2016)"
+        }
+      ],
+      "shortLabel": "Bağımsız ölçüm"
+    }
+  ],
+  "reviewDecisions": [
+    "Bilinmeyen ve yayımlanmayan bilgi aynı tam belirsizlik aralığını taşır.",
+    "Mimariye dayalı seri servis cezası veya bonusu yoktur.",
+    "Doğrulanmamış sayısal kalite eşikleri puanlamaya alınmaz.",
+    "Süt gerekiyorsa süt sisteminin yokluğu NA değildir.",
+    "Tartı/zamanlayıcı ve temizlik faydaları birer kez sayılır."
+  ]
+}
