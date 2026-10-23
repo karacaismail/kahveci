@@ -317,16 +317,9 @@ await expect(
   }),
 ).toBeVisible();
 await page.screenshot({ path: "evidence/desktop/decision.png" });
-await page.locator(".method .disclosure-trigger").click();
-await expect(page.locator(".method")).toContainText(
-  "Fiyat, bütçe, indirim, marka ve üretim ülkesi puan vermez",
-);
-await expect(page.locator(".method")).not.toContainText(
-  "Fiyatı bilinmeyen −100",
-);
-pass(
-  "decision inputs update workload scenario and method matches price-independent scoring",
-);
+await expect(page.locator(".method")).toHaveCount(0);
+await expect(page.locator("body")).not.toContainText("Kabul şartları 74");
+pass("decision inputs update workload scenario without scoring boilerplate");
 const budgetField = page.getByRole("textbox", {
   name: "Toplam başlangıç bütçesi",
 });
