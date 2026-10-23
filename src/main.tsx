@@ -308,11 +308,6 @@ function ScoreSummary({
           <span>{r.acceptance}</span>
         </div>
       </div>
-      <p>
-        {expanded
-          ? "Kabul şartları 74, diğer donanım ve kullanım avantajları 26 ağırlık puanıdır. Mimariye uygulanamayan ve süt gerekmiyorsa buhar kriteri paydadan çıkarılır; kalan puan 100’e ölçeklenir. Bu bir lezzet testi değildir."
-          : "Teknik kabul şartları ve seçtiğiniz iş akışına göre."}
-      </p>
       <ul>
         {r.reasons.slice(0, expanded ? 4 : 2).map((reason) => (
           <li key={reason.key}>
@@ -820,12 +815,6 @@ function Specs({
           onChange={(e) => setShowLegacy(e.currentTarget.checked)}
         />
       </div>
-      <p className="muted">
-        İşaretli her alanın kaynağını açabilirsiniz. Üretici beyanı, bağımsız
-        performans ölçümü değildir. Son sütun tercihe etkisini gösterir. Aynı
-        başlığa bağlı teknik alanlar tekrar puan eklemez; güç, menşei, malzeme
-        ve pompa tepe basıncı tek başına kalite puanı almaz.
-      </p>
       {layout === "phone" && (
         <p className="hint">
           Teknik tabloyu yatay kaydırarak değerleri, kaynakları ve puan
@@ -1741,19 +1730,6 @@ function App() {
             <section id="quality" className="detail-section">
               <div className="eyebrow">FİNCANDA NE DEĞİŞİR?</div>
               <h2>Espresso kalite kriterleri</h2>
-              <p className="muted">
-                8 ana kriter ve 4 ek karar verisi, her model için ayrı
-                değerlendirilir. Karşılıyor işareti kaynaklı donanım/işlev
-                beyanıdır; bağımsız lezzet veya kapasite puanı değildir. Henüz
-                doğrulanmadı araştırma boşluğudur; kaynakta açıklanmıyor ise
-                incelenen belgelerde bilgi bulunmadığını gösterir. İkisi de yok
-                anlamına gelmez.
-              </p>
-              <p className="acceptance-legend">
-                Büyük yeşil Phosphor ikon zorunlu kabul başlığını gösterir.
-                Modelin bu şartı karşıladığı yalnız altındaki durum ve dayanakla
-                anlaşılır; yeşil başlık tek başına ürün onayı değildir.
-              </p>
               {current.researchStatus === "needs-sku" && (
                 <p className="research-status">
                   Bu kayıtta kesin model/nesil kodu gerekiyor. Aile düzeyindeki
@@ -2451,24 +2427,6 @@ function App() {
                       ),
                     )}
                 </div>
-                <Disclosure
-                  className="method"
-                  label="Sıralama nasıl hesaplanıyor?"
-                >
-                  <p>
-                    Zorunlu kabul şartları 74, diğer teknik ve kullanım
-                    avantajları 26 ağırlık puanıdır. Fiyat, bütçe, indirim,
-                    marka ve üretim ülkesi puan vermez. Karşılanan özellik tam;
-                    sınırlı veya harici ekipman gerektiren özellik yarım ağırlık
-                    alır. Bilinmeyen/yayımlanmayan özellik puan kazanmaz; bu
-                    yokluk veya kötü lezzet kanıtı değildir. Uygulanamayan
-                    başlıklar paydadan çıkarılıp sonuç 100’e ölçeklenir.
-                    Kaynaklı tek kazan için 15+ günlük içecek ve sütlü içecek
-                    payı sıfırdan büyük varsayımında 15 puan indirilir; bu bir
-                    seri servis ölçümü değildir. Aynı puanda kaynak kapsamı
-                    yüksek kayıt öne gelir.
-                  </p>
-                </Disclosure>
               </div>
             </div>
             <section className="ownership">
@@ -2577,25 +2535,7 @@ function App() {
               </div>
             </div>
             <div className="methodology">
-              <h2>Veriyi nasıl okuyacaksınız?</h2>
-              <p>
-                <strong>Üretici:</strong> Bağlantılı belge/ürün sayfasında
-                modelle eşleştirilmiş teknik beyan.{" "}
-                <strong>Arama indeksi:</strong> Arama motorunda görülen fiyat
-                görüntüsü; canlı stok/sepet kontrolü değildir.{" "}
-                <strong>Teyitsiz aktarım:</strong> Paylaşılan ilk araştırmadan
-                gelen, yeniden doğrulanmamış alan.{" "}
-                <strong>Doğrulanmadı:</strong> Özelliğin yokluğu anlamına
-                gelmez. <strong>Uygulanamaz:</strong> Karşılaştırılan mimaride
-                ölçütün doğrudan karşılığı yok.
-              </p>
-              <p>
-                Önceki metinlerin 1–10 kahve puanları, ülkeye göre kalite
-                hükümleri ve birleştirilmiş model nesilleri karar motorundan
-                çıkarıldı. Tam teknik kapsam, tat paneli, sıcaklık/basınç
-                laboratuvar testi ve tüm mağazalarda canlı fiyat taraması
-                tamamlanmış değildir.
-              </p>
+              <h2>Kahve makinelerini tanıyın</h2>
               <div className="guide-links">
                 <Link href="https://www.sageappliances.com/en-gb/product/bes500">
                   Sage: sıcaklık / basınç mimarisi
